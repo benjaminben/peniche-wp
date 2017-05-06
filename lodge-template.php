@@ -18,10 +18,7 @@ $thumb_url = $thumb_url_array[0];
 <div id="Lodge">
 
   <div class="banner"
-       style="height: 500px;
-              background-image: url(<?php echo $thumb_url ?>);
-              background-size: cover;
-              background-position: center center;">
+       style="background-image: url(<?php echo $thumb_url ?>);">
   </div>
 
   <nav class="sub-menu">
@@ -46,10 +43,14 @@ $thumb_url = $thumb_url_array[0];
     ?>
 
     <div class="post">
-      <h1><?php the_title() ?></h1>
-      <p><?php the_content() ?></p>
+      <div class="text">
+        <h1 class="title"><?php the_title() ?></h1>
+        <p><?php the_content() ?></p>
+      </div>
       <?php if ($thumb_id) { ?>
+      <div class="img-cont">
         <img src="<?php echo $thumb_url ?>" />
+      </div>
       <?php } ?>
     </div>
 
