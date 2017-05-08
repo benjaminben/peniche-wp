@@ -46,4 +46,39 @@
       width: 80px;
     }
   }
+
+  .watch-cta {
+    bottom: 0;
+    right: 0;
+    font-size: 1.33em;
+    padding: 0.66em 2em;
+    background: lightblue;
+  }
+}
+
+#home_player {
+  display: none;
+  width: 100vw;
+  height: 56.25vw;
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+}
+
+#Home.video-active {
+  #home_player {
+    display: block;
+  }
+
+  .slideshow {
+    display: none;
+  }
+
+  .table-of-contents {
+    display: none;
+  }
+
+  .watch-cta {
+    transform: translate(100%, 100%);
+  }
 }

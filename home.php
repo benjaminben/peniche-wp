@@ -1,10 +1,16 @@
 <?php
+  wp_register_script( 'yt-iframe', 'https://www.youtube.com/iframe_api', null, 1.1, true );
+  wp_enqueue_script( 'yt-iframe' );
+  wp_register_script('home', get_template_directory_uri() . '/js/home.js', array( 'jquery' ), null, 1.1, true);
+  wp_enqueue_script( 'home' );
   get_header();
   $post = get_post(89);
 ?>
 
   <div id="Home">
-    <div class="slideshow absolute" data-urls="">
+    <div id="home_player" data-yt-id="<?php echo get_field('video_embed_id') ?>"></div>
+
+    <div class="slideshow absolute">
     <?php
 
       $slideshow = get_field_object("slideshow");
@@ -39,6 +45,10 @@
       ?>
       <img class="logo block" src="<?php echo $logo[0] ?>" />
     </div>
+
+    <span class="watch-cta absolute pointer">
+      WATCH
+    </span>
 
   </div>
 

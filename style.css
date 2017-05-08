@@ -247,6 +247,9 @@ td, th {
 .text-right {
   text-align: right;
 }
+.pointer {
+  cursor: pointer;
+}
 /*--------------------------------------------------------------
  # Typography
  --------------------------------------------------------------*/
@@ -786,6 +789,34 @@ embed, iframe, object {
 #Home .table-of-contents .logo {
   margin: 30px auto 0;
   width: 80px;
+}
+#Home .watch-cta {
+  bottom: 0;
+  right: 0;
+  font-size: 1.33em;
+  padding: 0.66em 2em;
+  background: lightblue;
+}
+#home_player {
+  display: none;
+  width: 100vw;
+  height: 56.25vw;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+#Home.video-active #home_player {
+  display: block;
+}
+#Home.video-active .slideshow {
+  display: none;
+}
+#Home.video-active .table-of-contents {
+  display: none;
+}
+#Home.video-active .watch-cta {
+  transform: translate(100%, 100%);
 }
 #Lodge {
   padding-bottom: 80px;
