@@ -1,0 +1,25 @@
+#page.contact {
+  .entry-title {
+    display: none;
+  }
+  .wpcf7 {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    form {
+      input {
+        width: 100%;
+
+        &[type="submit"] {
+          width: 100px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      textarea {
+        resize: vertical;
+      }
+    }
+  }
+}

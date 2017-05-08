@@ -23,7 +23,7 @@ $thumb_url = $thumb_url_array[0];
 
   <nav class="sub-menu">
   <?php
-    wp_nav_menu( array('menu' => 'Lodge Menu') );
+    wp_nav_menu( array('menu' => 'Lodge Navigation') );
   ?>
   </nav>
 

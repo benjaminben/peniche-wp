@@ -9,6 +9,9 @@
  * @package Peniche
  */
 
+	global $post;
+  $post_slug=$post->post_name;
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -20,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site <?php echo $post_slug ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'peniche' ); ?></a>
 
 	<header id="masthead" class="site-header flex align-center" role="banner">
