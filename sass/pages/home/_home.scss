@@ -20,4 +20,30 @@
       }
     }
   }
+
+  .table-of-contents {
+    width: 300px;
+    padding: 1em;
+    top: 5em; left: 2.5em;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.8);
+
+    .title {
+      margin-bottom: 30px;
+      * {
+        margin: 0;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .logo {
+      margin: 30px auto 0;
+      width: 80px;
+    }
+  }
 }

@@ -238,6 +238,15 @@ td, th {
 .relative {
   position: relative;
 }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 /*--------------------------------------------------------------
  # Typography
  --------------------------------------------------------------*/
@@ -754,6 +763,29 @@ embed, iframe, object {
 }
 #Home .slideshow .slide.active {
   opacity: 1;
+}
+#Home .table-of-contents {
+  width: 300px;
+  padding: 1em;
+  top: 5em;
+  left: 2.5em;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+}
+#Home .table-of-contents .title {
+  margin-bottom: 30px;
+}
+#Home .table-of-contents .title * {
+  margin: 0;
+}
+#Home .table-of-contents ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#Home .table-of-contents .logo {
+  margin: 30px auto 0;
+  width: 80px;
 }
 #Lodge {
   padding-bottom: 80px;
