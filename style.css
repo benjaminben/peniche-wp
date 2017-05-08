@@ -232,6 +232,12 @@ td, th {
 .align-end {
   align-items: flex-end;
 }
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
 /*--------------------------------------------------------------
  # Typography
  --------------------------------------------------------------*/
@@ -289,6 +295,7 @@ big {
  --------------------------------------------------------------*/
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 *, *:before, *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -297,6 +304,8 @@ html {
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
+  height: 100%;
+  overflow: hidden;
 }
 blockquote, q {
   quotes: "" "";
@@ -548,6 +557,11 @@ a:hover, a:active {
  --------------------------------------------------------------*/
 #content {
   padding-top: 50px;
+  height: 100%;
+  overflow: scroll;
+}
+body.home #content {
+  padding-top: 0;
 }
 .sticky {
   display: block;
@@ -626,6 +640,9 @@ a:hover, a:active {
   background: lightblue;
   color: white;
   letter-spacing: 0.1em;
+}
+body.home #masthead {
+  transform: translateY(-100%);
 }
 /*--------------------------------------------------------------
  # Infinite scroll
@@ -713,6 +730,31 @@ embed, iframe, object {
 /*--------------------------------------------------------------
  # Pages
  --------------------------------------------------------------*/
+#page {
+  height: 100%;
+}
+#Home {
+  height: 100%;
+}
+#Home .slideshow {
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#Home .slideshow .slide {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 0.33s ease;
+}
+#Home .slideshow .slide.active {
+  opacity: 1;
+}
 #Lodge {
   padding-bottom: 80px;
 }

@@ -1,0 +1,23 @@
+#Home {
+  height: 100%;
+
+  .slideshow {
+    height: 100%;
+    top: 0; left: 0;
+    width: 100%;
+
+    .slide {
+      height: 100%;
+      width: 100%;
+      top: 0; left: 0;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      transition: opacity 0.33s ease;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

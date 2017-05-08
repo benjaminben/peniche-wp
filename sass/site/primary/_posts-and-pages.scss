@@ -1,5 +1,12 @@
 #content {
   padding-top: 50px;
+  height: 100%;
+  overflow: scroll;
+}
+body.home {
+  #content {
+    padding-top: 0;
+  }
 }
 
 .sticky {

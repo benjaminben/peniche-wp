@@ -1,1 +1,6 @@
-@import "lodge/lodge"
+#page {
+  height: 100%;
+}
+
+@import "home/home";
+@import "lodge/lodge";
