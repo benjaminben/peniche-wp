@@ -764,7 +764,7 @@ embed, iframe, object {
   height: 100%;
   width: 100%;
   top: 0;
-  left: 0;
+  right: 0;
   overflow: hidden;
   transition: opacity 0.33s ease;
   display: none;

@@ -1,59 +1,34 @@
 window.$ = window.jQuery
 
-var ytPlayer
-function onYouTubeIframeAPIReady() {
-  var ytCont = document.getElementById("home_player")
-  console.log("blurg", ytCont);
-  ytPlayer = new YT.Player("home_player", {
-    height: "390",
-    width: "640",
-    videoId: ytCont.getAttribute("data-yt-id"),
-    playerVars: {"showinfo": 0, "modestbranding": 1},
-    events: {
-      "onReady": function(){console.log("yt player ready")},
-      "onStateChange": function(e) {
-        console.log(e.data)
-        if (e.data === 2) {
-          $("#Home").removeClass("video-active")
-        }
-        if (e.data === 0) {
-          ytPlayer.pauseVideo();
-          ytPlayer.seekTo(0);
-        }
-      }
-    }
-  })
-}
-
 $(document).ready(function() {
   var $home = $("#Home")
   var home_bg_slides = $home.find(".slideshow .slide")
-  var slide_number = -1
 
-  var animSlide = function(slide) {
+  var animSlide = function(slide, back) {
+    // console.log(slide)
     slide.css({
       zIndex: 2,
       width: "0%",
-      display: "block"
+      display: "block",
+      right: back ? "" : "0",
+      left: back ? "0" : "initial"
     })
 
     var imgCont = slide.find(".img-cont")
 
     imgCont.css({
       width: "100vw",
-      left: "-50vw"
+      left: back ? "-50vw" : "50vw"
     })
 
     TweenMax.to(imgCont, 0.8, {
       left: "0vw",
-      ease: Power3.easeInOut,
-      onComplete: function() {
-        // imgCont.css({width: "100%", left})
-      }
+      ease: Power3.easeInOut
     })
 
     TweenMax.to(slide, 0.8, {
-      x: 0, width: "100%",
+      width: "100%",
+      // clearProps: "transform",
       ease: Power3.easeInOut,
       onComplete: function() {
         console.log("dun")
@@ -63,19 +38,72 @@ $(document).ready(function() {
     })
   }
 
+  var this_slide_index = -1
+
   var updateSlide = function() {
-    slide_number = (slide_number < home_bg_slides.length - 1)
-                 ? slide_number + 1
-                 : 0;
-    animSlide($(home_bg_slides[slide_number]))
+    var last_slide_index = this_slide_index
+
+    this_slide_index = (this_slide_index < home_bg_slides.length - 1)
+                   ? this_slide_index + 1
+                   : 0;
+
+    // var last_slide = $(".slideshow .active") || $(".slideshow:first-child")
+
+    console.log(last_slide_index, this_slide_index)
+    var back = (this_slide_index === home_bg_slides.length - 1) ? true : false
+    animSlide(
+      $(home_bg_slides[this_slide_index]),
+      back
+    )
+    // if (last_slide_index > -1) {
+    //   var last_slide_bg = $(home_bg_slides[last_slide_index]).find(".img-cont")
+    //   TweenMax.to(last_slide_bg, 1.2, {
+    //     x: (back) ? "10%" : "-10%",
+    //     ease: Power3.easeInOut,
+    //     clearProps: "transform",
+    //     // onComplete: function() {
+    //     //   // last_slide_bg.css("transform", "")
+    //     // }
+    //   })
+    // }
   }
 
   updateSlide()
-  window.setInterval(function() {
+  var SLPHomeSlideInt = window.setInterval(function() {
     updateSlide()
   }, 3000)
 
-  // VIDEO CTA
+
+  // VIDEO
+  var ytPlayer
+  window.onYouTubeIframeAPIReady = function() {
+    var ytCont = document.getElementById("home_player")
+    ytPlayer = new YT.Player("home_player", {
+      height: "390",
+      width: "640",
+      videoId: ytCont.getAttribute("data-yt-id"),
+      playerVars: {"showinfo": 0, "modestbranding": 1},
+      events: {
+        "onReady": function(){console.log("yt player ready")},
+        "onStateChange": function(e) {
+          if (e.data === 1) {
+            window.clearInterval(SLPHomeSlideInt)
+          }
+          if (e.data === 2) {
+            $("#Home").removeClass("video-active")
+            SLPHomeSlideInt = window.setInterval(function() {
+              updateSlide()
+            }, 3000)
+          }
+          if (e.data === 0) {
+            ytPlayer.pauseVideo();
+            ytPlayer.seekTo(0);
+          }
+        }
+      }
+    })
+  }
+
   $("#Home .watch-cta").on("click", function(e) {
     $home.addClass("video-active")
     ytPlayer.playVideo();
