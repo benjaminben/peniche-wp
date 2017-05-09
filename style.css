@@ -758,19 +758,27 @@ embed, iframe, object {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 0;
 }
 #Home .slideshow .slide {
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
+  transition: opacity 0.33s ease;
+  display: none;
+}
+#Home .slideshow .slide .img-cont {
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
   background-size: cover;
   background-position: center center;
-  opacity: 0;
-  transition: opacity 0.33s ease;
 }
 #Home .slideshow .slide.active {
-  opacity: 1;
+  display: block;
 }
 #Home .table-of-contents {
   width: 300px;
