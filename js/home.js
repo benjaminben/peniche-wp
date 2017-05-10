@@ -2,10 +2,20 @@ window.$ = window.jQuery
 
 $(document).ready(function() {
   var $home = $("#Home")
+  var $slideshow = $home.find(".slideshow")
   var home_bg_slides = $home.find(".slideshow .slide")
+  var this_slide_index = 0
+
+  $slideshow.on("mousemove", function(e) {
+    if (e.clientX > e.target.getBoundingClientRect().width / 2) {
+      $slideshow.css("cursor", "pointer")
+    }
+    else {
+      $slideshow.css("cursor", "default")
+    }
+  })
 
   var animSlide = function(slide, back) {
-    // console.log(slide)
     slide.css({
       zIndex: 2,
       width: "0%",
@@ -31,41 +41,31 @@ $(document).ready(function() {
       // clearProps: "transform",
       ease: Power3.easeInOut,
       onComplete: function() {
-        console.log("dun")
+        // console.log("dun")
         $home.find(".slide.active").removeClass("active")
         slide.addClass("active").attr("style", "")
       }
     })
   }
 
-  var this_slide_index = -1
-
   var updateSlide = function() {
-    var last_slide_index = this_slide_index
+    var target
+    var back
 
-    this_slide_index = (this_slide_index < home_bg_slides.length - 1)
-                   ? this_slide_index + 1
-                   : 0;
+    if ($(".slideshow .active").length) {
+      if ($(".slideshow .active").next().length) {
+        target = $(".slideshow .active").next()
+      }
+      else {
+        target = $(".slideshow .slide").first()
+        back = true
+      }
+    }
+    else {
+      target = $(".slideshow .slide").first()
+    }
 
-    // var last_slide = $(".slideshow .active") || $(".slideshow:first-child")
-
-    console.log(last_slide_index, this_slide_index)
-    var back = (this_slide_index === home_bg_slides.length - 1) ? true : false
-    animSlide(
-      $(home_bg_slides[this_slide_index]),
-      back
-    )
-    // if (last_slide_index > -1) {
-    //   var last_slide_bg = $(home_bg_slides[last_slide_index]).find(".img-cont")
-    //   TweenMax.to(last_slide_bg, 1.2, {
-    //     x: (back) ? "10%" : "-10%",
-    //     ease: Power3.easeInOut,
-    //     clearProps: "transform",
-    //     // onComplete: function() {
-    //     //   // last_slide_bg.css("transform", "")
-    //     // }
-    //   })
-    // }
+    animSlide(target, back)
   }
 
   updateSlide()
