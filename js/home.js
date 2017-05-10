@@ -74,7 +74,7 @@ $(document).ready(function() {
     return slideForward(target)
   }
 
-  var SLPHomeSlideInt = window.setInterval(function() {
+  var slideTick = function() {
     var target
     var back
 
@@ -91,7 +91,9 @@ $(document).ready(function() {
       target = $(".slideshow .slide").first()
     }
     updateSlide(target, back)
-  }, 3000)
+  }
+  slideTick()
+  var SLPHomeSlideInt = window.setInterval(slideTick, 3000)
 
   $slideshow.on("mousemove", function(e) {
     if (e.clientX > e.target.getBoundingClientRect().width / 2) {
@@ -141,9 +143,7 @@ $(document).ready(function() {
           }
           if (e.data === 2) {
             $("#Home").removeClass("video-active")
-            SLPHomeSlideInt = window.setInterval(function() {
-              updateSlide()
-            }, 3000)
+            SLPHomeSlideInt = window.setInterval(slideTick, 3000)
           }
           if (e.data === 0) {
             ytPlayer.pauseVideo();

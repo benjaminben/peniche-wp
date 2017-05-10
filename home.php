@@ -21,7 +21,7 @@
           // echo "<h1>".$slideshow[0]."</h1>";
           $image = get_sub_field("images");
           ?>
-      <span class="slide absolute <?php echo (!$count ? "active" : "") ?>">
+      <span class="slide absolute ">
         <span class="block img-cont absolute"
               style="background-image: url(<?php echo $image["url"] ?>)"></span>
       </span>
