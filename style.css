@@ -880,6 +880,7 @@ embed, iframe, object {
   min-width: 400px;
   text-align: left;
   vertical-align: middle;
+  position: relative;
   flex: 1;
   padding-right: 30px;
 }
@@ -939,6 +940,7 @@ embed, iframe, object {
   }
   #Lodge .post .text {
     width: 100%;
+    min-width: auto;
   }
   #Lodge .post .img-cont {
     min-width: auto;

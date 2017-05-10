@@ -48,6 +48,7 @@
       min-width: 400px;
       text-align: left;
       vertical-align: middle;
+      position: relative;
       flex: 1;
       padding-right: 30px;
 
@@ -114,6 +115,7 @@
       display: block;
       .text {
         width: 100%;
+        min-width: auto;
       }
       .img-cont {
         min-width: auto;
