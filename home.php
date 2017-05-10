@@ -13,18 +13,21 @@
     <div class="slideshow absolute">
     <?php
 
-      $slideshow = get_field_object("slideshow");
+      $slideshow = get_field("slideshow");
       if( have_rows("slideshow") ):
-
+        $count = 0;
         while ( have_rows("slideshow") ) : the_row();
+          // $first = the_row() == $slideshow[0];
+          // echo "<h1>".$slideshow[0]."</h1>";
           $image = get_sub_field("images");
           ?>
-      <span class="slide absolute">
+      <span class="slide absolute <?php echo (!$count ? "active" : "") ?>">
         <span class="block img-cont absolute"
               style="background-image: url(<?php echo $image["url"] ?>)"></span>
       </span>
 
     <?php
+        $count = $count + 1;
         endwhile;
 
     else :

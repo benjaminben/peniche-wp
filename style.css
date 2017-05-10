@@ -780,6 +780,12 @@ embed, iframe, object {
 #Home .slideshow .slide.active {
   display: block;
 }
+#Home .slideshow[data-dir="forward"] {
+  cursor: url(images/forward-arrow.png) 40 30, auto;
+}
+#Home .slideshow[data-dir="back"] {
+  cursor: url(images/back-arrow.png) 20 30, auto;
+}
 #Home .table-of-contents {
   width: 300px;
   padding: 1em;

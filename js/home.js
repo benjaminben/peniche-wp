@@ -6,29 +6,20 @@ $(document).ready(function() {
   var home_bg_slides = $home.find(".slideshow .slide")
   var this_slide_index = 0
 
-  $slideshow.on("mousemove", function(e) {
-    if (e.clientX > e.target.getBoundingClientRect().width / 2) {
-      $slideshow.css("cursor", "pointer")
-    }
-    else {
-      $slideshow.css("cursor", "default")
-    }
-  })
-
-  var animSlide = function(slide, back) {
+  var slideForward = function(slide) {
     slide.css({
       zIndex: 2,
       width: "0%",
       display: "block",
-      right: back ? "" : "0",
-      left: back ? "0" : "initial"
+      right: "0",
+      left: "initial"
     })
 
     var imgCont = slide.find(".img-cont")
 
     imgCont.css({
       width: "100vw",
-      left: back ? "-50vw" : "50vw"
+      left: "50vw"
     })
 
     TweenMax.to(imgCont, 0.8, {
@@ -38,17 +29,52 @@ $(document).ready(function() {
 
     TweenMax.to(slide, 0.8, {
       width: "100%",
-      // clearProps: "transform",
       ease: Power3.easeInOut,
       onComplete: function() {
-        // console.log("dun")
+        $home.find(".slide.active").removeClass("active")
+        slide.addClass("active").attr("style", "")
+      }
+    })
+  }
+  var slideBackward = function(slide) {
+    slide.css({
+      zIndex: 2,
+      width: "0%",
+      display: "block",
+      right: "",
+      left: "0",
+    })
+
+    var imgCont = slide.find(".img-cont")
+
+    imgCont.css({
+      width: "100vw",
+      left: "-50vw",
+    })
+
+    TweenMax.to(imgCont, 0.8, {
+      left: "0vw",
+      ease: Power3.easeInOut
+    })
+
+    TweenMax.to(slide, 0.8, {
+      width: "100%",
+      ease: Power3.easeInOut,
+      onComplete: function() {
         $home.find(".slide.active").removeClass("active")
         slide.addClass("active").attr("style", "")
       }
     })
   }
 
-  var updateSlide = function() {
+  var updateSlide = function(target, back) {
+    if (back) {
+      return slideBackward(target)
+    }
+    return slideForward(target)
+  }
+
+  var SLPHomeSlideInt = window.setInterval(function() {
     var target
     var back
 
@@ -64,14 +90,38 @@ $(document).ready(function() {
     else {
       target = $(".slideshow .slide").first()
     }
-
-    animSlide(target, back)
-  }
-
-  updateSlide()
-  var SLPHomeSlideInt = window.setInterval(function() {
-    updateSlide()
+    updateSlide(target, back)
   }, 3000)
+
+  $slideshow.on("mousemove", function(e) {
+    if (e.clientX > e.target.getBoundingClientRect().width / 2) {
+      $slideshow.attr("data-dir", "forward")
+    }
+    else {
+      $slideshow.attr("data-dir", "back")
+    }
+  })
+  $slideshow.on("click", function(e) {
+    window.clearInterval(SLPHomeSlideInt)
+    if (e.clientX > e.target.getBoundingClientRect().width / 2) {
+      if ($(".slideshow .active").next().length) {
+        target = $(".slideshow .active").next()
+      }
+      else {
+        target = $(".slideshow .slide").first()
+      }
+      updateSlide(target, false)
+    }
+    else {
+      if ($(".slideshow .active").prev().length) {
+        target = $(".slideshow .active").prev()
+      }
+      else {
+        target = $(".slideshow .slide").last()
+      }
+      updateSlide(target, true)
+    }
+  })
 
 
   // VIDEO

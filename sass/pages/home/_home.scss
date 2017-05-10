@@ -33,6 +33,13 @@
         }
       }
     }
+
+    &[data-dir="forward"] {
+      cursor: url(images/forward-arrow.png) 40 30, auto;
+    }
+    &[data-dir="back"] {
+      cursor: url(images/back-arrow.png) 20 30, auto;
+    }
   }
 
   .table-of-contents {
