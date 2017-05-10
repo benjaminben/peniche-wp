@@ -48,13 +48,15 @@ $thumb_url = $thumb_url_array[0];
         $thumb_url = $thumb_url_array[0];
       ?>
 
-      <div class="post">
+      <div class="post <?php echo (get_field('banner') ? 'banner' : '') ?>">
         <div class="text">
           <h1 class="title"><?php the_title() ?></h1>
           <p><?php the_content() ?></p>
         </div>
         <?php if ($thumb_id) { ?>
-        <div class="img-cont">
+        <div class="img-cont" <?php echo (get_field('banner')
+                               ? 'style="background-image:url('.$thumb_url.')"'
+                               : '')?>>
           <img src="<?php echo $thumb_url ?>" />
         </div>
         <?php } ?>
