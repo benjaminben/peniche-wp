@@ -17,9 +17,11 @@ $thumb_url = $thumb_url_array[0];
 
 <div id="Lodge">
 
-  <div class="banner"
-       style="background-image: url(<?php echo $thumb_url ?>);">
-  </div>
+  <header>
+    <div class="banner"
+         style="background-image: url(<?php echo $thumb_url ?>);">
+    </div>
+  </header>
 
   <nav class="sub-menu">
   <?php
@@ -47,20 +49,20 @@ $thumb_url = $thumb_url_array[0];
         $thumb_id = get_post_thumbnail_id();
         $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
         $thumb_url = $thumb_url_array[0];
+
+        $format = get_field('format');
       ?>
 
-        <div class="post">
-          <div class="content <?php echo get_field('format') ?>">
-          <?php if (get_field('format') == 'flex-column') { ?>
+        <div class="post relative">
+          <div class="content relative <?php echo $format ?>">
+          <?php if ($format == 'flex-column') { ?>
             <?php if (get_field('arrangement') == 'text-img') { ?>
               <div class="text text-img">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>
               <?php if ($thumb_id) { ?>
-                <div class="img-cont" <?php echo (get_field('banner')
-                                       ? 'style="background-image:url('.$thumb_url.')"'
-                                       : '')?>>
+                <div class="img-cont">
                   <img src="<?php echo $thumb_url ?>" />
                 </div>
               <?php } ?>
@@ -79,6 +81,19 @@ $thumb_url = $thumb_url_array[0];
               </div>
             <?php } ?>
           <?php } ?>
+
+          <?php if ($format == 'banner') { ?>
+            <div class="text relative">
+              <h1 class="title"><?php the_title() ?></h1>
+              <p><?php the_content() ?></p>
+            </div>
+            <?php if ($thumb_id) { ?>
+              <div class="img-cont" style="background-image:url(<?php echo $thumb_url ?>)">
+                <img src="<?php echo $thumb_url ?>" />
+              </div>
+            <?php } ?>
+          <?php } ?>
+
           </div>
         </div>
 

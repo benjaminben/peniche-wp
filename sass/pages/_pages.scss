@@ -1,10 +1,12 @@
 #page {
   height: 100%;
 
-  .banner {
-    height: 500px;
-    background-size: cover;
-    background-position: center;
+  header {
+    .banner {
+      background-size: cover;
+      background-position: center center;
+      height: 500px;
+    }
   }
 }
 
