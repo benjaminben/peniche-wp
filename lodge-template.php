@@ -61,20 +61,13 @@ $thumb_url = $thumb_url_array[0];
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>
-              <?php if ($thumb_id) { ?>
-                <div class="img-cont">
-                  <img src="<?php echo $thumb_url ?>" />
-                </div>
-              <?php } ?>
+            <?php } ?>
+            <?php if ($thumb_id) { ?>
+              <div class="img-cont">
+                <img src="<?php echo $thumb_url ?>" />
+              </div>
             <?php } ?>
             <?php if (get_field('arrangement') == 'img-text') { ?>
-              <?php if ($thumb_id) { ?>
-                <div class="img-cont" <?php echo (get_field('banner')
-                                       ? 'style="background-image:url('.$thumb_url.')"'
-                                       : '')?>>
-                  <img src="<?php echo $thumb_url ?>" />
-                </div>
-              <?php } ?>
               <div class="text img-text">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
@@ -90,6 +83,43 @@ $thumb_url = $thumb_url_array[0];
             <?php if ($thumb_id) { ?>
               <div class="img-cont" style="background-image:url(<?php echo $thumb_url ?>)">
                 <img src="<?php echo $thumb_url ?>" />
+              </div>
+            <?php } ?>
+          <?php } ?>
+
+          <?php if ($format == 'slideshow') { ?>
+            <?php if (get_field('arrangement') == 'text-img') { ?>
+              <div class="text text-img">
+                <h1 class="title"><?php the_title() ?></h1>
+                <p><?php the_content() ?></p>
+              </div>
+            <?php } ?>
+            <span class="slides-cont block relative">
+              <div class="slides relative">
+                <?php
+                  $slides = get_field('slides');
+                  if (have_rows('slides')):
+                    while (have_rows('slides')) : the_row();
+                      $image = get_sub_field('image');
+                      $desc = get_sub_field('description');
+                    ?>
+                    <span class="slide absolute"
+                          style="background-image:url(<?php echo $image ?>)">
+                        <img src="<?php echo $image ?>" />
+                      <p class="absolute"><?php echo $desc ?></p>
+                    </span>
+                <?php
+                    endwhile;
+                  else :
+                    echo "no slides";
+                  endif;
+                ?>
+              </div>
+            </span>
+            <?php if (get_field('arrangement') == 'img-text') { ?>
+              <div class="text img-text">
+                <h1 class="title"><?php the_title() ?></h1>
+                <p><?php the_content() ?></p>
               </div>
             <?php } ?>
           <?php } ?>
