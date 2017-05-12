@@ -18,9 +18,11 @@ $thumb_url = $thumb_url_array[0];
 
 ?>
 
-<div class="banner"
-     style="background-image: url(<?php echo $thumb_url ?>);">
-</div>
+<header>
+	<div class="banner"
+	     style="background-image: url(<?php echo $thumb_url ?>);">
+	</div>
+</header>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

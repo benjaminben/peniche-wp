@@ -4,6 +4,9 @@
   Template Name: Lodge Template
 */
 
+wp_register_script('lodge', get_template_directory_uri() . '/js/lodge.js', array( 'jquery', 'gsap' ), null, 1.1, true);
+wp_enqueue_script( 'lodge' );
+
 get_header();
 
 global $post;
@@ -99,17 +102,38 @@ $thumb_url = $thumb_url_array[0];
                 <?php
                   $slides = get_field('slides');
                   if (have_rows('slides')):
+                    $slide_count = 0;
                     while (have_rows('slides')) : the_row();
                       $image = get_sub_field('image');
                       $desc = get_sub_field('description');
                     ?>
-                    <span class="slide absolute"
+                    <span class="slide absolute<?php echo ($slide_count == 0 ? " active" : "") ?>"
                           style="background-image:url(<?php echo $image ?>)">
                         <img src="<?php echo $image ?>" />
                       <p class="absolute"><?php echo $desc ?></p>
                     </span>
                 <?php
+                    $slide_count++;
                     endwhile;
+                ?>
+
+                <span class="absolute index-array table">
+                  <?php
+                    $index_count = 0;
+                    while (have_rows('slides')) : the_row();
+                    ?>
+                      <span class="index pointer table-cell v-middle<?php echo ($index_count == 0 ? " active" : "") ?>"
+                            data-index="<?php echo $index_count ?>">
+                        <svg class="block" width="100" height="100" viewbox="0 0 100 100">
+                          <circle cx="50" cy="50" r="45" stroke="black" stroke-width="10" fill="none" />
+                        </svg>
+                      </span>
+                  <?php
+                      $index_count++;
+                    endwhile;
+                  ?>
+                </span>
+                <?php
                   else :
                     echo "no slides";
                   endif;

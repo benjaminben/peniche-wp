@@ -1,5 +1,3 @@
-window.$ = window.jQuery
-
 $(document).ready(function() {
   var $home = $("#Home")
   var $slideshow = $home.find(".slideshow")
@@ -12,18 +10,19 @@ $(document).ready(function() {
       width: "0%",
       display: "block",
       right: "0",
-      left: "initial"
+      left: ""
     })
 
     var imgCont = slide.find(".img-cont")
 
     imgCont.css({
       width: "100vw",
-      left: "50vw"
+      // left: "",
+      right: "50%"
     })
 
     TweenMax.to(imgCont, 0.8, {
-      left: "0vw",
+      right: "0%",
       ease: Power3.easeInOut
     })
 

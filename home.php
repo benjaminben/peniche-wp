@@ -1,7 +1,7 @@
 <?php
   wp_register_script( 'yt-iframe', 'https://www.youtube.com/iframe_api', null, 1.1, true );
   wp_enqueue_script( 'yt-iframe' );
-  wp_register_script('home', get_template_directory_uri() . '/js/home.js', array( 'jquery', 'gsap' ), null, 1.1, true);
+  wp_register_script('home', get_template_directory_uri() . '/js/home.js', array( 'gsap' ), null, 1.1, true);
   wp_enqueue_script( 'home' );
   get_header();
   $post = get_post(89);

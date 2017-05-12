@@ -21,9 +21,11 @@ $thumb_url = $thumb_url_array[0];
 
 get_header(); ?>
 
-	<div class="banner"
-	     style="background-image: url(<?php echo $thumb_url ?>);">
-	</div>
+	<header>
+		<div class="banner"
+		     style="background-image: url(<?php echo $thumb_url ?>);">
+		</div>
+	</header>
 
 	<?php
 	while ( have_posts() ) : the_post();

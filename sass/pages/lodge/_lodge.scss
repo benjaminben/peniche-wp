@@ -61,10 +61,10 @@
 
           .text {
             display: inline-block;
-            min-width: 400px;
+            // min-width: 400px;
             vertical-align: middle;
             position: relative;
-            flex: 1;
+            flex: 1 1 400px;
 
             &.text-img {
               padding: 0 3em 0 0;
@@ -80,8 +80,8 @@
 
           .img-cont {
             width: 100%;
-            min-width: 400px;
-            flex: 1;
+            // min-width: 400px;
+            flex: 1 1 400px;
 
             img {
               display: inline-block;
@@ -130,17 +130,36 @@
         }
 
         &.slideshow {
+          display: flex;
+          flex-flow: row wrap;
+          align-items: center;
+
+          .text {
+            display: inline-block;
+            min-width: 400px;
+            vertical-align: middle;
+            position: relative;
+            flex: 1 1 400px;
+
+            &.text-img {
+              padding: 0 3em 0 0;
+            }
+            &.img-text {
+              padding: 0 0 0 3em;
+            }
+          }
 
           .slides-cont {
-            max-width: 800px;
-            overflow: hidden;
+            display: inline-block;
             margin: 0 auto;
+            flex: 1 1 600px;
           }
           .slides {
             width: 100%;
             padding-bottom: 66%;
 
             .slide {
+              display: none;
               width: 100%;
               z-index: 0;
               top: 0; left: 0;
@@ -158,6 +177,32 @@
                 margin: 0;
                 background: rgba(0,0,0,0.66);
                 color: white;
+              }
+
+              &.active {
+                display: block;
+              }
+            }
+
+            .index-array {
+              top: 100%;
+
+              .index {
+                width: 30px;
+                height: 30px;
+                svg {
+                  width: 20px;
+                  height: 20px;
+                  margin: 0 auto;
+                }
+
+                &.active {
+                  svg {
+                    circle {
+                      fill: black;
+                    }
+                  }
+                }
               }
             }
           }
@@ -184,7 +229,33 @@
                 padding: 30px 0 0;
               }
             }
-            .img-cont {
+          }
+          &.slideshow {
+            .text {
+              .title {
+                text-align: center;
+              }
+              &.text-img {
+                padding: 0 0 30px;
+              }
+              &.img-text {
+                padding: 30px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  #Lodge {
+    .posts {
+      .post {
+        .content {
+          &.slideshow {
+            .slides-cont {
+              width: 100%;
             }
           }
         }
@@ -204,6 +275,16 @@
               min-width: auto;
             }
             .img-cont {
+              min-width: auto;
+            }
+          }
+          &.slideshow {
+            display: block;
+            .text {
+              width: 100%;
+              min-width: auto;
+            }
+            .slides-cont {
               min-width: auto;
             }
           }

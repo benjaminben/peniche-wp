@@ -250,6 +250,15 @@ td, th {
 .pointer {
   cursor: pointer;
 }
+.v-top {
+  vertical-align: top;
+}
+.v-middle {
+  vertical-align: middle;
+}
+.v-bottom {
+  vertical-align: bottom;
+}
 /*--------------------------------------------------------------
  # Typography
  --------------------------------------------------------------*/
@@ -891,10 +900,9 @@ embed, iframe, object {
 }
 #Lodge .posts .post .content.flex-column .text {
   display: inline-block;
-  min-width: 400px;
   vertical-align: middle;
   position: relative;
-  flex: 1;
+  flex: 1 1 400px;
 }
 #Lodge .posts .post .content.flex-column .text.text-img {
   padding: 0 3em 0 0;
@@ -907,8 +915,7 @@ embed, iframe, object {
 }
 #Lodge .posts .post .content.flex-column .img-cont {
   width: 100%;
-  min-width: 400px;
-  flex: 1;
+  flex: 1 1 400px;
 }
 #Lodge .posts .post .content.flex-column .img-cont img {
   display: inline-block;
@@ -952,16 +959,35 @@ embed, iframe, object {
 #Lodge .posts .post .content.banner .img-cont img {
   display: none;
 }
+#Lodge .posts .post .content.slideshow {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+#Lodge .posts .post .content.slideshow .text {
+  display: inline-block;
+  min-width: 400px;
+  vertical-align: middle;
+  position: relative;
+  flex: 1 1 400px;
+}
+#Lodge .posts .post .content.slideshow .text.text-img {
+  padding: 0 3em 0 0;
+}
+#Lodge .posts .post .content.slideshow .text.img-text {
+  padding: 0 0 0 3em;
+}
 #Lodge .posts .post .content.slideshow .slides-cont {
-  max-width: 800px;
-  overflow: hidden;
+  display: inline-block;
   margin: 0 auto;
+  flex: 1 1 600px;
 }
 #Lodge .posts .post .content.slideshow .slides {
   width: 100%;
   padding-bottom: 66%;
 }
 #Lodge .posts .post .content.slideshow .slides .slide {
+  display: none;
   width: 100%;
   z-index: 0;
   top: 0;
@@ -981,6 +1007,24 @@ embed, iframe, object {
   background: rgba(0, 0, 0, 0.66);
   color: white;
 }
+#Lodge .posts .post .content.slideshow .slides .slide.active {
+  display: block;
+}
+#Lodge .posts .post .content.slideshow .slides .index-array {
+  top: 100%;
+}
+#Lodge .posts .post .content.slideshow .slides .index-array .index {
+  width: 30px;
+  height: 30px;
+}
+#Lodge .posts .post .content.slideshow .slides .index-array .index svg {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+}
+#Lodge .posts .post .content.slideshow .slides .index-array .index.active svg circle {
+  fill: black;
+}
 @media screen and (max-width: 888px) {
   #Lodge .posts .post .content.flex-column .text .title {
     text-align: center;
@@ -990,6 +1034,20 @@ embed, iframe, object {
   }
   #Lodge .posts .post .content.flex-column .text.img-text {
     padding: 30px 0 0;
+  }
+  #Lodge .posts .post .content.slideshow .text .title {
+    text-align: center;
+  }
+  #Lodge .posts .post .content.slideshow .text.text-img {
+    padding: 0 0 30px;
+  }
+  #Lodge .posts .post .content.slideshow .text.img-text {
+    padding: 30px 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  #Lodge .posts .post .content.slideshow .slides-cont {
+    width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -1001,6 +1059,16 @@ embed, iframe, object {
     min-width: auto;
   }
   #Lodge .posts .post .content.flex-column .img-cont {
+    min-width: auto;
+  }
+  #Lodge .posts .post .content.slideshow {
+    display: block;
+  }
+  #Lodge .posts .post .content.slideshow .text {
+    width: 100%;
+    min-width: auto;
+  }
+  #Lodge .posts .post .content.slideshow .slides-cont {
     min-width: auto;
   }
 }
