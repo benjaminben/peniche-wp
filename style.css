@@ -208,10 +208,10 @@ td, th {
 .none {
   display: none;
 }
-.flex-row-wrap {
+.flow-row-wrap {
   flex-flow: row wrap;
 }
-.flex-col-wrap {
+.flow-col-wrap {
   flex-flow: column wrap;
 }
 .justify-center {
@@ -316,7 +316,6 @@ big {
  --------------------------------------------------------------*/
 html {
   box-sizing: border-box;
-  height: 100%;
 }
 *, *:before, *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
@@ -325,8 +324,6 @@ html {
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
-  height: 100%;
-  overflow: hidden;
 }
 blockquote, q {
   quotes: "" "";
@@ -666,6 +663,52 @@ body.home #masthead {
   transform: translateY(-100%);
 }
 /*--------------------------------------------------------------
+ ## Footer
+ --------------------------------------------------------------*/
+footer {
+  padding: 4em 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: rgba(70, 70, 70, 1);
+  color: white;
+}
+footer h2 {
+  margin: 0 0 0.33em 0;
+}
+footer .hotel {
+  flex: 0 1 33%;
+  width: 33%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+footer .restaurant {
+  flex: 0 1 33%;
+  width: 33%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+footer .restaurant .hours span {
+  margin-bottom: 0.66em;
+}
+footer .social {
+  flex: 0 1 33%;
+  width: 34%;
+  align-self: center;
+}
+footer .social form input {
+  margin: 1em auto;
+}
+footer .attribution {
+  width: 100%;
+}
+footer .cat {
+  margin-bottom: 1em;
+}
+footer .cat span {
+  font-size: 0.8em;
+}
+/*--------------------------------------------------------------
  # Infinite scroll
  --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -760,7 +803,7 @@ embed, iframe, object {
   height: 500px;
 }
 #Home {
-  height: 100%;
+  min-height: 100vh;
 }
 #Home .slideshow {
   height: 100%;

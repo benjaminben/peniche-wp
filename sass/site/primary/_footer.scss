@@ -1,0 +1,54 @@
+footer {
+  padding: 4em 0;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(70,70,70,1);
+  color: white;
+
+  h2 {
+    margin: 0 0 0.33em 0;
+  }
+
+  .hotel {
+    flex: 0 1 33%;
+    width: 33%;
+    padding: 0 1em;
+    box-sizing: border-box;
+  }
+  .restaurant {
+    flex: 0 1 33%;
+    width: 33%;
+    padding: 0 1em;
+    box-sizing: border-box;
+
+    .hours {
+      span {
+        margin-bottom: 0.66em;
+      }
+    }
+  }
+  .social {
+    flex: 0 1 33%;
+    width: 34%;
+    align-self: center;
+
+    form {
+      input {
+        margin: 1em auto;
+      }
+    }
+  }
+  .attribution {
+    width: 100%;
+  }
+
+  .cat {
+    margin-bottom: 1em;
+
+    span {
+      font-size: 0.8em;
+    }
+  }
+}

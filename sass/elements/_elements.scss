@@ -1,6 +1,6 @@
 html {
 	box-sizing: border-box;
-	height: 100%
+	// height: 100%
 }
 
 *,
@@ -11,8 +11,8 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	height: 100%;
-	overflow: hidden;
+	// height: 100%;
+	// overflow: hidden;
 }
 
 blockquote, q {

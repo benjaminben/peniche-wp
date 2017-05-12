@@ -15,7 +15,85 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-
+      <div class="content flex flow-row-wrap">
+        <span class="hotel">
+          <span class="cat block">
+            <h2>Booking:</h2>
+            <span class="block">+351 262 700 030</span>
+            <span class="block">
+              <a href="mailto:info@surferslodgepeniche.com">
+                info@surferslodgepeniche.com
+              </a>
+            </span>
+          </span>
+          <span class="cat block">
+            <h2>Address:</h2>
+            <span class="block">
+              Avenida do mar, Nº 132<br/>
+              2520-050 Casais do Baleal - Ferrel<br/>
+              Peniche - Portugal
+            </span>
+          </span>
+          <span class="cat block">
+            <h2>GPS:</h2>
+            <span class="block">
+              Latitude: N39 22 14<br/>
+              Longitude: W9 19 41
+            </span>
+          </span>
+        </span>
+        <span class="social">
+          <span class="icons block">
+            <span class="icon inline-block">F</span>
+            <span class="icon inline-block">G</span>
+            <span class="icon inline-block">I</span>
+            <span class="icon inline-block">V</span>
+          </span>
+          <form>
+            <input class="block" type="text" />
+            <button>Subscribe</button>
+          </form>
+        </span>
+        <span class="restaurant">
+          <span class="cat block">
+            <h2>Reservations:</h2>
+            <span class="block">+351 262 700 030</span>
+            <span class="block">
+              <a href="mailto:info@surferslodgepeniche.com">
+                info@surferslodgepeniche.com
+              </a>
+            </span>
+          </span>
+          <span class="cat block hours">
+            <h2>Hours:</h2>
+            <span class="block">
+              <strong>Breakfast (buffet)</strong>
+              <br/>
+              Mon-Sun 07:30am - 10:00am
+            </span>
+            <span class="block">
+              <strong>Lunch</strong>
+              <br/>
+              Mon-Sun 07:30am - 10:00am
+            </span>
+            <span class="block">
+              <strong>Snacks</strong>
+              <br/>
+              Mon-Sun 07:30am - 10:00am
+            </span>
+            <span class="block">
+              <strong>Dinner</strong>
+              <br/>
+              Mon-Sun 07:30am - 10:00am
+            </span>
+          </span>
+        </span>
+        <span class="attribution">
+          <h2>Surfers Lodge Peniche</h2>
+          <span>&copy; 2017 - all rights reserved.</span>
+          <span>Read our <a>Terms & Conditions</a></span>
+        </span>
+      </div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
