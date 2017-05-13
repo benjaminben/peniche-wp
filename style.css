@@ -433,7 +433,6 @@ a:hover, a:active {
   flex: 1;
 }
 .main-navigation ul {
-  display: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -659,8 +658,65 @@ body.home #content {
   color: white;
   letter-spacing: 0.1em;
 }
-body.home #masthead {
+#mobile_masthead {
+  display: none;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  overflow: scroll;
+}
+#mobile_masthead.active {
+  height: 100vh;
+}
+#mobile_masthead .custom-logo-link {
+  padding: 0.33em 0 0 0.66em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#mobile_masthead .custom-logo-link img {
+  display: block;
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}
+#mobile_masthead .burger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#mobile_masthead .burger svg {
+  width: 30px;
+  height: 30px;
+}
+#mobile_masthead nav {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 2em;
+}
+#mobile_masthead nav ul {
+  width: 100%;
+}
+#mobile_masthead nav ul li {
+  display: block;
+  float: none;
+}
+#mobile_masthead nav a {
+  padding: 0.5em;
+}
+body.home #masthead, body.home #mobile_masthead {
   transform: translateY(-100%);
+}
+@media screen and (max-width: 768px) {
+  #masthead {
+    display: none;
+  }
+  #mobile_masthead {
+    display: block;
+  }
 }
 /*--------------------------------------------------------------
  ## Footer

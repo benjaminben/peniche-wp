@@ -41,4 +41,28 @@
 		</span>
 	</header><!-- #masthead -->
 
+	<header id="mobile_masthead" class="site-header" role="banner">
+		<?php
+			if( has_custom_logo() ) {
+				the_custom_logo();
+			} else { ?>
+				<h1 class="site-root-link"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Surfers Lodge Peniche</a></h1>
+		<?php	} ?>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+			<span class="booking">
+				<a href="<?php echo esc_url( home_url( '/' ) ) . "booking"; ?>">
+					Booking
+				</a>
+			</span>
+		</nav><!-- #site-navigation -->
+		<span class="burger">
+			<svg width="100" height="100" viewbox="0 0 100 100">
+				<line x1="0" x2="100" y1="10" y2="10" stroke-width="20" stroke="black" />
+				<line x1="0" x2="100" y1="50" y2="50" stroke-width="20" stroke="black" />
+				<line x1="0" x2="100" y1="90" y2="90" stroke-width="20" stroke="black" />
+			</svg>
+		</span>
+	</header><!-- #mobile_masthead -->
+
 	<div id="content" class="site-content">
