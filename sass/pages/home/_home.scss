@@ -1,11 +1,14 @@
 #Home {
   min-height: 100vh;
+  background: black;
 
   .slideshow {
     height: 100%;
     top: 0; left: 0;
     width: 100%;
     z-index: 0;
+    transform-origin: 50%;
+    background: white;
 
     .slide {
       height: 100%;

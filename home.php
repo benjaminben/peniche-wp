@@ -37,7 +37,7 @@
     ?>
     </div>
 
-    <div class="table-of-contents absolute text-center">
+    <div id="home_toc" class="table-of-contents absolute text-center">
       <span class="title block">
         <h2>Surfers Lodge</h2>
         <h3>Peniche</h3>
@@ -51,7 +51,7 @@
       <img class="logo block" src="<?php echo $logo[0] ?>" />
     </div>
 
-    <span class="watch-cta absolute pointer">
+    <span id="home_watch_cta" class="watch-cta absolute pointer">
       WATCH
     </span>
 

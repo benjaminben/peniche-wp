@@ -1,10 +1,25 @@
 $(document).ready(function() {
   var $home = $("#Home")
+  var $home_toc = $("#home_toc")
+  var $home_watch = $("#home_watch_cta")
   var $slideshow = $home.find(".slideshow")
   var home_bg_slides = $home.find(".slideshow .slide")
   var this_slide_index = 0
 
-  var slideForward = function(slide) {
+  var clickThru
+  var slideComplete
+  var slideForward
+  var slideBackward
+  var updateSlide
+  var slideTick
+
+  slideComplete = function(slide) {
+    $home.find(".slide.active").removeClass("active")
+    slide.addClass("active").attr("style", "")
+    $slideshow.on("click", clickThru)
+  }
+
+  slideForward = function(slide) {
     slide.css({
       zIndex: 2,
       width: "0%",
@@ -30,12 +45,12 @@ $(document).ready(function() {
       width: "100%",
       ease: Power3.easeInOut,
       onComplete: function() {
-        $home.find(".slide.active").removeClass("active")
-        slide.addClass("active").attr("style", "")
+        slideComplete(slide)
       }
     })
   }
-  var slideBackward = function(slide) {
+
+  slideBackward = function(slide) {
     slide.css({
       zIndex: 2,
       width: "0%",
@@ -60,20 +75,19 @@ $(document).ready(function() {
       width: "100%",
       ease: Power3.easeInOut,
       onComplete: function() {
-        $home.find(".slide.active").removeClass("active")
-        slide.addClass("active").attr("style", "")
+        slideComplete(slide)
       }
     })
   }
 
-  var updateSlide = function(target, back) {
+  updateSlide = function(target, back) {
     if (back) {
       return slideBackward(target)
     }
     return slideForward(target)
   }
 
-  var slideTick = function() {
+  slideTick = function() {
     var target
     var back
 
@@ -102,7 +116,9 @@ $(document).ready(function() {
       $slideshow.attr("data-dir", "back")
     }
   })
-  $slideshow.on("click", function(e) {
+
+  clickThru = function(e) {
+    $slideshow.off("click")
     window.clearInterval(SLPHomeSlideInt)
     if (e.clientX > e.target.getBoundingClientRect().width / 2) {
       if ($(".slideshow .active").next().length) {
@@ -122,11 +138,56 @@ $(document).ready(function() {
       }
       updateSlide(target, true)
     }
-  })
+  }
+
+  $slideshow.on("click", clickThru)
 
 
   // VIDEO
   var ytPlayer
+
+  var initVideo = function() {
+    ytPlayer.playVideo()
+
+    TweenMax.to($home_toc, 0.33, {
+      opacity: 0
+    })
+    TweenMax.to($home_watch, 0.33, {
+      x: "100%",
+      y: "100%",
+      opacity: 0,
+      delay: 0.165
+    })
+    TweenMax.to($slideshow, 0.33, {
+      scale: 1.2,
+      opacity: 0,
+      delay: 0.33,
+      onComplete: function() {
+        $home.addClass("video-active")
+      }
+    })
+  }
+
+  window.hideVideo = function() {
+    $("#Home").removeClass("video-active")
+    SLPHomeSlideInt = window.setInterval(slideTick, 3000)
+
+    TweenMax.to($home_toc, 0.33, {
+      opacity: 1
+    })
+    TweenMax.to($home_watch, 0.33, {
+      x: "0%",
+      y: "0%",
+      opacity: 1,
+      delay: 0.165
+    })
+    TweenMax.to($slideshow, 0.33, {
+      scale: 1,
+      opacity: 1,
+      delay: 0.33
+    })
+  }
+
   window.onYouTubeIframeAPIReady = function() {
     var ytCont = document.getElementById("home_player")
     ytPlayer = new YT.Player("home_player", {
@@ -141,8 +202,7 @@ $(document).ready(function() {
             window.clearInterval(SLPHomeSlideInt)
           }
           if (e.data === 2) {
-            $("#Home").removeClass("video-active")
-            SLPHomeSlideInt = window.setInterval(slideTick, 3000)
+            hideVideo()
           }
           if (e.data === 0) {
             ytPlayer.pauseVideo();
@@ -154,7 +214,6 @@ $(document).ready(function() {
   }
 
   $("#Home .watch-cta").on("click", function(e) {
-    $home.addClass("video-active")
-    ytPlayer.playVideo();
+    initVideo()
   })
 })
