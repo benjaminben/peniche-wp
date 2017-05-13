@@ -6,7 +6,8 @@
 get_header();
 
 global $post;
-$post_slug = $post->post_name;
+// $post_slug = $post->post_name;
+$post_slug = "blog";
 
 $thumb_id = get_post_thumbnail_id();
 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
@@ -20,7 +21,7 @@ $thumb_url = $thumb_url_array[0];
   </div>
 </header>
 
-  <div id="primary" class="content-area">
+  <div id="blog_primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
     <?php
@@ -28,9 +29,6 @@ $thumb_url = $thumb_url_array[0];
       'post_type'      => 'post',
       'category_name'  => $post_slug,
       'posts_per_page' => -1,
-      // 'post_parent'    => 0,
-      // 'meta_key'       => 'order',
-      // 'orderby'        => 'meta_value',
       'order'          => 'DESC',
     ];
     $q = new WP_Query( $args );
@@ -56,7 +54,6 @@ $thumb_url = $thumb_url_array[0];
       }
     }
     else {
-      echo "boo";
       get_template_part( 'template-parts/post/content', 'none' );
     }
     ?>
@@ -65,5 +62,5 @@ $thumb_url = $thumb_url_array[0];
   </div><!-- #primary -->
 
 <?php
-get_sidebar();
+include 'blog-sidebar.php';
 get_footer();

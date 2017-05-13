@@ -7,19 +7,27 @@
  * @package Peniche
  */
 
-get_header(); ?>
+get_header();
 
-	<section id="primary" class="content-area">
+global $post;
+
+$thumb_id = get_post_thumbnail_id();
+$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+$thumb_url = $thumb_url_array[0];
+
+?>
+
+<header>
+  <div class="banner"
+       style="background-image: url(<?php echo $thumb_url ?>);">
+  </div>
+</header>
+
+	<section id="blog_primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'peniche' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<?php
+		if ( have_posts() ) :
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -28,7 +36,15 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				?>
+				<div class="post">
+				  <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				  <h5 class="date"><?php the_time( get_option( 'date_format' ) ); ?></h5>
+				  <div class="content">
+				    <?php the_excerpt(); ?>
+				  </div>
+				</div>
+				<?php
 
 			endwhile;
 
@@ -44,5 +60,5 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+include 'blog-sidebar.php';
 get_footer();

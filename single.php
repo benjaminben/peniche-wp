@@ -16,6 +16,8 @@ $thumb_id = get_post_thumbnail_id();
 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
 $thumb_url = $thumb_url_array[0];
 
+$is_blog = in_category('blog')
+
 ?>
 
 <header>
@@ -24,7 +26,7 @@ $thumb_url = $thumb_url_array[0];
 	</div>
 </header>
 
-	<div id="primary" class="content-area">
+	<div id="<?php echo ($is_blog ? "blog_primary" : "primary") ?>" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -49,5 +51,5 @@ $thumb_url = $thumb_url_array[0];
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+include 'blog-sidebar.php';
 get_footer();
