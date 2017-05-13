@@ -150,7 +150,7 @@ $(document).ready(function() {
     ytPlayer.playVideo()
 
     TweenMax.to($home_toc, 0.33, {
-      opacity: 0
+      opacity: 0,
     })
     TweenMax.to($home_watch, 0.33, {
       x: "100%",

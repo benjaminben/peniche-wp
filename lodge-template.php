@@ -60,18 +60,18 @@ $thumb_url = $thumb_url_array[0];
           <div class="content relative <?php echo $format ?>">
           <?php if ($format == 'flex-column') { ?>
             <?php if (get_field('arrangement') == 'text-img') { ?>
-              <div class="text text-img">
+              <div class="text fadie text-img">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>
             <?php } ?>
             <?php if ($thumb_id) { ?>
-              <div class="img-cont">
+              <div class="img-cont fadie">
                 <img src="<?php echo $thumb_url ?>" />
               </div>
             <?php } ?>
             <?php if (get_field('arrangement') == 'img-text') { ?>
-              <div class="text img-text">
+              <div class="text fadie img-text">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>
@@ -79,12 +79,12 @@ $thumb_url = $thumb_url_array[0];
           <?php } ?>
 
           <?php if ($format == 'banner') { ?>
-            <div class="text relative">
+            <div class="text fadie relative">
               <h1 class="title"><?php the_title() ?></h1>
               <p><?php the_content() ?></p>
             </div>
             <?php if ($thumb_id) { ?>
-              <div class="img-cont" style="background-image:url(<?php echo $thumb_url ?>)">
+              <div class="img-cont fadie" style="background-image:url(<?php echo $thumb_url ?>)">
                 <img src="<?php echo $thumb_url ?>" />
               </div>
             <?php } ?>
@@ -92,12 +92,12 @@ $thumb_url = $thumb_url_array[0];
 
           <?php if ($format == 'slideshow') { ?>
             <?php if (get_field('arrangement') == 'text-img') { ?>
-              <div class="text text-img">
+              <div class="text fadie text-img">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>
             <?php } ?>
-            <span class="slides-cont block relative">
+            <span class="slides-cont fadie block relative">
               <div class="slides relative">
                 <?php
                   $slides = get_field('slides');
@@ -141,7 +141,7 @@ $thumb_url = $thumb_url_array[0];
               </div>
             </span>
             <?php if (get_field('arrangement') == 'img-text') { ?>
-              <div class="text img-text">
+              <div class="text fadie img-text">
                 <h1 class="title"><?php the_title() ?></h1>
                 <p><?php the_content() ?></p>
               </div>

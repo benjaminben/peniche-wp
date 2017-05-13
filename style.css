@@ -979,13 +979,15 @@ embed, iframe, object {
 }
 #Lodge .posts .post:before {
   content: '';
-  width: 80%;
+  opacity: 0;
+  width: 0%;
   max-width: 500px;
   height: 2px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   display: block;
   margin: 4em auto;
+  transition: opacity 0.33s ease, width 0.66s ease-in;
 }
 #Lodge .posts .post:nth-of-type(1):before {
   display: none;
@@ -1126,6 +1128,20 @@ embed, iframe, object {
 }
 #Lodge .posts .post .content.slideshow .slides .index-array .index.active svg circle {
   fill: black;
+}
+#Lodge .posts .post .fadie {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+#Lodge .posts .post .fadie:nth-of-type(2n) {
+  transition-delay: 0.33s;
+}
+#Lodge .posts .post.active:before {
+  width: 80%;
+  opacity: 1;
+}
+#Lodge .posts .post.active .text, #Lodge .posts .post.active .text-cont, #Lodge .posts .post.active .img-cont, #Lodge .posts .post.active .slides-cont {
+  opacity: 1;
 }
 @media screen and (max-width: 888px) {
   #Lodge .posts .post .content.flex-column .text .title {

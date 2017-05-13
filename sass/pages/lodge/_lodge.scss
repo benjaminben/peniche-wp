@@ -34,13 +34,15 @@
 
       &:before {
         content: '';
-        width: 80%;
+        opacity: 0;
+        width: 0%;
         max-width: 500px;
         height: 2px;
         background: rgba(0,0,0,0.1);
         border-radius: 2px;
         display: block;
         margin: 4em auto;
+        transition: opacity 0.33s ease, width 0.66s ease-in;
       }
 
       &:nth-of-type(1) {
@@ -206,6 +208,26 @@
               }
             }
           }
+        }
+      }
+
+      .fadie {
+        opacity: 0;
+        transition: opacity 1s ease;
+
+        &:nth-of-type(2n) {
+          transition-delay: 0.33s;
+        }
+      }
+
+      &.active {
+        &:before {
+          width: 80%;
+          opacity: 1;
+        }
+
+        .text, .text-cont, .img-cont, .slides-cont {
+          opacity: 1;
         }
       }
     }
