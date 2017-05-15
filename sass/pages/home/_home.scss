@@ -2,6 +2,12 @@
   min-height: 100vh;
   background: black;
 
+  &.loading {
+    * {
+      display: none!important;
+    }
+  }
+
   .slideshow {
     height: 100%;
     top: 0; left: 0;
@@ -55,7 +61,6 @@
     padding: 2em 1em;
     top: 5em; left: 2.5em;
     box-sizing: border-box;
-    // border-radius: 3px;
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.8);
 
@@ -72,7 +77,9 @@
       * {
         margin: 0;
       }
-
+      h2 {
+        letter-spacing: 0.1em;
+      }
       h3 {
         font-size: 1em;
         letter-spacing: 0.1em;

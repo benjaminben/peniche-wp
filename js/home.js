@@ -143,6 +143,41 @@ $(document).ready(function() {
 
 
   // INIT
+  var initHome = function() {
+    slideInterval = window.setInterval(slideTick, 3000)
+
+    TweenMax.fromTo($home_toc, 0.33,
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1,
+      delay: 0.33
+    })
+    TweenMax.fromTo($home_watch, 0.33,
+    {
+      x: "100%",
+      y: "100%",
+      opacity: 0,
+    },
+    {
+      x: "0%",
+      y: "0%",
+      opacity: 1,
+      delay: 0.165
+    })
+    TweenMax.fromTo($(".slide.active"), 0.33,
+    {
+      scale: 1.2,
+      opacity: 0,
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      // delay: 0.33
+    })
+  }
+
   $img_conts = $(".img-cont")
   var numLoaded = 0
   $.each($img_conts, function(i, cont) {
@@ -152,8 +187,7 @@ $(document).ready(function() {
       $(e.target).addClass("is-loaded")
       numLoaded += 1
       if (numLoaded === $img_conts.length) {
-        slideTick()
-        slideInterval = window.setInterval(slideTick, 3000)
+        initHome()
       }
     }
     test.addEventListener("load", handleLoad)

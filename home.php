@@ -17,11 +17,10 @@
       if( have_rows("slideshow") ):
         $count = 0;
         while ( have_rows("slideshow") ) : the_row();
-          // $first = the_row() == $slideshow[0];
-          // echo "<h1>".$slideshow[0]."</h1>";
           $image = get_sub_field("images");
           ?>
-      <span class="slide absolute ">
+      <span class="slide absolute<?php echo ($count == 0 ? " active" : "") ?>"
+            <?php echo $count==0 ? "style='opacity: 0'" : "" ?>>
         <span class="block img-cont absolute"
               style="background-image: url(<?php echo $image["url"] ?>)">
           <img src="<?php echo $image["url"] ?>" />
@@ -39,7 +38,8 @@
     ?>
     </div>
 
-    <div id="home_toc" class="table-of-contents absolute text-center">
+    <div id="home_toc" class="table-of-contents absolute text-center"
+         style="opacity: 0">
       <span class="title block">
         <h2 class="logo-med">Surfers Lodge</h2>
         <h3 class="uppercase logo-dark">Peniche</h3>
@@ -53,7 +53,8 @@
       <img class="logo block" src="<?php echo $logo[0] ?>" />
     </div>
 
-    <span id="home_watch_cta" class="watch-cta absolute pointer uppercase">
+    <span id="home_watch_cta" class="watch-cta absolute pointer uppercase"
+          style="opacity: 0">
       WATCH
     </span>
 

@@ -901,6 +901,9 @@ footer .social .icons .icon img {
   min-height: 100vh;
   background: black;
 }
+#Home.loading * {
+  display: none !important;
+}
 #Home .slideshow {
   height: 100%;
   top: 0;
@@ -965,6 +968,9 @@ footer .social .icons .icon img {
 }
 #Home .table-of-contents .title * {
   margin: 0;
+}
+#Home .table-of-contents .title h2 {
+  letter-spacing: 0.1em;
 }
 #Home .table-of-contents .title h3 {
   font-size: 1em;
