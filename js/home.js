@@ -5,7 +5,7 @@ $(document).ready(function() {
   var $slideshow = $home.find(".slideshow")
   var home_bg_slides = $home.find(".slideshow .slide")
   var this_slide_index = 0
-  var slideInterval
+  var slideTimeout
 
   var clickThru
   var slideComplete
@@ -13,70 +13,88 @@ $(document).ready(function() {
   var slideBackward
   var updateSlide
   var slideTick
+  var slideAuto
 
-  slideComplete = function(slide) {
-    $home.find(".slide.active").removeClass("active")
-    slide.addClass("active").attr("style", "")
+  slideComplete = function() {
+    // $home.find(".slide.active").removeClass("active")
+    // slide.addClass("active").attr("style", "")
     $slideshow.on("click", clickThru)
+    if (slideAuto) {
+      slideTimeout = window.setTimeout(slideTick, 3000)
+    }
   }
 
-  slideForward = function(slide) {
-    slide.css({
-      zIndex: 2,
+  slideForward = function($next) {
+    $prev = $(".slide.active")
+    $prev_img = $prev.find(".img-cont")
+    $next_img = $next.find(".img-cont")
+
+    $prev.css({
+      left: 0
+    })
+    $next.css({
+      opacity: 1,
+      zIndex: 1,
+    })
+    $next_img.css({
+      left: $slideshow.width() / 4 + "px"
+    })
+
+    TweenMax.to($next_img, 0.8, {
+      left: "0px",
+      ease: Power3.easeInOut,
+    })
+    TweenMax.to($prev_img, 0.8, {
+      left: -$slideshow.width() / 4 + "px",
+      ease: Power3.easeInOut,
+    })
+    TweenMax.to($prev, 0.8, {
       width: "0%",
-      display: "block",
-      right: "0",
-      left: ""
-    })
-
-    var imgCont = slide.find(".img-cont")
-
-    imgCont.css({
-      width: "100vw",
-      // left: "",
-      right: "50%"
-    })
-
-    TweenMax.to(imgCont, 0.8, {
-      right: "0%",
-      ease: Power3.easeInOut
-    })
-
-    TweenMax.to(slide, 0.8, {
-      width: "100%",
       ease: Power3.easeInOut,
       onComplete: function() {
-        slideComplete(slide)
+        $prev.removeClass("active")
+        $next.addClass("active")
+        $prev.css({left: "", width: ""})
+        $prev_img.css({left: ""})
+        $next.css({opacity: "", zIndex: ""})
+        $next_img.css({left: ""})
+        slideComplete($next)
       }
     })
   }
 
-  slideBackward = function(slide) {
-    slide.css({
-      zIndex: 2,
+  slideBackward = function($next) {
+    $prev = $(".slide.active")
+    $prev_img = $prev.find(".img-cont")
+    $next_img = $next.find(".img-cont")
+
+    $prev.css({
+      left: "auto",
+      right: 0
+    })
+    $next.css({
+      opacity: 1,
+      zIndex: 1,
+    })
+    $next_img.css({
+      right: $slideshow.width() / 4 + "px",
+      left: "auto"
+    })
+
+    TweenMax.to($next_img, 0.8, {
+      right: "0px",
+      ease: Power3.easeInOut,
+    })
+    TweenMax.to($prev, 0.8, {
       width: "0%",
-      display: "block",
-      right: "",
-      left: "0",
-    })
-
-    var imgCont = slide.find(".img-cont")
-
-    imgCont.css({
-      width: "100vw",
-      left: "-50vw",
-    })
-
-    TweenMax.to(imgCont, 0.8, {
-      left: "0vw",
-      ease: Power3.easeInOut
-    })
-
-    TweenMax.to(slide, 0.8, {
-      width: "100%",
       ease: Power3.easeInOut,
       onComplete: function() {
-        slideComplete(slide)
+        $prev.removeClass("active")
+        $next.addClass("active")
+        $prev.css({left: "", right: "", width: ""})
+        $next.css({opacity: "", zIndex: ""})
+        $next_img.css({right: "", left: ""})
+        slideComplete($next)
       }
     })
   }
@@ -92,7 +110,7 @@ $(document).ready(function() {
     var target
     var back
 
-    if ($(".slideshow .active").length) {
+    // if ($(".slideshow .active").length) {
       if ($(".slideshow .active").next().length) {
         target = $(".slideshow .active").next()
       }
@@ -100,10 +118,10 @@ $(document).ready(function() {
         target = $(".slideshow .slide").first()
         back = true
       }
-    }
-    else {
-      target = $(".slideshow .slide").first()
-    }
+    // }
+    // else {
+      // target = $(".slideshow .slide").first()
+    // }
     updateSlide(target, back)
   }
 
@@ -117,8 +135,9 @@ $(document).ready(function() {
   })
 
   clickThru = function(e) {
+    slideAuto = false
     $slideshow.off("click")
-    window.clearInterval(slideInterval)
+    window.clearTimeout(slideTimeout)
     if (e.clientX > e.target.getBoundingClientRect().width / 2) {
       if ($(".slideshow .active").next().length) {
         target = $(".slideshow .active").next()
@@ -144,7 +163,8 @@ $(document).ready(function() {
 
   // INIT
   var initHome = function() {
-    slideInterval = window.setInterval(slideTick, 3000)
+    slideAuto = true
+    slideTimeout = window.setTimeout(slideTick, 3000)
 
     TweenMax.fromTo($home_toc, 0.33,
     {
@@ -174,7 +194,6 @@ $(document).ready(function() {
     {
       scale: 1,
       opacity: 1,
-      // delay: 0.33
     })
   }
 
@@ -223,7 +242,8 @@ $(document).ready(function() {
 
   window.hideVideo = function() {
     $("#Home").removeClass("video-active")
-    slideInterval = window.setInterval(slideTick, 3000)
+    slideTimeout = window.setTimeout(slideTick, 3000)
+    slideAuto = true
 
     TweenMax.to($home_toc, 0.33, {
       opacity: 1
@@ -252,7 +272,7 @@ $(document).ready(function() {
         "onReady": function(){console.log("yt player ready")},
         "onStateChange": function(e) {
           if (e.data === 1) {
-            window.clearInterval(slideInterval)
+            window.clearTimeout(slideTimeout)
           }
           if (e.data === 2) {
             hideVideo()
