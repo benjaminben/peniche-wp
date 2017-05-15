@@ -89,9 +89,27 @@
 .v-top {
   vertical-align: top;
 }
+
 .v-middle {
   vertical-align: middle;
 }
+
 .v-bottom {
   vertical-align: bottom;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.logo-light {
+  color: $color__logo-light;
+}
+
+.logo-med {
+  color: $color__logo-med;
+}
+
+.logo-dark {
+  color: $color__logo-dark;
 }

@@ -5,6 +5,7 @@ $(document).ready(function() {
   var $slideshow = $home.find(".slideshow")
   var home_bg_slides = $home.find(".slideshow .slide")
   var this_slide_index = 0
+  var slideInterval
 
   var clickThru
   var slideComplete
@@ -105,8 +106,6 @@ $(document).ready(function() {
     }
     updateSlide(target, back)
   }
-  slideTick()
-  var SLPHomeSlideInt = window.setInterval(slideTick, 3000)
 
   $slideshow.on("mousemove", function(e) {
     if (e.clientX > e.target.getBoundingClientRect().width / 2) {
@@ -119,7 +118,7 @@ $(document).ready(function() {
 
   clickThru = function(e) {
     $slideshow.off("click")
-    window.clearInterval(SLPHomeSlideInt)
+    window.clearInterval(slideInterval)
     if (e.clientX > e.target.getBoundingClientRect().width / 2) {
       if ($(".slideshow .active").next().length) {
         target = $(".slideshow .active").next()
@@ -141,6 +140,26 @@ $(document).ready(function() {
   }
 
   $slideshow.on("click", clickThru)
+
+
+  // INIT
+  $img_conts = $(".img-cont")
+  var numLoaded = 0
+  $.each($img_conts, function(i, cont) {
+    var img = $(cont).find("img")[0]
+    var test = document.createElement("img")
+    var handleLoad = function(e) {
+      $(e.target).addClass("is-loaded")
+      numLoaded += 1
+      if (numLoaded === $img_conts.length) {
+        slideTick()
+        slideInterval = window.setInterval(slideTick, 3000)
+      }
+    }
+    test.addEventListener("load", handleLoad)
+    test.addEventListener("error", handleLoad)
+    test.src = img.src
+  })
 
 
   // VIDEO
@@ -170,7 +189,7 @@ $(document).ready(function() {
 
   window.hideVideo = function() {
     $("#Home").removeClass("video-active")
-    SLPHomeSlideInt = window.setInterval(slideTick, 3000)
+    slideInterval = window.setInterval(slideTick, 3000)
 
     TweenMax.to($home_toc, 0.33, {
       opacity: 1
@@ -199,7 +218,7 @@ $(document).ready(function() {
         "onReady": function(){console.log("yt player ready")},
         "onStateChange": function(e) {
           if (e.data === 1) {
-            window.clearInterval(SLPHomeSlideInt)
+            window.clearInterval(slideInterval)
           }
           if (e.data === 2) {
             hideVideo()

@@ -11,7 +11,7 @@ $(document).ready(function() {
   var checkPosts = function() {
     console.log($inactivePosts.length)
     $.each($inactivePosts, function(i, p) {
-      if (p.getBoundingClientRect().top < (window.outerHeight-200)) {
+      if (p.getBoundingClientRect().top < (window.outerHeight-(window.outerHeight*0.2))) {
         classifyActive($(p))
       }
     })

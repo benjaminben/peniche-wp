@@ -43,16 +43,24 @@
           </span>
         </span>
         <span class="social">
-          <span class="icons block">
-            <span class="icon inline-block">F</span>
-            <span class="icon inline-block">G</span>
-            <span class="icon inline-block">I</span>
-            <span class="icon inline-block">V</span>
-          </span>
           <form>
             <input class="block" type="text" />
             <button>Subscribe</button>
           </form>
+          <span class="icons block">
+            <a class="icon inline-table" href="https://google.com">
+              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/facebook-letter-logo.png" ?>" /></span>
+            </a>
+            <a class="icon inline-table" href="https://google.com">
+              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/instagram-logo.png" ?>" /></span>
+            </a>
+            <a class="icon inline-table" href="https://google.com">
+              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/google-plus.png" ?>" /></span>
+            </a>
+            <a class="icon inline-table" href="https://google.com">
+              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/vimeo-logo.png" ?>" /></span>
+            </a>
+          </span>
         </span>
         <span class="restaurant">
           <span class="cat block">

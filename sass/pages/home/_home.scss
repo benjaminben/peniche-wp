@@ -15,7 +15,6 @@
       width: 100%;
       top: 0; right: 0;
       overflow: hidden;
-      // opacity: 0; (loaded?)
       transition: opacity 0.33s ease;
       display: none;
 
@@ -26,6 +25,12 @@
         background-size: cover;
         background-position: center center;
         // transform: background-position 0.8s ease;
+
+        img {
+          width: 1px; height: 1px;
+          position: absolute;
+          display: none;
+        }
       }
 
       &.active {
@@ -47,15 +52,31 @@
 
   .table-of-contents {
     width: 300px;
-    padding: 1em;
+    padding: 2em 1em;
     top: 5em; left: 2.5em;
     box-sizing: border-box;
+    // border-radius: 3px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.8);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0.5em; bottom: 0.5em;
+      left: 0.5em; right: 0.5em;
+      border: 1px solid rgba(255,255,255,0.66);
+    }
 
     .title {
       margin-bottom: 30px;
       * {
         margin: 0;
+      }
+
+      h3 {
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        font-weight: 600;
       }
     }
 
@@ -63,6 +84,21 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
+      position: relative;
+
+      a {
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        font-size: 0.9em;
+
+        &:before, &:after {
+          content: "~";
+          margin: 0 0.33em;
+        }
+      }
     }
 
     .logo {
@@ -74,9 +110,13 @@
   .watch-cta {
     bottom: 0;
     right: 0;
-    font-size: 1.33em;
-    padding: 0.66em 2em;
-    background: lightblue;
+    font-size: 1.66em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: white;
+    padding: 0.66em 1.66em;
+    background: $color__logo-light;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
   }
 }
 
