@@ -4,6 +4,11 @@
   width: 100%;
   height: 50px;
   z-index: 1;
+  transition: height 0.33s ease;
+
+  &.expand {
+    height: 70px;
+  }
 
   .custom-logo-link {
     padding-left: 0.66em;
@@ -23,22 +28,31 @@
     a {
       position: relative;
       margin: 0 1.66em;
-      color: black;
+      color: $color__black;
 
-      &:hover {
+      &:hover, &.active {
         &:before {
           content: "~";
           position: absolute;
-          right: 110%;
-          top: 50%;
-          transform: translateY(-50%);
+          right: 112%;
+          top: 0.1em;
+          font-size: 0.9em;
         }
         &:after {
           content: "~";
           position: absolute;
-          left: 110%;
-          top: 50%;
-          transform: translateY(-50%);
+          left: 112%;
+          top: 0.1em;
+          font-size: 0.9em;
+        }
+      }
+
+      &:hover {
+        &:before {
+          animation: tilde-wiggle-left 0.8s infinite ease;
+        }
+        &:after {
+          animation: tilde-wiggle-right 0.8s infinite ease;
         }
       }
     }

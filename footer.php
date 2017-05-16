@@ -99,7 +99,7 @@
         <span class="attribution">
           <h2>Surfers Lodge Peniche</h2>
           <span>&copy; 2017 - all rights reserved.</span>
-          <span>Read our <a>Terms & Conditions</a></span>
+          <span>Read our <a href="<?php echo get_page_link(291) ?>">Terms & Conditions</a></span>
         </span>
       </div>
 		</div><!-- .site-info -->

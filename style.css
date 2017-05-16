@@ -276,7 +276,7 @@ td, th {
  --------------------------------------------------------------*/
 body, button, input, select, textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -323,6 +323,146 @@ mark, ins {
 big {
   font-size: 125%;
 }
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-ExtraboldItalic.eot');
+  src: url('fonts/open_sans/OpenSans-ExtraboldItalic.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-ExtraboldItalic.woff') format('woff'), url('fonts/open_sans/OpenSans-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-Light.eot');
+  src: url('fonts/open_sans/OpenSans-Light.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-Light.woff') format('woff'), url('fonts/open_sans/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSansLight-Italic.eot');
+  src: url('fonts/open_sans/OpenSansLight-Italic.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSansLight-Italic.woff') format('woff'), url('fonts/open_sans/OpenSansLight-Italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-Italic.eot');
+  src: url('fonts/open_sans/OpenSans-Italic.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-Italic.woff') format('woff'), url('fonts/open_sans/OpenSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-Extrabold.eot');
+  src: url('fonts/open_sans/OpenSans-Extrabold.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-Extrabold.woff') format('woff'), url('fonts/open_sans/OpenSans-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-Semibold.eot');
+  src: url('fonts/open_sans/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-Semibold.woff') format('woff'), url('fonts/open_sans/OpenSans-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-Bold.eot');
+  src: url('fonts/open_sans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-Bold.woff') format('woff'), url('fonts/open_sans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans.eot');
+  src: url('fonts/open_sans/OpenSans.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans.woff') format('woff'), url('fonts/open_sans/OpenSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-SemiboldItalic.eot');
+  src: url('fonts/open_sans/OpenSans-SemiboldItalic.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-SemiboldItalic.woff') format('woff'), url('fonts/open_sans/OpenSans-SemiboldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/open_sans/OpenSans-BoldItalic.eot');
+  src: url('fonts/open_sans/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'), url('fonts/open_sans/OpenSans-BoldItalic.woff') format('woff'), url('fonts/open_sans/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('Lato-LightItalic.eot');
+  src: url('Lato-LightItalic.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-LightItalic.woff') format('woff'), url('fonts/lato/Lato-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-Light.eot');
+  src: url('fonts/lato/Lato-Light.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Light.woff') format('woff'), url('fonts/lato/Lato-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato Hairline';
+  src: url('fonts/lato/Lato-HairlineItalic.eot');
+  src: url('fonts/lato/Lato-HairlineItalic.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-HairlineItalic.woff') format('woff'), url('fonts/lato/Lato-HairlineItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-Bold.eot');
+  src: url('fonts/lato/Lato-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Bold.woff') format('woff'), url('fonts/lato/Lato-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-Italic.eot');
+  src: url('fonts/lato/Lato-Italic.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Italic.woff') format('woff'), url('fonts/lato/Lato-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-BoldItalic.eot');
+  src: url('fonts/lato/Lato-BoldItalic.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-BoldItalic.woff') format('woff'), url('fonts/lato/Lato-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato Hairline';
+  src: url('fonts/lato/Lato-Hairline.eot');
+  src: url('fonts/lato/Lato-Hairline.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Hairline.woff') format('woff'), url('fonts/lato/Lato-Hairline.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-Regular.eot');
+  src: url('fonts/lato/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Regular.woff') format('woff'), url('fonts/lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-Black.eot');
+  src: url('fonts/lato/Lato-Black.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-Black.woff') format('woff'), url('fonts/lato/Lato-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/lato/Lato-BlackItalic.eot');
+  src: url('fonts/lato/Lato-BlackItalic.eot?#iefix') format('embedded-opentype'), url('fonts/lato/Lato-BlackItalic.woff') format('woff'), url('fonts/lato/Lato-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
 /*--------------------------------------------------------------
  # Elements
  --------------------------------------------------------------*/
@@ -337,6 +477,9 @@ body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
   color: rgba(40, 40, 40, 1);
+}
+h1, h2, h3, h4, h5 {
+  font-family: "Lato", sans-serif;
 }
 blockquote, q {
   quotes: "" "";
@@ -425,6 +568,7 @@ textarea {
  ## Links
  --------------------------------------------------------------*/
 a {
+  cursor: pointer;
   color: royalblue;
 }
 a:visited {
@@ -629,6 +773,10 @@ body.home #content {
   width: 100%;
   height: 50px;
   z-index: 1;
+  transition: height 0.33s ease;
+}
+#masthead.expand {
+  height: 70px;
 }
 #masthead .custom-logo-link {
   padding-left: 0.66em;
@@ -646,21 +794,27 @@ body.home #content {
 #masthead nav a {
   position: relative;
   margin: 0 1.66em;
-  color: black;
+  color: rgba(40, 40, 40, 1);
+}
+#masthead nav a:hover:before, #masthead nav a.active:before {
+  content: "~";
+  position: absolute;
+  right: 112%;
+  top: 0.1em;
+  font-size: 0.9em;
+}
+#masthead nav a:hover:after, #masthead nav a.active:after {
+  content: "~";
+  position: absolute;
+  left: 112%;
+  top: 0.1em;
+  font-size: 0.9em;
 }
 #masthead nav a:hover:before {
-  content: "~";
-  position: absolute;
-  right: 110%;
-  top: 50%;
-  transform: translateY(-50%);
+  animation: tilde-wiggle-left 0.8s infinite ease;
 }
 #masthead nav a:hover:after {
-  content: "~";
-  position: absolute;
-  left: 110%;
-  top: 50%;
-  transform: translateY(-50%);
+  animation: tilde-wiggle-right 0.8s infinite ease;
 }
 #masthead .booking {
   padding-right: 0.33em;
@@ -744,7 +898,7 @@ body.home #masthead, body.home #mobile_masthead {
 /*--------------------------------------------------------------
  ## Footer
  --------------------------------------------------------------*/
-footer {
+#colophon {
   padding: 4em 0;
   text-align: center;
   justify-content: center;
@@ -752,42 +906,45 @@ footer {
   background: rgba(70, 70, 70, 1);
   color: white;
 }
-footer h2 {
+#colophon a {
+  color: #7c9cb3;
+}
+#colophon h2 {
   margin: 0 0 0.33em 0;
 }
-footer .hotel {
+#colophon .hotel {
   flex: 0 1 33%;
   width: 33%;
   padding: 0 1em;
   box-sizing: border-box;
 }
-footer .restaurant {
+#colophon .restaurant {
   flex: 0 1 33%;
   width: 33%;
   padding: 0 1em;
   box-sizing: border-box;
 }
-footer .restaurant .hours span {
+#colophon .restaurant .hours span {
   margin-bottom: 0.66em;
 }
-footer .social {
+#colophon .social {
   flex: 0 1 33%;
   width: 34%;
   align-self: center;
 }
-footer .social form {
+#colophon .social form {
   margin: 0 auto 1em;
 }
-footer .social form input {
+#colophon .social form input {
   margin: 0 auto 1em;
 }
-footer .attribution {
+#colophon .attribution {
   width: 100%;
 }
-footer .cat {
+#colophon .cat {
   margin-bottom: 1em;
 }
-footer .cat span {
+#colophon .cat span {
   font-size: 0.8em;
 }
 /*--------------------------------------------------------------
@@ -886,6 +1043,10 @@ embed, iframe, object {
 }
 .page-content {
   padding-top: 50px;
+}
+.generic-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .img-cont {
   transition: opacity 0.33s ease;
@@ -987,7 +1148,7 @@ footer .social .icons .icon img {
 #Home .table-of-contents .title h3 {
   font-size: 1em;
   letter-spacing: 0.1em;
-  font-weight: 600;
+  font-weight: 300;
 }
 #Home .table-of-contents ul {
   margin: 0;
@@ -1006,6 +1167,13 @@ footer .social .icons .icon img {
 #Home .table-of-contents ul a:before, #Home .table-of-contents ul a:after {
   content: "~";
   margin: 0 0.33em;
+  display: inline-block;
+}
+#Home .table-of-contents ul a:hover:before {
+  animation: tilde-wiggle-left 0.66s infinite ease;
+}
+#Home .table-of-contents ul a:hover:after {
+  animation: tilde-wiggle-right 0.66s infinite ease;
 }
 #Home .table-of-contents .logo {
   margin: 30px auto 0;
@@ -1042,6 +1210,28 @@ footer .social .icons .icon img {
 }
 #Home.video-active .watch-cta {
   transform: translate(100%, 100%);
+}
+@keyframes tilde-wiggle-left {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-33%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes tilde-wiggle-right {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(33%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 #Lodge {
   padding-bottom: 80px;
@@ -1408,4 +1598,26 @@ footer .social .icons .icon img {
 }
 #page.contact .wpcf7 form textarea {
   resize: vertical;
+}
+@keyframes tilde-wiggle-left {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-33%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes tilde-wiggle-right {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(33%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }

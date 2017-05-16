@@ -1,4 +1,4 @@
-footer {
+#colophon {
   padding: 4em 0;
   text-align: center;
   justify-content: center;
@@ -6,6 +6,10 @@ footer {
 
   background: rgba(70,70,70,1);
   color: white;
+
+  a {
+    color: $color__logo-light;
+  }
 
   h2 {
     margin: 0 0 0.33em 0;

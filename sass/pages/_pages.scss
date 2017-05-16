@@ -14,6 +14,11 @@
   padding-top: 50px;
 }
 
+.generic-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .img-cont {
   // opacity: 0;
   transition: opacity 0.33s ease;
@@ -58,3 +63,27 @@ footer {
 @import "blog/blog";
 @import "booking/booking";
 @import "contact/contact";
+
+@keyframes tilde-wiggle-left {
+  0% {
+    transform: translateX(0%)
+  }
+  50% {
+    transform: translateX(-33%)
+  }
+  100% {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes tilde-wiggle-right {
+  0% {
+    transform: translateX(0%)
+  }
+  50% {
+    transform: translateX(33%)
+  }
+  100% {
+    transform: translateX(0%)
+  }
+}

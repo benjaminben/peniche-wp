@@ -88,7 +88,7 @@
       h3 {
         font-size: 1em;
         letter-spacing: 0.1em;
-        font-weight: 600;
+        font-weight: 300;
       }
     }
 
@@ -109,6 +109,15 @@
         &:before, &:after {
           content: "~";
           margin: 0 0.33em;
+          display: inline-block;
+        }
+        &:hover {
+          &:before {
+            animation: tilde-wiggle-left 0.66s infinite ease;
+          }
+          &:after {
+            animation: tilde-wiggle-right 0.66s infinite ease;
+          }
         }
       }
     }
@@ -156,5 +165,29 @@
 
   .watch-cta {
     transform: translate(100%, 100%);
+  }
+}
+
+@keyframes tilde-wiggle-left {
+  0% {
+    transform: translateX(0%)
+  }
+  50% {
+    transform: translateX(-33%)
+  }
+  100% {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes tilde-wiggle-right {
+  0% {
+    transform: translateX(0%)
+  }
+  50% {
+    transform: translateX(33%)
+  }
+  100% {
+    transform: translateX(0%)
   }
 }
