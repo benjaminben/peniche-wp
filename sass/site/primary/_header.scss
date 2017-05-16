@@ -5,15 +5,16 @@
   height: 60px;
   z-index: 1;
   transition: height 0.33s ease;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
 
   &.expand {
     height: 70px;
   }
 
   .custom-logo-link {
-    padding-left: 0.66em;
-    height: 50px;
-    margin-top: 0px;
+    padding-left: 0.5em;
+    height: 46px;
+    margin-top: -1px;
 
     img {
       display: block;
@@ -33,39 +34,39 @@
       letter-spacing: 0.1em;
       font-size: 0.9em;
 
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 12px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        top: calc(50% - 2.5px);
+        opacity: 0;
+        transition: opacity 0.33s ease;
+      }
+
+      &:before {
+        right: 110%;
+        background-image: url("images/left-spike.svg");
+      }
+      &:after {
+        left: 110%;
+        background-image: url("images/right-spike.svg");
+      }
+
       &:hover, &.active {
-        &:before {
-          content: "";
-          position: absolute;
-          right: 110%;
-          height: 4px;
-          width: 12px;
-          background-size: 100%;
-          background-repeat: no-repeat;
-          background-image: url("images/left-spike.svg");
-          top: calc(50% - 2.5px);
-          // font-size: 0.9em;
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          left: 110%;
-          height: 4px;
-          width: 12px;
-          background-size: 100%;
-          background-repeat: no-repeat;
-          background-image: url("images/right-spike.svg");
-          top: calc(50% - 2px);
-          // font-size: 0.9em;
+        &:before, &:after {
+          opacity: 1;
         }
       }
 
       &:hover {
         &:before {
-          animation: tilde-wiggle-left 0.8s infinite ease;
+          animation: tilde-wiggle-left 0.8s ease;
         }
         &:after {
-          animation: tilde-wiggle-right 0.8s infinite ease;
+          animation: tilde-wiggle-right 0.8s ease;
         }
       }
     }

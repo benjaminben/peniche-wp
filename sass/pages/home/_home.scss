@@ -129,10 +129,10 @@
           }
           &:hover {
             &:before {
-              animation: tilde-wiggle-left 0.66s infinite ease;
+              animation: tilde-wiggle-left 0.66s ease;
             }
             &:after {
-              animation: tilde-wiggle-right 0.66s infinite ease;
+              animation: tilde-wiggle-right 0.66s ease;
             }
           }
         }

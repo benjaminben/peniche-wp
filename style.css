@@ -774,14 +774,15 @@ body.home #content {
   height: 60px;
   z-index: 1;
   transition: height 0.33s ease;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 #masthead.expand {
   height: 70px;
 }
 #masthead .custom-logo-link {
-  padding-left: 0.66em;
-  height: 50px;
-  margin-top: 0px;
+  padding-left: 0.5em;
+  height: 46px;
+  margin-top: -1px;
 }
 #masthead .custom-logo-link img {
   display: block;
@@ -799,33 +800,33 @@ body.home #content {
   letter-spacing: 0.1em;
   font-size: 0.9em;
 }
-#masthead nav a:hover:before, #masthead nav a.active:before {
+#masthead nav a:before, #masthead nav a:after {
   content: "";
   position: absolute;
-  right: 110%;
   height: 4px;
   width: 12px;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: url("images/left-spike.svg");
   top: calc(50% - 2.5px);
+  opacity: 0;
+  transition: opacity 0.33s ease;
 }
-#masthead nav a:hover:after, #masthead nav a.active:after {
-  content: "";
-  position: absolute;
+#masthead nav a:before {
+  right: 110%;
+  background-image: url("images/left-spike.svg");
+}
+#masthead nav a:after {
   left: 110%;
-  height: 4px;
-  width: 12px;
-  background-size: 100%;
-  background-repeat: no-repeat;
   background-image: url("images/right-spike.svg");
-  top: calc(50% - 2px);
+}
+#masthead nav a:hover:before, #masthead nav a.active:before, #masthead nav a:hover:after, #masthead nav a.active:after {
+  opacity: 1;
 }
 #masthead nav a:hover:before {
-  animation: tilde-wiggle-left 0.8s infinite ease;
+  animation: tilde-wiggle-left 0.8s ease;
 }
 #masthead nav a:hover:after {
-  animation: tilde-wiggle-right 0.8s infinite ease;
+  animation: tilde-wiggle-right 0.8s ease;
 }
 #masthead .booking {
   padding-right: 0.33em;
@@ -1061,6 +1062,7 @@ embed, iframe, object {
   margin: 0 auto;
 }
 .img-cont {
+  opacity: 0;
   transition: opacity 0.33s ease;
 }
 .img-cont.is-loaded {
@@ -1198,10 +1200,10 @@ footer .social .icons .icon img {
   background-image: url("images/right-spike.svg");
 }
 #Home .table-of-contents ul li a:hover:before {
-  animation: tilde-wiggle-left 0.66s infinite ease;
+  animation: tilde-wiggle-left 0.66s ease;
 }
 #Home .table-of-contents ul li a:hover:after {
-  animation: tilde-wiggle-right 0.66s infinite ease;
+  animation: tilde-wiggle-right 0.66s ease;
 }
 #Home .table-of-contents .logo {
   margin: 30px auto 0;
@@ -1311,10 +1313,21 @@ footer .social .icons .icon img {
   color: black;
   text-decoration: none;
   padding-bottom: 0.33em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  display: block;
+  position: relative;
 }
-.primary-page-type .sub-menu ul li a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
+.primary-page-type .sub-menu ul li a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0);
+  transform: translateY(0.2em);
+  transition: all 0.33s ease;
+}
+.primary-page-type .sub-menu ul li a:hover:after {
+  transform: translateY(0);
+  background: rgba(0, 0, 0, 1);
 }
 .primary-page-type .posts .post {
   z-index: 0;
@@ -1488,49 +1501,49 @@ footer .social .icons .icon img {
   opacity: 1;
 }
 @media screen and (max-width: 888px) {
-  #Lodge .posts .post .content.flex-column .text .title {
+  .primary-page-type .posts .post .content.flex-column .text .title {
     text-align: center;
   }
-  #Lodge .posts .post .content.flex-column .text.text-img {
+  .primary-page-type .posts .post .content.flex-column .text.text-img {
     padding: 0 0 30px;
   }
-  #Lodge .posts .post .content.flex-column .text.img-text {
+  .primary-page-type .posts .post .content.flex-column .text.img-text {
     padding: 30px 0 0;
   }
-  #Lodge .posts .post .content.slideshow .text .title {
+  .primary-page-type .posts .post .content.slideshow .text .title {
     text-align: center;
   }
-  #Lodge .posts .post .content.slideshow .text.text-img {
+  .primary-page-type .posts .post .content.slideshow .text.text-img {
     padding: 0 0 30px;
   }
-  #Lodge .posts .post .content.slideshow .text.img-text {
+  .primary-page-type .posts .post .content.slideshow .text.img-text {
     padding: 30px 0 0;
   }
 }
 @media screen and (max-width: 768px) {
-  #Lodge .posts .post .content.slideshow .slides-cont {
+  .primary-page-type .posts .post .content.slideshow .slides-cont {
     width: 100%;
   }
 }
 @media screen and (max-width: 480px) {
-  #Lodge .posts .post .content.flex-column {
+  .primary-page-type .posts .post .content.flex-column {
     display: block;
   }
-  #Lodge .posts .post .content.flex-column .text {
+  .primary-page-type .posts .post .content.flex-column .text {
     width: 100%;
     min-width: auto;
   }
-  #Lodge .posts .post .content.flex-column .img-cont {
+  .primary-page-type .posts .post .content.flex-column .img-cont {
     min-width: auto;
   }
-  #Lodge .posts .post .content.slideshow {
+  .primary-page-type .posts .post .content.slideshow {
     display: block;
   }
-  #Lodge .posts .post .content.slideshow .text {
+  .primary-page-type .posts .post .content.slideshow .text {
     width: 100%;
     min-width: auto;
   }
-  #Lodge .posts .post .content.slideshow .slides-cont {
+  .primary-page-type .posts .post .content.slideshow .slides-cont {
     min-width: auto;
   }
 }

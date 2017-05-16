@@ -18,13 +18,13 @@ $(document).ready(function() {
   //   }
   // })
 
-  // $img_conts = $(".img-cont")
-  // $.each($img_conts, function(i, cont) {
-  //   var img = $(cont).find("img")[0]
-  //   var test = document.createElement("img")
-  //   test.addEventListener("load", function() {
-  //     $(cont).addClass("is-loaded")
-  //   })
-  //   test.src = img.src
-  // })
+  $img_conts = $(".img-cont")
+  $.each($img_conts, function(i, cont) {
+    var img = $(cont).find("img")[0]
+    var test = document.createElement("img")
+    test.addEventListener("load", function() {
+      $(cont).addClass("is-loaded")
+    })
+    test.src = img.src
+  })
 })

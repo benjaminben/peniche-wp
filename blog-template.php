@@ -16,8 +16,9 @@ $thumb_url = $thumb_url_array[0];
 ?>
 
 <header>
-  <div class="banner"
+  <div class="banner img-cont"
        style="background-image: url(<?php echo $thumb_url ?>);">
+    <img class="none" src="<?php echo $thumb_url ?>" />
   </div>
 </header>
 
