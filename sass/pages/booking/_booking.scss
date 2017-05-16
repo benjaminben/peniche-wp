@@ -1,0 +1,40 @@
+#Booking {
+  .entry-title {
+    display: none;
+  }
+
+  form {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+
+    input {
+      width: 100%;
+
+      &[type="date"] {
+        border: none;
+        border-bottom: 1px solid rgba(60,60,60,1);
+        border-radius: 0;
+        font-size: 3em;
+        letter-spacing: 0.1em;
+        font-weight: 100;
+        outline: none;
+      }
+
+      &[type="submit"] {
+        margin: 0 auto;
+        padding: 1em 2em;
+        width: auto;
+        font-size: 1em;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        background: $color__logo-light;
+
+        &:hover, &:active {
+          background: $color__logo-dark;
+        }
+      }
+    }
+  }
+}

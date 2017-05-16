@@ -37,7 +37,9 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<span class="booking table-cell">
-			<button class="booking-button">BOOKING</button>
+			<a href="<?php echo get_page_link(102); ?>">
+				<button class="booking-button">BOOKING</button>
+			</a>
 		</span>
 	</header><!-- #masthead -->
 
@@ -51,7 +53,7 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			<span class="booking">
-				<a href="<?php echo esc_url( home_url( '/' ) ) . "booking"; ?>">
+				<a href="<?php echo get_page_link(102); ?>">
 					Booking
 				</a>
 			</span>

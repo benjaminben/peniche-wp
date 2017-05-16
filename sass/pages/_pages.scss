@@ -10,6 +10,10 @@
   }
 }
 
+.page-content {
+  padding-top: 50px;
+}
+
 .img-cont {
   // opacity: 0;
   transition: opacity 0.33s ease;
@@ -52,4 +56,5 @@ footer {
 @import "home/home";
 @import "lodge/lodge";
 @import "blog/blog";
+@import "booking/booking";
 @import "contact/contact";

@@ -18,11 +18,12 @@
   }
 
   nav {
-    padding-left: 1em;
+    padding-left: 1.66em;
 
     a {
       position: relative;
-      margin: 0 1.33em;
+      margin: 0 1.66em;
+      color: black;
 
       &:hover {
         &:before {
@@ -44,14 +45,17 @@
   }
 
   .booking {
-    padding-right: 0.66em;
+    padding-right: 0.33em;
     height: 80%;
 
     button {
       height: 100%;
-      background: lightblue;
+      background: $color__logo-light;
       color: white;
+      padding: 0 30px;
+      font-size: 1em;
       letter-spacing: 0.1em;
+      outline: none;
     }
   }
 }

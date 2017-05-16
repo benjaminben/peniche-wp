@@ -641,11 +641,12 @@ body.home #content {
   height: auto;
 }
 #masthead nav {
-  padding-left: 1em;
+  padding-left: 1.66em;
 }
 #masthead nav a {
   position: relative;
-  margin: 0 1.33em;
+  margin: 0 1.66em;
+  color: black;
 }
 #masthead nav a:hover:before {
   content: "~";
@@ -662,14 +663,17 @@ body.home #content {
   transform: translateY(-50%);
 }
 #masthead .booking {
-  padding-right: 0.66em;
+  padding-right: 0.33em;
   height: 80%;
 }
 #masthead .booking button {
   height: 100%;
-  background: lightblue;
+  background: #7c9cb3;
   color: white;
+  padding: 0 30px;
+  font-size: 1em;
   letter-spacing: 0.1em;
+  outline: none;
 }
 #mobile_masthead {
   display: none;
@@ -873,6 +877,9 @@ embed, iframe, object {
   background-size: cover;
   background-position: center center;
   height: 500px;
+}
+.page-content {
+  padding-top: 50px;
 }
 .img-cont {
   transition: opacity 0.33s ease;
@@ -1300,6 +1307,39 @@ footer .social .icons .icon img {
 }
 #blog_sidebar form input[type="text"] {
   margin-bottom: 1em;
+}
+#Booking .entry-title {
+  display: none;
+}
+#Booking form {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+}
+#Booking form input {
+  width: 100%;
+}
+#Booking form input[type="date"] {
+  border: none;
+  border-bottom: 1px solid rgba(60, 60, 60, 1);
+  border-radius: 0;
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  font-weight: 100;
+  outline: none;
+}
+#Booking form input[type="submit"] {
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: auto;
+  font-size: 1em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: #7c9cb3;
+}
+#Booking form input[type="submit"]:hover, #Booking form input[type="submit"]:active {
+  background: #004066;
 }
 #page.contact .entry-title {
   display: none;
