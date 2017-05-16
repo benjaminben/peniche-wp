@@ -669,11 +669,17 @@ body.home #content {
 #masthead .booking button {
   height: 100%;
   background: #7c9cb3;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: none;
   color: white;
   padding: 0 30px;
   font-size: 1em;
   letter-spacing: 0.1em;
   outline: none;
+}
+#masthead .booking button:hover, #masthead .booking button:active {
+  background: #004066;
 }
 #mobile_masthead {
   display: none;
@@ -1311,6 +1317,10 @@ footer .social .icons .icon img {
 #Booking .entry-title {
   display: none;
 }
+#Booking .title {
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
 #Booking form {
   margin: 0 auto;
   width: 90%;
@@ -1331,15 +1341,54 @@ footer .social .icons .icon img {
 #Booking form input[type="submit"] {
   margin: 0 auto;
   padding: 1em 2em;
-  width: auto;
-  font-size: 1em;
-  color: white;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  width: auto;
   background: #7c9cb3;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: none;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  outline: none;
 }
 #Booking form input[type="submit"]:hover, #Booking form input[type="submit"]:active {
   background: #004066;
+}
+#Booking form .number-guests {
+  display: block;
+  width: 100%;
+}
+#Booking form .number-guests .wpcf7-list-item {
+  margin: 0 1em;
+  border: 1px solid black;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+#Booking form .number-guests .wpcf7-list-item.checked {
+  background: pink;
+}
+#Booking form .number-guests .wpcf7-list-item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#Booking form .number-guests .wpcf7-list-item .wpcf7-list-item-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#Booking form .number-guests .wpcf7-list-item:first-child {
+  margin: 0 1em 0 0;
+}
+#Booking form .number-guests .wpcf7-list-item:last-child {
+  margin: 0 0 0 1em;
 }
 #page.contact .entry-title {
   display: none;

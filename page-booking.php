@@ -7,6 +7,8 @@
 ?>
 
 <div id="Booking" class="page-content">
+  <h1 class="text-center title">Submit A Booking Request</h1>
+
   <?php
   while ( have_posts() ) : the_post();
 
