@@ -29,21 +29,34 @@
       position: relative;
       margin: 0 1.66em;
       color: $color__black;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9em;
 
       &:hover, &.active {
         &:before {
-          content: "~";
+          content: "";
           position: absolute;
-          right: 112%;
-          top: 0.1em;
-          font-size: 0.9em;
+          right: 110%;
+          height: 4px;
+          width: 12px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-image: url("images/left-spike.svg");
+          top: calc(50% - 2.5px);
+          // font-size: 0.9em;
         }
         &:after {
-          content: "~";
+          content: "";
           position: absolute;
-          left: 112%;
-          top: 0.1em;
-          font-size: 0.9em;
+          left: 110%;
+          height: 4px;
+          width: 12px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-image: url("images/right-spike.svg");
+          top: calc(50% - 2px);
+          // font-size: 0.9em;
         }
       }
 

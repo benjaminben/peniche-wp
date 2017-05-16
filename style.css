@@ -795,20 +795,31 @@ body.home #content {
   position: relative;
   margin: 0 1.66em;
   color: rgba(40, 40, 40, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
 }
 #masthead nav a:hover:before, #masthead nav a.active:before {
-  content: "~";
+  content: "";
   position: absolute;
-  right: 112%;
-  top: 0.1em;
-  font-size: 0.9em;
+  right: 110%;
+  height: 4px;
+  width: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("images/left-spike.svg");
+  top: calc(50% - 2.5px);
 }
 #masthead nav a:hover:after, #masthead nav a.active:after {
-  content: "~";
+  content: "";
   position: absolute;
-  left: 112%;
-  top: 0.1em;
-  font-size: 0.9em;
+  left: 110%;
+  height: 4px;
+  width: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("images/right-spike.svg");
+  top: calc(50% - 2px);
 }
 #masthead nav a:hover:before {
   animation: tilde-wiggle-left 0.8s infinite ease;
@@ -1040,6 +1051,7 @@ embed, iframe, object {
   background-size: cover;
   background-position: center center;
   height: 500px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 .page-content {
   padding-top: 50px;
@@ -1156,7 +1168,10 @@ footer .social .icons .icon img {
   list-style-type: none;
   position: relative;
 }
-#Home .table-of-contents ul a {
+#Home .table-of-contents ul li {
+  margin: 0.33em 0;
+}
+#Home .table-of-contents ul li a {
   color: black;
   text-decoration: none;
   text-transform: uppercase;
@@ -1164,15 +1179,28 @@ footer .social .icons .icon img {
   letter-spacing: 0.1em;
   font-size: 0.9em;
 }
-#Home .table-of-contents ul a:before, #Home .table-of-contents ul a:after {
-  content: "~";
-  margin: 0 0.33em;
+#Home .table-of-contents ul li a:before, #Home .table-of-contents ul li a:after {
+  content: "";
   display: inline-block;
+  vertical-align: middle;
+  height: 4px;
+  width: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: -1px;
+  margin: 0 0.66em;
+  position: relative;
 }
-#Home .table-of-contents ul a:hover:before {
+#Home .table-of-contents ul li a:before {
+  background-image: url("images/left-spike.svg");
+}
+#Home .table-of-contents ul li a:after {
+  background-image: url("images/right-spike.svg");
+}
+#Home .table-of-contents ul li a:hover:before {
   animation: tilde-wiggle-left 0.66s infinite ease;
 }
-#Home .table-of-contents ul a:hover:after {
+#Home .table-of-contents ul li a:hover:after {
   animation: tilde-wiggle-right 0.66s infinite ease;
 }
 #Home .table-of-contents .logo {
@@ -1305,6 +1333,7 @@ footer .social .icons .icon img {
 #Lodge .posts .post .content.flex-column .img-cont {
   width: 100%;
   flex: 1 1 400px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 #Lodge .posts .post .content.flex-column .img-cont img {
   display: inline-block;
@@ -1368,6 +1397,7 @@ footer .social .icons .icon img {
 }
 #Lodge .posts .post .content.slideshow .slides-cont {
   display: inline-block;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   flex: 1 1 600px;
 }

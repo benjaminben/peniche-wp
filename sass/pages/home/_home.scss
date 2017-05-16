@@ -98,28 +98,46 @@
       list-style-type: none;
       position: relative;
 
-      a {
-        color: black;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 400;
-        letter-spacing: 0.1em;
-        font-size: 0.9em;
+      li {
+        margin: 0.33em 0;
 
-        &:before, &:after {
-          content: "~";
-          margin: 0 0.33em;
-          display: inline-block;
-        }
-        &:hover {
+        a {
+          color: black;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          font-size: 0.9em;
+
+          &:before, &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 4px;
+            width: 12px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            top: -1px;
+            margin: 0 0.66em;
+            position: relative;
+          }
           &:before {
-            animation: tilde-wiggle-left 0.66s infinite ease;
+            background-image: url("images/left-spike.svg");
           }
           &:after {
-            animation: tilde-wiggle-right 0.66s infinite ease;
+            background-image: url("images/right-spike.svg");
+          }
+          &:hover {
+            &:before {
+              animation: tilde-wiggle-left 0.66s infinite ease;
+            }
+            &:after {
+              animation: tilde-wiggle-right 0.66s infinite ease;
+            }
           }
         }
       }
+
     }
 
     .logo {

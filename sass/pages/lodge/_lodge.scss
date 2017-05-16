@@ -84,6 +84,7 @@
             width: 100%;
             // min-width: 400px;
             flex: 1 1 400px;
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
 
             img {
               display: inline-block;
@@ -153,6 +154,7 @@
 
           .slides-cont {
             display: inline-block;
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.1);
             margin: 0 auto;
             flex: 1 1 600px;
           }
