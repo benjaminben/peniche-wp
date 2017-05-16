@@ -771,7 +771,7 @@ body.home #content {
   position: fixed;
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
-  height: 50px;
+  height: 60px;
   z-index: 1;
   transition: height 0.33s ease;
 }
@@ -780,13 +780,13 @@ body.home #content {
 }
 #masthead .custom-logo-link {
   padding-left: 0.66em;
+  height: 50px;
+  margin-top: 0px;
 }
 #masthead .custom-logo-link img {
   display: block;
-  max-width: 40px;
-  max-height: 40px;
   width: auto;
-  height: auto;
+  height: 100%;
 }
 #masthead nav {
   padding-left: 1.66em;
@@ -914,7 +914,7 @@ body.home #masthead, body.home #mobile_masthead {
   text-align: center;
   justify-content: center;
   align-items: center;
-  background: rgba(70, 70, 70, 1);
+  background: rgba(60, 60, 60, 1);
   color: white;
 }
 #colophon a {
@@ -1210,9 +1210,9 @@ footer .social .icons .icon img {
 #Home .watch-cta {
   bottom: 0;
   right: 0;
-  font-size: 1.66em;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 1.33em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   color: white;
   padding: 0.66em 1.66em;
   background: #7c9cb3;
@@ -1261,36 +1261,65 @@ footer .social .icons .icon img {
     transform: translateX(0%);
   }
 }
-#Lodge {
+.primary-page-type {
   padding-bottom: 80px;
 }
-#Lodge .sub-menu {
+.primary-page-type .marquee-vid .entry-title {
+  display: none;
+}
+.primary-page-type .marquee-vid .entry-content {
+  margin: 0;
+  padding-top: 80px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.primary-page-type .marquee-vid .entry-content p {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  box-sizing: border-box;
+}
+.primary-page-type .marquee-vid .entry-content iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.primary-page-type .marquee-vid .hentry {
+  margin: 0;
+}
+.primary-page-type .marquee-vid footer {
+  display: none;
+}
+.primary-page-type .sub-menu {
   margin-bottom: 2em;
 }
-#Lodge .sub-menu ul {
+.primary-page-type .sub-menu ul {
   display: block;
   text-align: center;
   margin: 0;
   padding: 1.66em 0;
   list-style-type: none;
 }
-#Lodge .sub-menu ul li {
+.primary-page-type .sub-menu ul li {
   display: inline-block;
   margin: 0 1em;
 }
-#Lodge .sub-menu ul li a {
+.primary-page-type .sub-menu ul li a {
   color: black;
   text-decoration: none;
   padding-bottom: 0.33em;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
-#Lodge .sub-menu ul li a:hover {
+.primary-page-type .sub-menu ul li a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
-#Lodge .posts .post {
+.primary-page-type .posts .post {
   z-index: 0;
 }
-#Lodge .posts .post:before {
+.primary-page-type .posts .post:before {
   content: '';
   opacity: 0;
   width: 0%;
@@ -1302,51 +1331,51 @@ footer .social .icons .icon img {
   margin: 4em auto;
   transition: opacity 0.33s ease, width 0.66s ease-in;
 }
-#Lodge .posts .post:nth-of-type(1):before {
+.primary-page-type .posts .post:nth-of-type(1):before {
   display: none;
 }
-#Lodge .posts .post .content {
+.primary-page-type .posts .post .content {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
-#Lodge .posts .post .content.flex-column {
+.primary-page-type .posts .post .content.flex-column {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
-#Lodge .posts .post .content.flex-column .text {
+.primary-page-type .posts .post .content.flex-column .text {
   display: inline-block;
   vertical-align: middle;
   position: relative;
   flex: 1 1 400px;
 }
-#Lodge .posts .post .content.flex-column .text.text-img {
+.primary-page-type .posts .post .content.flex-column .text.text-img {
   padding: 0 3em 0 0;
 }
-#Lodge .posts .post .content.flex-column .text.img-text {
+.primary-page-type .posts .post .content.flex-column .text.img-text {
   padding: 0 0 0 3em;
 }
-#Lodge .posts .post .content.flex-column .text .title {
+.primary-page-type .posts .post .content.flex-column .text .title {
   margin: 0;
 }
-#Lodge .posts .post .content.flex-column .img-cont {
+.primary-page-type .posts .post .content.flex-column .img-cont {
   width: 100%;
   flex: 1 1 400px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
-#Lodge .posts .post .content.flex-column .img-cont img {
+.primary-page-type .posts .post .content.flex-column .img-cont img {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
   height: auto;
 }
-#Lodge .posts .post .content.banner {
+.primary-page-type .posts .post .content.banner {
   width: 100%;
   max-width: none;
   overflow: hidden;
 }
-#Lodge .posts .post .content.banner:before {
+.primary-page-type .posts .post .content.banner:before {
   content: '';
   position: absolute;
   top: 0;
@@ -1356,14 +1385,14 @@ footer .social .icons .icon img {
   height: 100%;
   background: rgba(255, 255, 255, 0.8);
 }
-#Lodge .posts .post .content.banner .text {
+.primary-page-type .posts .post .content.banner .text {
   display: block;
   max-width: 1200px;
   margin: 0 auto;
   padding: 10%;
   z-index: 2;
 }
-#Lodge .posts .post .content.banner .img-cont {
+.primary-page-type .posts .post .content.banner .img-cont {
   position: absolute;
   z-index: 0;
   top: 0;
@@ -1374,38 +1403,38 @@ footer .social .icons .icon img {
   background-size: cover;
   background-position: center;
 }
-#Lodge .posts .post .content.banner .img-cont img {
+.primary-page-type .posts .post .content.banner .img-cont img {
   display: none;
 }
-#Lodge .posts .post .content.slideshow {
+.primary-page-type .posts .post .content.slideshow {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
-#Lodge .posts .post .content.slideshow .text {
+.primary-page-type .posts .post .content.slideshow .text {
   display: inline-block;
   min-width: 400px;
   vertical-align: middle;
   position: relative;
   flex: 1 1 400px;
 }
-#Lodge .posts .post .content.slideshow .text.text-img {
+.primary-page-type .posts .post .content.slideshow .text.text-img {
   padding: 0 3em 0 0;
 }
-#Lodge .posts .post .content.slideshow .text.img-text {
+.primary-page-type .posts .post .content.slideshow .text.img-text {
   padding: 0 0 0 3em;
 }
-#Lodge .posts .post .content.slideshow .slides-cont {
+.primary-page-type .posts .post .content.slideshow .slides-cont {
   display: inline-block;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   flex: 1 1 600px;
 }
-#Lodge .posts .post .content.slideshow .slides {
+.primary-page-type .posts .post .content.slideshow .slides {
   width: 100%;
   padding-bottom: 66%;
 }
-#Lodge .posts .post .content.slideshow .slides .slide {
+.primary-page-type .posts .post .content.slideshow .slides .slide {
   display: none;
   width: 100%;
   z-index: 0;
@@ -1416,46 +1445,46 @@ footer .social .icons .icon img {
   background-size: cover;
   background-position: center;
 }
-#Lodge .posts .post .content.slideshow .slides .slide img {
+.primary-page-type .posts .post .content.slideshow .slides .slide img {
   display: none;
 }
-#Lodge .posts .post .content.slideshow .slides .slide p {
+.primary-page-type .posts .post .content.slideshow .slides .slide p {
   bottom: 0;
   padding: 1em;
   margin: 0;
   background: rgba(0, 0, 0, 0.66);
   color: white;
 }
-#Lodge .posts .post .content.slideshow .slides .slide.active {
+.primary-page-type .posts .post .content.slideshow .slides .slide.active {
   display: block;
 }
-#Lodge .posts .post .content.slideshow .slides .index-array {
+.primary-page-type .posts .post .content.slideshow .slides .index-array {
   top: 100%;
 }
-#Lodge .posts .post .content.slideshow .slides .index-array .index {
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index {
   width: 30px;
   height: 30px;
 }
-#Lodge .posts .post .content.slideshow .slides .index-array .index svg {
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index svg {
   width: 20px;
   height: 20px;
   margin: 0 auto;
 }
-#Lodge .posts .post .content.slideshow .slides .index-array .index.active svg circle {
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index.active svg circle {
   fill: black;
 }
-#Lodge .posts .post .fadie {
+.primary-page-type .posts .post .fadie {
   opacity: 0;
   transition: opacity 1s ease;
 }
-#Lodge .posts .post .fadie:nth-of-type(2n) {
+.primary-page-type .posts .post .fadie:nth-of-type(2n) {
   transition-delay: 0.33s;
 }
-#Lodge .posts .post.active:before {
+.primary-page-type .posts .post.active:before {
   width: 80%;
   opacity: 1;
 }
-#Lodge .posts .post.active .text, #Lodge .posts .post.active .text-cont, #Lodge .posts .post.active .img-cont, #Lodge .posts .post.active .slides-cont {
+.primary-page-type .posts .post.active .text, .primary-page-type .posts .post.active .text-cont, .primary-page-type .posts .post.active .img-cont, .primary-page-type .posts .post.active .slides-cont {
   opacity: 1;
 }
 @media screen and (max-width: 888px) {

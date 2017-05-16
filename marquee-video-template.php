@@ -1,7 +1,7 @@
 <?php
 
 /*
-  Template Name: Lodge Template
+  Template Name: Marquee Video
 */
 
 wp_register_script('lodge', get_template_directory_uri() . '/js/lodge.js', array( 'jquery', 'gsap' ), null, 1.1, true);
@@ -20,17 +20,23 @@ $thumb_url = $thumb_url_array[0];
 
 <div class="primary-page-type">
 
-  <header>
-    <div class="banner"
-         style="background-image: url(<?php echo $thumb_url ?>);">
-    </div>
-  </header>
-
-  <nav class="sub-menu">
   <?php
-    wp_nav_menu( array('menu' => 'Lodge Navigation') );
+    while ( have_posts() ) : the_post(); ?>
+
+    <div class="marquee-vid">
+      <?php get_template_part( 'template-parts/content', 'page' ); ?>
+    </div>
+
+    <?php endwhile; // End of the loop.
   ?>
-  </nav>
+
+  <?php if ($post_slug == "lodge") { ?>
+    <nav class="sub-menu">
+    <?php
+      wp_nav_menu( array('menu' => 'Lodge Navigation') );
+    ?>
+    </nav>
+  <?php } ?>
 
   <?php
     $args = [

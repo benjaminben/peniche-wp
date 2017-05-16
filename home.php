@@ -55,7 +55,7 @@
 
     <span id="home_watch_cta" class="watch-cta absolute pointer uppercase"
           style="opacity: 0">
-      WATCH
+      PREVIEW
     </span>
 
   </div>
