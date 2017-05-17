@@ -26,10 +26,12 @@
   nav {
     padding-left: 1.66em;
 
-    a {
+    li {
+      a {
+        color: $color__black;
+        padding: 0 1.66em;
+      }
       position: relative;
-      margin: 0 1.66em;
-      color: $color__black;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-size: 0.9em;
@@ -47,15 +49,15 @@
       }
 
       &:before {
-        right: 110%;
+        left: 5%;
         background-image: url("images/left-spike.svg");
       }
       &:after {
-        left: 110%;
+        right: 5%;
         background-image: url("images/right-spike.svg");
       }
 
-      &:hover, &.active {
+      &:hover, &.current-menu-item {
         &:before, &:after {
           opacity: 1;
         }

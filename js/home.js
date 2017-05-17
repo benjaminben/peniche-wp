@@ -16,8 +16,6 @@ $(document).ready(function() {
   var slideAuto
 
   slideComplete = function() {
-    // $home.find(".slide.active").removeClass("active")
-    // slide.addClass("active").attr("style", "")
     $slideshow.on("click", clickThru)
     if (slideAuto) {
       slideTimeout = window.setTimeout(slideTick, 3000)
@@ -184,7 +182,7 @@ $(document).ready(function() {
       x: "0%",
       y: "0%",
       opacity: 1,
-      delay: 0.165
+      delay: 0.33
     })
     TweenMax.fromTo($(".slide.active"), 0.33,
     {
