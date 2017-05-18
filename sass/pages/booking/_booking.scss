@@ -65,6 +65,23 @@
       }
     }
 
+    .seasons {
+      text-align: center;
+      font-size: 0.8em;
+
+      .season {
+        display: inline-block;
+        width: 50%;
+        margin-bottom: 1em;
+
+        h3, p {
+          margin: 0;
+        }
+      }
+
+      margin-bottom: 40px;
+    }
+
     .select-room {
       display: block;
       width: 100%;

@@ -1,14 +1,31 @@
 $(document).ready(function() {
-  $src = $("#booking_src")
-  $form = $("#Booking .wpcf7-form")
+  var $src = $("#booking_src")
+  var $form = $("#Booking .wpcf7-form")
 
-  $dates = $form.find("input[type='date']")
-  $arrival = $form.find("input.arrival")
-  $departure = $form.find("input.departure")
-  today = new Date()
+  var $seasons = $form.find(".seasons")
+  var $dates = $form.find("input[type='date']")
+  var $arrival = $form.find("input.arrival")
+  var $departure = $form.find("input.departure")
+  var today = new Date()
 
-  $select_room = $form.find(".select-room")
-  $room_ops = $select_room.find(".wpcf7-list-item")
+  var $select_room = $form.find(".select-room")
+  var $room_ops = $select_room.find(".wpcf7-list-item")
+
+  var displaySeasons = function() {
+    var seasons = $src.find(".seasons .season")
+    $.each(seasons, function(index, season) {
+      var span = document.createElement("span")
+      span.className = "season"
+      span.innerHTML = "<h3>" + $(season).attr("data-title") + "</h3>"
+                      + "<p><em>" +
+                          $(season).attr("data-start-date") + " &mdash; " +
+                          $(season).attr("data-end-date")
+                      + "</em></p>";
+      $seasons.append(span)
+    })
+  }
+
+  displaySeasons()
 
   $.each($dates, function(index, date) {
     var $date = $(date)
@@ -18,6 +35,9 @@ $(document).ready(function() {
       }
       else if ($date.hasClass("arrival")) {
         $departure.attr("min", e.target.value)
+      }
+      else {
+        displaySeason($arrival.attr("value"), $departure.attr("value"))
       }
     })
   })

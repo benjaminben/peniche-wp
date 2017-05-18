@@ -1655,6 +1655,19 @@ footer .social .icons .icon img {
 #Booking form input[type="submit"]:hover, #Booking form input[type="submit"]:active {
   background: #004066;
 }
+#Booking form .seasons {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 40px;
+}
+#Booking form .seasons .season {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 1em;
+}
+#Booking form .seasons .season h3, #Booking form .seasons .season p {
+  margin: 0;
+}
 #Booking form .select-room {
   display: block;
   width: 100%;
