@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $src = $("#booking_src")
   $form = $("#Booking .wpcf7-form")
 
   $dates = $form.find("input[type='date']")
@@ -6,8 +7,8 @@ $(document).ready(function() {
   $departure = $form.find("input.departure")
   today = new Date()
 
-  $num_guests = $form.find(".number-guests")
-  $guest_ops = $num_guests.find(".wpcf7-list-item")
+  $select_room = $form.find(".select-room")
+  $room_ops = $select_room.find(".wpcf7-list-item")
 
   $.each($dates, function(index, date) {
     var $date = $(date)
@@ -21,8 +22,14 @@ $(document).ready(function() {
     })
   })
 
+  $.each($room_ops, function(index, room) {
+    $(room).css("background-image", "url(" + $src.find(
+      ".room[data-title='"+$(room).find("input").attr("value")+"']"
+    ).attr("data-image") + ")")
+  })
+
   var clearGuestOps = function() {
-    $.each($guest_ops, function(index, op) {
+    $.each($room_ops, function(index, op) {
       var $op = $(op)
       var $input = $op.find("input")
 
@@ -31,7 +38,7 @@ $(document).ready(function() {
     })
   }
 
-  $.each($guest_ops, function(index, op) {
+  $.each($room_ops, function(index, op) {
     var $op = $(op)
     var $input = $op.find("input")
 

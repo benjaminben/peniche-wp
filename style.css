@@ -1299,13 +1299,32 @@ footer .social .icons .icon img {
 }
 .primary-page-type .sub-menu {
   margin-bottom: 2em;
+  text-align: center;
 }
 .primary-page-type .sub-menu ul {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin: 0;
   padding: 1.66em 0;
   list-style-type: none;
+}
+.primary-page-type .sub-menu ul:before, .primary-page-type .sub-menu ul:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 6px;
+  width: 18px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: -1px;
+  margin: 0 0.66em;
+  position: relative;
+}
+.primary-page-type .sub-menu ul:before {
+  background-image: url("images/left-spike.svg");
+}
+.primary-page-type .sub-menu ul:after {
+  background-image: url("images/right-spike.svg");
 }
 .primary-page-type .sub-menu ul li {
   display: inline-block;
@@ -1584,11 +1603,27 @@ footer .social .icons .icon img {
 #Booking .title {
   font-weight: 300;
   letter-spacing: 0.1em;
+  margin: 0.66em 0;
 }
 #Booking form {
   margin: 0 auto;
   width: 90%;
   max-width: 600px;
+}
+#Booking form br {
+  display: none;
+}
+#Booking form .field-cont {
+  display: block;
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+#Booking form .field-label {
+  margin-bottom: 1em;
+  display: block;
 }
 #Booking form input {
   width: 100%;
@@ -1620,40 +1655,41 @@ footer .social .icons .icon img {
 #Booking form input[type="submit"]:hover, #Booking form input[type="submit"]:active {
   background: #004066;
 }
-#Booking form .number-guests {
+#Booking form .select-room {
   display: block;
   width: 100%;
+  text-align: center;
 }
-#Booking form .number-guests .wpcf7-list-item {
-  margin: 0 1em;
+#Booking form .select-room .wpcf7-list-item {
+  margin: 1em;
   border: 1px solid black;
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
+  border-radius: 3px;
+  width: 10em;
+  height: 12em;
   position: relative;
   display: inline-block;
   text-align: center;
   cursor: pointer;
+  background-size: 8em;
+  background-position: 1em 1em;
+  background-repeat: no-repeat;
 }
-#Booking form .number-guests .wpcf7-list-item.checked {
-  background: pink;
+#Booking form .select-room .wpcf7-list-item.checked {
+  box-shadow: 0px 0px 0px 4px pink;
 }
-#Booking form .number-guests .wpcf7-list-item input {
+#Booking form .select-room .wpcf7-list-item input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-#Booking form .number-guests .wpcf7-list-item .wpcf7-list-item-label {
+#Booking form .select-room .wpcf7-list-item .wpcf7-list-item-label {
+  padding: 1em;
+  box-sizing: border-box;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#Booking form .number-guests .wpcf7-list-item:first-child {
-  margin: 0 1em 0 0;
-}
-#Booking form .number-guests .wpcf7-list-item:last-child {
-  margin: 0 0 0 1em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.8em;
 }
 #page.contact .entry-title {
   display: none;
