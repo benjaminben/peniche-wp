@@ -3,6 +3,7 @@ $(document).ready(function() {
   var $form = $("#Booking .wpcf7-form")
 
   var $seasons = $form.find(".seasons")
+  var $roomDeets = $form.find(".room-details")
   var $dates = $form.find("input[type='date']")
   var $arrival = $form.find("input.arrival")
   var $departure = $form.find("input.departure")
@@ -15,7 +16,7 @@ $(document).ready(function() {
     var seasons = $src.find(".seasons .season")
     $.each(seasons, function(index, season) {
       var span = document.createElement("span")
-      span.className = "season"
+      span.className = "season " + $(season).attr("data-rate")
       span.innerHTML = "<h3>" + $(season).attr("data-title") + "</h3>"
                       + "<p><em>" +
                           $(season).attr("data-start-date") + " &mdash; " +
@@ -58,6 +59,18 @@ $(document).ready(function() {
     })
   }
 
+  var displayRoomDetails = function(title) {
+    $room = $src.find(".room[data-title='"+title+"']")
+    $roomDeets.html(
+      "<div class='deets'>" +
+        "<span class='deet low inline-block'><h3>Low Season</h3><p><em>"+$room.attr("data-low-rate")+"€</em></p></span>" +
+        "<span class='deet mid inline-block'><h3>Middle Season</h3><p><em>"+$room.attr("data-mid-rate")+"€</em></p></span>" +
+        "<span class='deet high inline-block'><h3>High Season</h3><p><em>"+$room.attr("data-high-rate")+"€</em></p></span>" +
+      "</div>" +
+      "<p class='note text-center uppercase'>*Rates Per Room</p>"
+    )
+  }
+
   $.each($room_ops, function(index, op) {
     var $op = $(op)
     var $input = $op.find("input")
@@ -70,6 +83,7 @@ $(document).ready(function() {
       clearGuestOps()
       $input.attr("checked", "checked")
       $op.addClass("checked")
+      displayRoomDetails($input.attr("value"))
     })
   })
 })

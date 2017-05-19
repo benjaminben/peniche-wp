@@ -56,12 +56,17 @@
       }
     }
 
-    .wpcf7-validation-errors {
-      border: none;
+    .wpcf7-response-output {
+      border: none!important;
       text-align: center;
       margin: 0;
       padding: 0;
+    }
+    .wpcf7-validation-errors {
       color: rgba(160,0,0,1);
+    }
+    .wpcf7-response-output {
+      color: rgba(0,160,0,1);
     }
 
     .ajax-loader {

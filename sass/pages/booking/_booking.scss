@@ -65,6 +65,10 @@
       }
     }
 
+    textarea {
+      resize: vertical;
+    }
+
     .seasons {
       text-align: center;
       font-size: 0.8em;
@@ -76,6 +80,22 @@
 
         h3, p {
           margin: 0;
+        }
+
+        &.low {
+          h3 {
+            color: $color__logo-light
+          }
+        }
+        &.mid {
+          h3 {
+            color: $color__logo-med
+          }
+        }
+        &.high {
+          h3 {
+            color: $color__logo-dark
+          }
         }
       }
 
@@ -89,7 +109,7 @@
 
       .wpcf7-list-item {
         margin: 1em;
-        border: 1px solid black;
+        border: 1px solid rgba(0,0,0,0.1);
         border-radius: 3px;
         width: 10em;
         height: 12em;
@@ -102,7 +122,7 @@
         background-repeat: no-repeat;
 
         &.checked {
-          box-shadow: 0px 0px 0px 4px pink;
+          box-shadow: 0px 0px 0px 4px rgba(0,0,0,0.2);
         }
 
         input {
@@ -119,16 +139,66 @@
           left: 0;
           width: 100%;
           font-size: 0.8em;
-          // transform: translate(-50%, -50%);
         }
-
-        // &:first-child {
-        //   margin: 0 1em 0 0;
-        // }
-        // &:last-child {
-        //   margin: 0 0 0 1em;
-        // }
       }
+    }
+
+    .room-details {
+      h3, p {
+        margin: 0;
+      }
+      margin-bottom: 40px;
+
+      .deets {
+        width: 100%;
+        text-align: center;
+
+        .deet {
+          margin-bottom: 40px;
+          vertical-align: middle;
+          width: 100%; max-width: 200px;
+
+
+          &.low {
+            h3 {
+              color: $color__logo-light
+            }
+          }
+          &.mid {
+            h3 {
+              color: $color__logo-med
+            }
+          }
+          &.high {
+            h3 {
+              color: $color__logo-dark
+            }
+          }
+        }
+      }
+
+      .note {
+        letter-spacing: 0.1em;
+        font-size: 0.8em;
+      }
+    }
+
+    .wpcf7-response-output {
+      border: none!important;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .wpcf7-validation-errors {
+      color: rgba(160,0,0,1);
+    }
+    .wpcf7-response-output {
+      color: rgba(0,160,0,1);
+    }
+
+    .ajax-loader {
+      display: block;
+      margin: 1em auto;
     }
   }
 }

@@ -1671,6 +1671,9 @@ footer .social .icons .icon img {
 #Booking form input[type="submit"]:hover, #Booking form input[type="submit"]:active {
   background: #004066;
 }
+#Booking form textarea {
+  resize: vertical;
+}
 #Booking form .seasons {
   text-align: center;
   font-size: 0.8em;
@@ -1684,6 +1687,15 @@ footer .social .icons .icon img {
 #Booking form .seasons .season h3, #Booking form .seasons .season p {
   margin: 0;
 }
+#Booking form .seasons .season.low h3 {
+  color: #7c9cb3;
+}
+#Booking form .seasons .season.mid h3 {
+  color: #196c8a;
+}
+#Booking form .seasons .season.high h3 {
+  color: #004066;
+}
 #Booking form .select-room {
   display: block;
   width: 100%;
@@ -1691,7 +1703,7 @@ footer .social .icons .icon img {
 }
 #Booking form .select-room .wpcf7-list-item {
   margin: 1em;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   width: 10em;
   height: 12em;
@@ -1704,7 +1716,7 @@ footer .social .icons .icon img {
   background-repeat: no-repeat;
 }
 #Booking form .select-room .wpcf7-list-item.checked {
-  box-shadow: 0px 0px 0px 4px pink;
+  box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 #Booking form .select-room .wpcf7-list-item input {
   opacity: 0;
@@ -1719,6 +1731,51 @@ footer .social .icons .icon img {
   left: 0;
   width: 100%;
   font-size: 0.8em;
+}
+#Booking form .room-details {
+  margin-bottom: 40px;
+}
+#Booking form .room-details h3, #Booking form .room-details p {
+  margin: 0;
+}
+#Booking form .room-details .deets {
+  width: 100%;
+  text-align: center;
+}
+#Booking form .room-details .deets .deet {
+  margin-bottom: 40px;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 200px;
+}
+#Booking form .room-details .deets .deet.low h3 {
+  color: #7c9cb3;
+}
+#Booking form .room-details .deets .deet.mid h3 {
+  color: #196c8a;
+}
+#Booking form .room-details .deets .deet.high h3 {
+  color: #004066;
+}
+#Booking form .room-details .note {
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+}
+#Booking form .wpcf7-response-output {
+  border: none !important;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#Booking form .wpcf7-validation-errors {
+  color: rgba(160, 0, 0, 1);
+}
+#Booking form .wpcf7-response-output {
+  color: rgba(0, 160, 0, 1);
+}
+#Booking form .ajax-loader {
+  display: block;
+  margin: 1em auto;
 }
 #page.contact .entry-title {
   display: none;
@@ -1769,12 +1826,17 @@ footer .social .icons .icon img {
   resize: vertical;
   margin-bottom: 1em;
 }
-#page.contact .wpcf7 .wpcf7-validation-errors {
-  border: none;
+#page.contact .wpcf7 .wpcf7-response-output {
+  border: none !important;
   text-align: center;
   margin: 0;
   padding: 0;
+}
+#page.contact .wpcf7 .wpcf7-validation-errors {
   color: rgba(160, 0, 0, 1);
+}
+#page.contact .wpcf7 .wpcf7-response-output {
+  color: rgba(0, 160, 0, 1);
 }
 #page.contact .wpcf7 .ajax-loader {
   display: block;
