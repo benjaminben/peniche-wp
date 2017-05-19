@@ -1478,6 +1478,7 @@ footer .social .icons .icon img {
   bottom: 0;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 .primary-page-type .posts .post .content.slideshow .slides .slide img {
   display: none;
@@ -1486,8 +1487,9 @@ footer .social .icons .icon img {
   bottom: 0;
   padding: 1em;
   margin: 0;
-  background: rgba(0, 0, 0, 0.66);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
+  letter-spacing: 0.1em;
 }
 .primary-page-type .posts .post .content.slideshow .slides .slide.active {
   display: block;
@@ -1504,8 +1506,20 @@ footer .social .icons .icon img {
   height: 20px;
   margin: 0 auto;
 }
-.primary-page-type .posts .post .content.slideshow .slides .index-array .index.active svg circle {
-  fill: black;
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index svg circle {
+  stroke-width: 6px;
+  stroke: rgba(40, 40, 40, 1);
+  fill: rgba(0, 0, 0, 0);
+  transition: fill 0.33s ease;
+}
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index:first-child {
+  width: 25px;
+}
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index:first-child svg {
+  margin: 0;
+}
+.primary-page-type .posts .post .content.slideshow .slides .index-array .index.active svg circle, .primary-page-type .posts .post .content.slideshow .slides .index-array .index:hover svg circle {
+  fill: rgba(40, 40, 40, 1);
 }
 .primary-page-type .posts .post .fadie {
   opacity: 0;
@@ -1521,6 +1535,17 @@ footer .social .icons .icon img {
 .primary-page-type .posts .post.active .text, .primary-page-type .posts .post.active .text-cont, .primary-page-type .posts .post.active .img-cont, .primary-page-type .posts .post.active .slides-cont {
   opacity: 1;
 }
+@media screen and (max-width: 1111px) {
+  .primary-page-type .posts .post .content.slideshow .text .title {
+    text-align: center;
+  }
+  .primary-page-type .posts .post .content.slideshow .text.text-img {
+    padding: 0 0 30px;
+  }
+  .primary-page-type .posts .post .content.slideshow .text.img-text {
+    padding: 30px 0 0;
+  }
+}
 @media screen and (max-width: 888px) {
   .primary-page-type .posts .post .content.flex-column .text .title {
     text-align: center;
@@ -1529,15 +1554,6 @@ footer .social .icons .icon img {
     padding: 0 0 30px;
   }
   .primary-page-type .posts .post .content.flex-column .text.img-text {
-    padding: 30px 0 0;
-  }
-  .primary-page-type .posts .post .content.slideshow .text .title {
-    text-align: center;
-  }
-  .primary-page-type .posts .post .content.slideshow .text.text-img {
-    padding: 0 0 30px;
-  }
-  .primary-page-type .posts .post .content.slideshow .text.img-text {
     padding: 30px 0 0;
   }
 }

@@ -242,6 +242,7 @@
               right: 0; bottom: 0;
               background-size: cover;
               background-position: center;
+              cursor: pointer;
 
               img {
                 display: none;
@@ -251,8 +252,9 @@
                 bottom: 0;
                 padding: 1em;
                 margin: 0;
-                background: rgba(0,0,0,0.66);
+                background: rgba(0,0,0,0.5);
                 color: white;
+                letter-spacing: 0.1em;
               }
 
               &.active {
@@ -266,16 +268,32 @@
               .index {
                 width: 30px;
                 height: 30px;
+
+
                 svg {
                   width: 20px;
                   height: 20px;
                   margin: 0 auto;
+
+                  circle {
+                    stroke-width: 6px;
+                    stroke: $color__black;
+                    fill: rgba(0,0,0,0);
+                    transition: fill 0.33s ease;
+                  }
                 }
 
-                &.active {
+                &:first-child {
+                  width: 25px;
+                  svg {
+                    margin: 0;
+                  }
+
+                }
+                &.active, &:hover {
                   svg {
                     circle {
-                      fill: black;
+                      fill: $color__black;
                     }
                   }
                 }
@@ -306,14 +324,15 @@
       }
     }
   }
-
 }
-@media screen and (max-width: 888px) {
+
+
+@media screen and (max-width: 1111px) {
   .primary-page-type {
     .posts {
       .post {
         .content {
-          &.flex-column {
+          &.slideshow {
             .text {
               .title {
                 text-align: center;
@@ -326,7 +345,17 @@
               }
             }
           }
-          &.slideshow {
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 888px) {
+  .primary-page-type {
+    .posts {
+      .post {
+        .content {
+          &.flex-column {
             .text {
               .title {
                 text-align: center;

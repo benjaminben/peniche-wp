@@ -126,7 +126,7 @@ $thumb_url = $thumb_url_array[0];
                       <span class="index pointer table-cell v-middle<?php echo ($index_count == 0 ? " active" : "") ?>"
                             data-index="<?php echo $index_count ?>">
                         <svg class="block" width="100" height="100" viewbox="0 0 100 100">
-                          <circle cx="50" cy="50" r="45" stroke="black" stroke-width="10" fill="none" />
+                          <circle cx="50" cy="50" r="45" fill="none" />
                         </svg>
                       </span>
                   <?php
