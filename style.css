@@ -1625,12 +1625,22 @@ footer .social .icons .icon img {
   letter-spacing: 0.1em;
   color: #196c8a;
 }
+#blog_sidebar form select {
+  width: 200px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto 1em;
+  padding: 0.25em;
+  height: 2em;
+}
 #blog_sidebar form input {
   display: block;
   margin: 0 auto;
 }
 #blog_sidebar form input[type="text"] {
   padding: 0.25em 0.5em;
+  width: 200px;
+  box-sizing: border-box;
   position: relative;
 }
 #blog_sidebar form input[type="submit"] {

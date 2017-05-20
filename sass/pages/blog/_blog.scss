@@ -46,6 +46,15 @@
       color: $color__logo-med;
     }
 
+    select {
+      width: 200px;
+      box-sizing: border-box;
+      position: relative;
+      margin: 0 auto 1em;
+      padding: 0.25em;
+      height: 2em;
+    }
+
     input {
       display: block;
       margin: 0 auto;
@@ -54,6 +63,8 @@
       &[type="text"] {
         // margin-bottom: 1em;
         padding: 0.25em 0.5em;
+        width: 200px;
+        box-sizing: border-box;
         position: relative;
       }
 
