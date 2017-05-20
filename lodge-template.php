@@ -27,11 +27,15 @@ $thumb_url = $thumb_url_array[0];
     </div>
   </header>
 
-  <nav class="sub-menu">
-  <?php
-    wp_nav_menu( array('menu' => 'Lodge Navigation') );
-  ?>
-  </nav>
+  <?php if ($post->post_parent == "5") { ?>
+    <nav class="sub-menu">
+    <?php
+      wp_nav_menu( array('menu' => 'Lodge Navigation') );
+    ?>
+    </nav>
+  <?php } else { ?>
+    <div class="header-spacer"></div>
+  <?php } ?>
 
   <?php
     $args = [
