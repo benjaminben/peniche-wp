@@ -1894,10 +1894,13 @@ footer .social .icons .icon img {
   text-align: center;
 }
 #Booking form .room-details .deets .deet {
-  margin-bottom: 40px;
-  vertical-align: middle;
+  vertical-align: top;
   width: 100%;
   max-width: 200px;
+}
+#Booking form .room-details .deets .deet .seasons {
+  margin-top: 1em;
+  display: block;
 }
 #Booking form .room-details .deets .deet.low h3 {
   color: #7c9cb3;

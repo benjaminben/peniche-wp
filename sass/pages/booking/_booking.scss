@@ -154,10 +154,14 @@
         text-align: center;
 
         .deet {
-          margin-bottom: 40px;
-          vertical-align: middle;
+          // margin-bottom: 40px;
+          vertical-align: top;
           width: 100%; max-width: 200px;
 
+          .seasons {
+            margin-top: 1em;
+            display: block;
+          }
 
           &.low {
             h3 {
