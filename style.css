@@ -766,6 +766,9 @@ body.home #content {
 /*--------------------------------------------------------------
  ## Main Navigation
  --------------------------------------------------------------*/
+body.admin-bar #masthead nav li:hover .sub-menu {
+  top: 92px !important;
+}
 #masthead {
   position: fixed;
   background: rgba(255, 255, 255, 0.9);
@@ -872,7 +875,7 @@ body.home #content {
   transition: opacity 0.33s 0.125s ease, transform 0.33s ease, top 0s 0s linear;
   transform: translateY(0);
   opacity: 1;
-  top: 92px;
+  top: 60px;
 }
 #masthead .booking {
   padding-right: 0.33em;
