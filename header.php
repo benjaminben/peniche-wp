@@ -60,9 +60,9 @@
 		</nav><!-- #site-navigation -->
 		<span class="burger">
 			<svg width="100" height="100" viewbox="0 0 100 100">
-				<line x1="0" x2="100" y1="10" y2="10" stroke-width="20" stroke="black" />
-				<line x1="0" x2="100" y1="50" y2="50" stroke-width="20" stroke="black" />
-				<line x1="0" x2="100" y1="90" y2="90" stroke-width="20" stroke="black" />
+				<line x1="0" x2="100" y1="15" y2="15" stroke-width="10" stroke="rgba(0,0,0,0.8)" />
+				<line x1="0" x2="100" y1="50" y2="50" stroke-width="10" stroke="rgba(0,0,0,0.8)" />
+				<line x1="0" x2="100" y1="85" y2="85" stroke-width="10" stroke="rgba(0,0,0,0.8)" />
 			</svg>
 		</span>
 	</header><!-- #mobile_masthead -->

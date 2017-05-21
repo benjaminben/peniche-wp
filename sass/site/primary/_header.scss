@@ -15,6 +15,8 @@
     padding-left: 0.5em;
     height: 46px;
     margin-top: -1px;
+    position: relative;
+    z-index: 1000;
 
     img {
       display: block;
@@ -25,16 +27,32 @@
 
   nav {
     padding-left: 1.66em;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+
+    .menu-main-navigation-container {
+      height: 100%;
+    }
+
+    ul {
+      height: 100%;
+      display: table;
+    }
 
     li {
-      a {
-        color: $color__black;
-        padding: 0 1.66em;
-      }
       position: relative;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-size: 0.9em;
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+
+      a {
+        color: $color__black;
+        padding: 0 1.66em;
+      }
 
       &:before, &:after {
         content: "";
@@ -71,12 +89,58 @@
           animation: tilde-wiggle-right 0.8s ease;
         }
       }
+
+      .sub-menu {
+        position: fixed;
+        top: -92px;
+        width: 100%;
+        left: 0;
+        height: auto;
+        background: rgba(255,255,255,0.9);
+        display: block;
+        box-sizing: border-box;
+        padding: 18px 84px;
+        transform: translateY(-110%);
+        opacity: 0;
+        box-shadow: 0px 6px 3px -6px rgba(0,0,0,0.1);
+        transition: opacity 0.33s ease,
+                    transform 0.33s 0.33s ease,
+                    top 0s 0.33s linear;
+
+        li {
+          display: inline-block;
+          vertical-align: middle;
+          float: none;
+          text-align: center;
+
+          &:before, &:after {
+            // display: none;
+          }
+
+          a {
+            width: auto;
+          }
+        }
+      }
+
+      &:hover {
+        .sub-menu {
+          transition: opacity 0.33s 0.125s ease,
+                      transform 0.33s ease,
+                      top 0s 0s linear;
+          transform: translateY(0);
+          opacity: 1;
+          top: 92px;
+        }
+      }
     }
   }
 
   .booking {
     padding-right: 0.33em;
     height: 80%;
+    position: relative;
+    z-index: 1000;
 
     button {
       height: 100%;
@@ -104,10 +168,12 @@
   width: 100%;
   height: 50px;
   z-index: 1;
-  overflow: scroll;
+  overflow: hidden;
 
   &.active {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+    // overflow: scroll;
   }
 
   .custom-logo-link {
@@ -167,5 +233,9 @@ body.home {
   }
   #mobile_masthead {
     display: block;
+
+    .sub-menu {
+      display: none;
+    }
   }
 }

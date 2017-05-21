@@ -782,6 +782,8 @@ body.home #content {
   padding-left: 0.5em;
   height: 46px;
   margin-top: -1px;
+  position: relative;
+  z-index: 1000;
 }
 #masthead .custom-logo-link img {
   display: block;
@@ -790,12 +792,25 @@ body.home #content {
 }
 #masthead nav {
   padding-left: 1.66em;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+#masthead nav .menu-main-navigation-container {
+  height: 100%;
+}
+#masthead nav ul {
+  height: 100%;
+  display: table;
 }
 #masthead nav li {
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.9em;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
 }
 #masthead nav li a {
   color: rgba(40, 40, 40, 1);
@@ -829,9 +844,41 @@ body.home #content {
 #masthead nav li:hover:after {
   animation: tilde-wiggle-right 0.8s ease;
 }
+#masthead nav li .sub-menu {
+  position: fixed;
+  top: -92px;
+  width: 100%;
+  left: 0;
+  height: auto;
+  background: rgba(255, 255, 255, 0.9);
+  display: block;
+  box-sizing: border-box;
+  padding: 18px 84px;
+  transform: translateY(-110%);
+  opacity: 0;
+  box-shadow: 0px 6px 3px -6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.33s ease, transform 0.33s 0.33s ease, top 0s 0.33s linear;
+}
+#masthead nav li .sub-menu li {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  text-align: center;
+}
+#masthead nav li .sub-menu li a {
+  width: auto;
+}
+#masthead nav li:hover .sub-menu {
+  transition: opacity 0.33s 0.125s ease, transform 0.33s ease, top 0s 0s linear;
+  transform: translateY(0);
+  opacity: 1;
+  top: 92px;
+}
 #masthead .booking {
   padding-right: 0.33em;
   height: 80%;
+  position: relative;
+  z-index: 1000;
 }
 #masthead .booking button {
   height: 100%;
@@ -855,10 +902,11 @@ body.home #content {
   width: 100%;
   height: 50px;
   z-index: 1;
-  overflow: scroll;
+  overflow: hidden;
 }
 #mobile_masthead.active {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
 #mobile_masthead .custom-logo-link {
   padding: 0.33em 0 0 0.66em;
@@ -906,6 +954,9 @@ body.home #masthead, body.home #mobile_masthead {
   }
   #mobile_masthead {
     display: block;
+  }
+  #mobile_masthead .sub-menu {
+    display: none;
   }
 }
 /*--------------------------------------------------------------
