@@ -83,6 +83,28 @@ $thumb_url = $thumb_url_array[0];
             <?php } ?>
           <?php } ?>
 
+          <?php if ($format == 'video-embed') { ?>
+            <?php if (get_field('arrangement') == 'text-img') { ?>
+              <div class="text fadie text-img">
+                <h1 class="title"><?php the_title() ?></h1>
+                <p><?php the_content() ?></p>
+              </div>
+            <?php } ?>
+
+              <div class="vid-cont inline-block">
+                <div class="wrapper">
+                  <?php the_field('embed'); ?>
+                </div>
+              </div>
+
+            <?php if (get_field('arrangement') == 'img-text') { ?>
+              <div class="text fadie img-text">
+                <h1 class="title"><?php the_title() ?></h1>
+                <p><?php the_content() ?></p>
+              </div>
+            <?php } ?>
+          <?php } ?>
+
           <?php if ($format == 'banner') { ?>
             <div class="text fadie relative">
               <h1 class="title"><?php the_title() ?></h1>
