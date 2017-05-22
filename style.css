@@ -1462,15 +1462,16 @@ body.admin-bar #Home {
 .primary-page-type .sub-menu ul li {
   display: inline-block;
   margin: 0 1em;
-  padding-bottom: 0.33em;
-  position: relative;
 }
 .primary-page-type .sub-menu ul li a {
   color: black;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
 }
-.primary-page-type .sub-menu ul li:after {
+.primary-page-type .sub-menu ul li a:after {
   content: "";
   display: block;
   width: 100%;
@@ -1479,7 +1480,7 @@ body.admin-bar #Home {
   transform: translateY(0.2em);
   transition: all 0.33s ease;
 }
-.primary-page-type .sub-menu ul li:hover:after, .primary-page-type .sub-menu ul li.current-menu-item:after {
+.primary-page-type .sub-menu ul li:hover a:after, .primary-page-type .sub-menu ul li.current-menu-item a:after {
   transform: translateY(0);
   background: rgba(0, 0, 0, 1);
 }
@@ -1746,6 +1747,23 @@ body.admin-bar #Home {
     width: 100%;
   }
 }
+@media screen and (max-width: 600px) {
+  .primary-page-type .sub-menu ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .primary-page-type .sub-menu ul:before, .primary-page-type .sub-menu ul:after {
+    display: none;
+  }
+  .primary-page-type .sub-menu ul li {
+    width: 30%;
+    margin: 0.33em 0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
 @media screen and (max-width: 480px) {
   .primary-page-type .posts .post .content.flex-column {
     display: block;
@@ -1766,42 +1784,6 @@ body.admin-bar #Home {
   }
   .primary-page-type .posts .post .content.slideshow .slides-cont {
     min-width: auto;
-  }
-  .primary-page-type .sub-menu ul {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
-  .primary-page-type .sub-menu ul:before, .primary-page-type .sub-menu ul:after {
-    display: none;
-  }
-  .primary-page-type .sub-menu ul li {
-    width: 30%;
-    margin: 0.33em 0;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .primary-page-type .sub-menu ul li:after {
-    display: none;
-  }
-  .primary-page-type .sub-menu ul li a {
-    padding-bottom: 0.33em;
-    position: relative;
-    display: inline-block;
-  }
-  .primary-page-type .sub-menu ul li a:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: rgba(0, 0, 0, 0);
-    transform: translateY(0.2em);
-    transition: all 0.33s ease;
-  }
-  .primary-page-type .sub-menu ul li:hover a:after, .primary-page-type .sub-menu ul li.current-menu-item a:after {
-    transform: translateY(0);
-    background: rgba(0, 0, 0, 1);
   }
 }
 #blog_primary {

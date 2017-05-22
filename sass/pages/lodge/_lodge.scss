@@ -73,26 +73,28 @@
         a {
           color: black;
           text-decoration: none;
-          display: block;
-        }
+          display: inline-block;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.9em;
 
-        padding-bottom: 0.33em;
-        position: relative;
-
-        &:after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 1px;
-          background: rgba(0,0,0,0);
-          transform: translateY(0.2em);
-          transition: all 0.33s ease;
+          &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: rgba(0,0,0,0);
+            transform: translateY(0.2em);
+            transition: all 0.33s ease;
+          }
         }
 
         &:hover, &.current-menu-item {
-          &:after {
-            transform: translateY(0);
-            background: rgba(0,0,0,1);
+          a {
+            &:after {
+              transform: translateY(0);
+              background: rgba(0,0,0,1);
+            }
           }
         }
       }
@@ -451,6 +453,28 @@
     }
   }
 }
+@media screen and (max-width: 600px) {
+  .primary-page-type {
+    .sub-menu {
+      ul {
+        &:before, &:after {
+          display: none;
+        }
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        li {
+          width: 30%;
+          margin: 0.33em 0;
+          font-size: 0.9em;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 480px) {
   .primary-page-type {
     .posts {
@@ -474,54 +498,6 @@
             }
             .slides-cont {
               min-width: auto;
-            }
-          }
-        }
-      }
-    }
-
-    .sub-menu {
-      ul {
-        &:before, &:after {
-          display: none;
-        }
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-
-        li {
-          width: 30%;
-          margin: 0.33em 0;
-          font-size: 0.9em;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-
-          &:after {
-            display: none;
-          }
-
-          a {
-            padding-bottom: 0.33em;
-            position: relative;
-            display: inline-block;
-
-            &:after {
-              content: "";
-              display: block;
-              width: 100%;
-              height: 1px;
-              background: rgba(0,0,0,0);
-              transform: translateY(0.2em);
-              transition: all 0.33s ease;
-            }
-          }
-
-          &:hover, &.current-menu-item {
-            a {
-              &:after {
-                transform: translateY(0);
-                background: rgba(0,0,0,1);
-              }
             }
           }
         }
