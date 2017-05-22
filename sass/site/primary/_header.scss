@@ -175,6 +175,12 @@ body.admin-bar {
   }
 }
 
+body.admin-bar {
+  #mobile_masthead {
+    top: 50px!important;
+  }
+}
+
 #mobile_masthead {
   display: none;
   position: fixed;
@@ -183,6 +189,7 @@ body.admin-bar {
   height: 50px;
   z-index: 1;
   overflow: hidden;
+  top: 0;
 
   &.active {
     height: auto;
@@ -218,20 +225,66 @@ body.admin-bar {
     // display: none;
     padding-top: 50px;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.66em;
 
     ul {
       width: 100%;
+    }
 
-      li {
-        display: block;
-        float: none;
+    li, .booking {
+      display: block;
+      float: none;
+
+      a {
+        padding: 0.66em 0;
+        color: $color__black;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.1em;
+
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 12px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          top: calc(50% - 2.5px);
+          opacity: 0;
+          transition: opacity 0.33s ease;
+        }
+
+        &:before {
+          left: -24px;
+          background-image: url("images/left-spike.svg");
+        }
+        &:after {
+          right: -24px;
+          background-image: url("images/right-spike.svg");
+        }
+      }
+
+
+      &:hover, &.current-menu-item {
+        a {
+          &:before, &:after {
+            opacity: 1;
+          }
+        }
+      }
+
+      &:hover {
+        &:before {
+          animation: tilde-wiggle-left 0.8s ease;
+        }
+        &:after {
+          animation: tilde-wiggle-right 0.8s ease;
+        }
       }
     }
 
-    a {
-      padding: 0.5em;
-    }
+
   }
 }
 

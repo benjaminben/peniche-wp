@@ -13,6 +13,19 @@
 
   h2 {
     margin: 0 0 0.33em 0;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+  }
+
+  .section {
+    font-size: 0.9em;
+    padding: 0 1em;
+    box-sizing: border-box;
+
+    .title {
+      margin: 0 auto 0.66em;
+      letter-spacing: 0.1em;
+    }
   }
 
   .hotel {
@@ -47,6 +60,7 @@
   }
   .attribution {
     width: 100%;
+    font-size: 0.8em;
   }
 
   .cat {
@@ -54,6 +68,37 @@
 
     span {
       font-size: 0.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #colophon {
+    .section {
+      width: 100%;
+      flex: auto;
+      text-align: center;
+      margin: 1em auto;
+
+      .cat {
+        display: inline-block;
+        vertical-align: top;
+        margin: 1em;
+        min-width: 200px;
+      }
+
+      &.hotel {
+        order: 1
+      }
+      &.restaurant {
+        order: 2
+      }
+      &.social {
+        order: 3
+      }
+      &.attribution {
+        order: 4
+      }
     }
   }
 }

@@ -16,7 +16,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
       <div class="content flex flow-row-wrap">
-        <span class="hotel">
+        <span class="hotel section">
+          <h1 class="title">HOTEL</h1>
           <span class="cat block">
             <h2>Booking:</h2>
             <span class="block">+351 262 700 030</span>
@@ -42,7 +43,7 @@
             </span>
           </span>
         </span>
-        <span class="social">
+        <span class="social section">
           <form>
             <input class="block" type="text" />
             <button>Subscribe</button>
@@ -62,7 +63,8 @@
             </a>
           </span>
         </span>
-        <span class="restaurant">
+        <span class="restaurant section">
+          <h1 class="title">RESTAURANT</h1>
           <span class="cat block">
             <h2>Reservations:</h2>
             <span class="block">+351 262 700 030</span>
@@ -96,7 +98,7 @@
             </span>
           </span>
         </span>
-        <span class="attribution">
+        <span class="attribution section">
           <h2>Surfers Lodge Peniche</h2>
           <span>&copy; 2017 - all rights reserved.</span>
           <span>Read our <a href="<?php echo get_page_link(291) ?>">Terms & Conditions</a></span>

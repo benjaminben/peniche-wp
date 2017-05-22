@@ -1,6 +1,13 @@
+body.admin-bar {
+  #Home {
+    min-height: calc(100vh - 30px)!important;
+  }
+}
+
 #Home {
   min-height: 100vh;
   background: black;
+  position: relative;
 
   &.loading {
     * {
@@ -64,7 +71,7 @@
   .table-of-contents {
     width: 300px;
     padding: 2em 1em;
-    top: 5em; left: 2.5em;
+    top: 3em; left: 3em;
     box-sizing: border-box;
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.8);
