@@ -22,7 +22,6 @@
       iframe {
         position: absolute;
         top: 0; left: 0;
-        // bottom: 0; right: 0;
         width: 100%;
         height: 100%;
       }
@@ -133,6 +132,13 @@
         max-width: 1200px;
         margin: 0 auto;
 
+        .title {
+          margin: 0;
+          color: $color__logo-dark;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
         &.flex-column {
           display: flex;
           flex-flow: row wrap;
@@ -150,10 +156,6 @@
             }
             &.img-text {
               padding: 0 0 0 3em;
-            }
-
-            .title {
-              margin: 0;
             }
           }
 

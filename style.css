@@ -767,13 +767,13 @@ body.home #content {
  ## Main Navigation
  --------------------------------------------------------------*/
 body.admin-bar #masthead nav li:hover .sub-menu {
-  top: 92px !important;
+  top: 102px !important;
 }
 #masthead {
   position: fixed;
   background: rgba(255, 255, 255, 0.9);
   width: 100%;
-  height: 60px;
+  height: 70px;
   z-index: 1;
   transition: height 0.33s ease;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
@@ -782,9 +782,9 @@ body.admin-bar #masthead nav li:hover .sub-menu {
   height: 70px;
 }
 #masthead .custom-logo-link {
-  padding-left: 0.5em;
-  height: 46px;
-  margin-top: -1px;
+  padding-left: 20px;
+  height: 45px;
+  margin-top: -2px;
   position: relative;
   z-index: 1000;
 }
@@ -849,14 +849,14 @@ body.admin-bar #masthead nav li:hover .sub-menu {
 }
 #masthead nav li .sub-menu {
   position: fixed;
-  top: -92px;
+  top: -102px;
   width: 100%;
   left: 0;
   height: auto;
   background: rgba(255, 255, 255, 0.9);
   display: block;
   box-sizing: border-box;
-  padding: 18px 84px;
+  padding: 18px 96px;
   transform: translateY(-110%);
   opacity: 0;
   box-shadow: 0px 6px 3px -6px rgba(0, 0, 0, 0.1);
@@ -875,7 +875,7 @@ body.admin-bar #masthead nav li:hover .sub-menu {
   transition: opacity 0.33s 0.125s ease, transform 0.33s ease, top 0s 0s linear;
   transform: translateY(0);
   opacity: 1;
-  top: 60px;
+  top: 70px;
 }
 #masthead .booking {
   padding-right: 0.33em;
@@ -890,7 +890,7 @@ body.admin-bar #masthead nav li:hover .sub-menu {
   border-radius: 0;
   border: none;
   color: white;
-  padding: 0 30px;
+  padding: 0 40px;
   font-size: 1em;
   letter-spacing: 0.1em;
   outline: none;
@@ -1051,7 +1051,27 @@ body.home #masthead, body.home #mobile_masthead {
   margin: 0 auto 1em;
 }
 #colophon .social form input {
+  font-size: 1em;
+  letter-spacing: 0.1em;
   margin: 0 auto 1em;
+  padding: 0.33em 0.66em;
+  box-sizing: border-box;
+}
+#colophon .social form input[type="submit"] {
+  margin: 1em auto 2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  width: auto;
+  background: #7c9cb3;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: none;
+  color: white;
+  outline: none;
+  display: block;
+}
+#colophon .social form input[type="submit"]:hover, #colophon .social form input[type="submit"]:active {
+  background: #004066;
 }
 #colophon .attribution {
   width: 100%;
@@ -1186,7 +1206,7 @@ embed, iframe, object {
   margin-bottom: 1.5em;
 }
 .page-content {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .generic-page-content {
   max-width: 1200px;
@@ -1223,6 +1243,7 @@ body.admin-bar #Home {
   min-height: 100vh;
   background: black;
   position: relative;
+  overflow: hidden;
 }
 #Home.loading * {
   display: none !important;
@@ -1347,13 +1368,30 @@ body.admin-bar #Home {
 #Home .watch-cta {
   bottom: 0;
   right: 0;
-  font-size: 1.33em;
-  font-weight: 400;
   letter-spacing: 0.2em;
   color: white;
-  padding: 0.66em 1.66em;
-  background: #7c9cb3;
+  background: rgba(0, 64, 102, 0.9);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  width: 110px;
+  height: 110px;
+  padding: 1.1em 0.6em 0;
+  box-sizing: border-box;
+}
+#Home .watch-cta p {
+  margin: 0;
+  font-weight: 600;
+}
+#Home .watch-cta svg {
+  display: block;
+  width: 66%;
+  margin: 0 auto;
+  height: auto;
+}
+#Home .watch-cta:hover #welcome_eye_lid {
+  animation: welcome-eye-blink 0.33s;
+}
+#Home .watch-cta:hover #welcome_eye {
+  animation: welcome-eye-squeeze 0.33s;
 }
 #home_player {
   display: none;
@@ -1376,6 +1414,22 @@ body.admin-bar #Home {
 #Home.video-active .watch-cta {
   transform: translate(100%, 100%);
 }
+@keyframes welcome-eye-blink {
+  10% {
+    transform: translateY(15px) scaleY(0);
+  }
+  100% {
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes welcome-eye-squeeze {
+  10% {
+    transform: translateY(3px) scaleY(0.8);
+  }
+  100% {
+    animation-timing-function: ease-out;
+  }
+}
 @keyframes tilde-wiggle-left {
   0% {
     transform: translateX(0%);
@@ -1396,6 +1450,23 @@ body.admin-bar #Home {
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 600px) {
+  #Home .table-of-contents {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 3em auto;
+  }
+  #Home .watch-cta {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    display: block;
+    margin: 0px auto;
+    border-radius: 4px;
+    transform: none !important;
   }
 }
 .primary-page-type {
@@ -1510,6 +1581,12 @@ body.admin-bar #Home {
   max-width: 1200px;
   margin: 0 auto;
 }
+.primary-page-type .posts .post .content .title {
+  margin: 0;
+  color: #004066;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 .primary-page-type .posts .post .content.flex-column {
   display: flex;
   flex-flow: row wrap;
@@ -1526,9 +1603,6 @@ body.admin-bar #Home {
 }
 .primary-page-type .posts .post .content.flex-column .text.img-text {
   padding: 0 0 0 3em;
-}
-.primary-page-type .posts .post .content.flex-column .text .title {
-  margin: 0;
 }
 .primary-page-type .posts .post .content.flex-column .img-cont {
   width: 100%;
@@ -1864,6 +1938,28 @@ body.admin-bar #Home {
   font-size: 1em;
   letter-spacing: 0.1em;
   outline: none;
+}
+@media screen and (max-width: 768px) {
+  #blog_primary {
+    float: none;
+    width: 100%;
+  }
+  #blog_sidebar {
+    float: none;
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    padding: 0;
+  }
+  select, input[type="text"] {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #blog_primary {
+    font-size: 0.8em;
+  }
 }
 #Booking .entry-title {
   display: none;

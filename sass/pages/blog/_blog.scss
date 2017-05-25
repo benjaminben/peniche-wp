@@ -34,7 +34,6 @@
 #blog_sidebar {
   float: right;
   width: 30%;
-  // max-width: 300px;
   box-sizing: border-box;
   padding: 3em 4em 0 0;
 
@@ -91,5 +90,28 @@
         outline: none;
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #blog_primary {
+    float: none;
+    width: 100%;
+  }
+  #blog_sidebar {
+    float: none;
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    padding: 0;
+  }
+  select, input[type="text"] {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #blog_primary {
+    font-size: 0.8em;
   }
 }

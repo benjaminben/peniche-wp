@@ -45,8 +45,8 @@
         </span>
         <span class="social section">
           <form>
-            <input class="block" type="text" />
-            <button>Subscribe</button>
+            <input class="block" type="text" placeholder="EMAIL" />
+            <input type="submit" value="SUBSCRIBE" />
           </form>
           <span class="icons block">
             <a class="icon inline-table" href="https://google.com">

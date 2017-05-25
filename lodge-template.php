@@ -136,8 +136,10 @@ $thumb_url = $thumb_url_array[0];
                     ?>
                     <span class="slide absolute<?php echo ($slide_count == 0 ? " active" : "") ?>"
                           style="background-image:url(<?php echo $image ?>)">
-                        <img src="<?php echo $image ?>" />
-                      <p class="absolute"><?php echo $desc ?></p>
+                        <img src="<?php echo $image ?>" alt="<?php echo $desc ?>" />
+                        <?php if ($desc) { ?>
+                          <p class="absolute"><?php echo $desc ?></p>
+                        <?php } ?>
                     </span>
                 <?php
                     $slide_count++;

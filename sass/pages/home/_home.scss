@@ -8,6 +8,7 @@ body.admin-bar {
   min-height: 100vh;
   background: black;
   position: relative;
+  overflow: hidden;
 
   &.loading {
     * {
@@ -30,8 +31,6 @@ body.admin-bar {
       overflow: hidden;
       z-index: 0;
       opacity: 0;
-      // transition: opacity 0.33s ease;
-      // display: none;
 
       .img-cont {
         height: 100%;
@@ -40,22 +39,17 @@ body.admin-bar {
         background-size: cover;
         background-position: center center;
         width: 100vw;
-        // transform: background-position 0.8s ease;
 
         img {
-          // width: 1px; height: 1px;
-          // position: absolute;
           display: none;
         }
       }
 
       &.active {
-        // display: block;
         opacity: 1;
         z-index: 2;
 
         .img-cont {
-          // background-position: center center;
         }
       }
     }
@@ -156,13 +150,34 @@ body.admin-bar {
   .watch-cta {
     bottom: 0;
     right: 0;
-    font-size: 1.33em;
-    font-weight: 400;
     letter-spacing: 0.2em;
     color: white;
-    padding: 0.66em 1.66em;
-    background: $color__logo-light;
+    background: rgba(0,64,102,0.9);
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
+    width: 110px; height: 110px;
+    padding: 1.1em 0.6em 0;
+    box-sizing: border-box;
+
+    p {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    svg {
+      display: block;
+      width: 66%;
+      margin: 0 auto;
+      height: auto;
+    }
+
+    &:hover {
+      #welcome_eye_lid {
+        animation: welcome-eye-blink 0.33s;
+      }
+      #welcome_eye {
+        animation: welcome-eye-squeeze 0.33s;
+      }
+    }
   }
 }
 
@@ -193,6 +208,23 @@ body.admin-bar {
   }
 }
 
+@keyframes welcome-eye-blink {
+  10% {
+    transform: translateY(15px) scaleY(0)
+  }
+  100% {
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes welcome-eye-squeeze {
+  10% {
+    transform: translateY(3px) scaleY(0.8)
+  }
+  100% {
+    animation-timing-function: ease-out;
+  }
+}
+
 @keyframes tilde-wiggle-left {
   0% {
     transform: translateX(0%)
@@ -214,5 +246,25 @@ body.admin-bar {
   }
   100% {
     transform: translateX(0%)
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #Home {
+    .table-of-contents {
+      position: relative;
+      top: auto;
+      left: auto;
+      margin: 3em auto;
+    }
+    .watch-cta {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      display: block;
+      margin: 0px auto;
+      border-radius: 4px;
+      transform: none!important;
+    }
   }
 }
