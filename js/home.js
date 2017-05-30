@@ -75,12 +75,11 @@ $(document).ready(function() {
       zIndex: 1,
     })
     $next_img.css({
-      right: $slideshow.width() / 4 + "px",
-      left: "auto"
+      left: -$slideshow.width() / 4 + "px"
     })
 
     TweenMax.to($next_img, 0.8, {
-      right: "0px",
+      left: "0px",
       ease: Power3.easeInOut,
     })
     TweenMax.to($prev, 0.8, {
@@ -91,7 +90,7 @@ $(document).ready(function() {
         $next.addClass("active")
         $prev.css({left: "", right: "", width: ""})
         $next.css({opacity: "", zIndex: ""})
-        $next_img.css({right: "", left: ""})
+        $next_img.css({left: "0"})
         slideComplete($next)
       }
     })

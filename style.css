@@ -1048,13 +1048,14 @@ body.home #masthead, body.home #mobile_masthead {
   align-self: center;
 }
 #colophon .social form {
+  max-width: 230px;
   margin: 0 auto 1em;
 }
 #colophon .social form input {
   font-size: 1em;
   letter-spacing: 0.1em;
   margin: 0 auto 1em;
-  padding: 0.33em 0.66em;
+  padding: 0.5em 0.8em;
   box-sizing: border-box;
 }
 #colophon .social form input[type="submit"] {
