@@ -1,6 +1,7 @@
 <?php
-  // wp_register_script( 'yt-iframe', 'https://www.youtube.com/iframe_api', null, 1.1, true );
-  // wp_enqueue_script( 'yt-iframe' );
+  /* WPCF7 date-picker fallback */
+  add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
+
   wp_register_script('booking', get_template_directory_uri() . '/js/booking.js', null, 1.1, true);
   wp_enqueue_script( 'booking' );
   get_header();

@@ -160,6 +160,8 @@ $(document).ready(function() {
 
   // INIT
   var initHome = function() {
+    $home.addClass("loaded")
+
     slideAuto = true
     slideTimeout = window.setTimeout(slideTick, 3000)
 

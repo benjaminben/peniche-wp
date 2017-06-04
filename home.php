@@ -8,6 +8,13 @@
 ?>
 
   <div id="Home">
+    <div id="intro_loader" class="loader absolute flex justify-center align-center">
+      <div class="cont">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.507 326.682"><path d="M265.36,320.027,42.028,326.682,0,190.479l219.9.184" fill="#41449b" opacity="0.9"></path><path d="M265.989,274.872,42.657,281.526.629,145.323l219.9.184" fill="#6769b0" opacity="0.9"></path><path d="M266.776,228.293,43.444,234.947,1.416,98.744l219.9.184" fill="#8d8ec2" opacity="0.9"></path><path d="M267.969,178.859,44.637,185.513,2.609,49.31l219.9.184" fill="#b3b4d7" opacity="0.9"></path><path d="M268.507,129.549,45.175,136.2,3.147,0l219.9.184" fill="#d9d9eb" opacity="0.9"></path></svg>
+        <span id="loader_cta">LOADING...</span>
+      </div>
+    </div>
+
     <div id="home_player" data-yt-id="<?php echo get_field('video_embed_id') ?>"></div>
 
     <div class="slideshow absolute">
