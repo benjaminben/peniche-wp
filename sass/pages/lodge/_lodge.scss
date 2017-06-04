@@ -82,6 +82,7 @@
             display: block;
             width: 100%;
             height: 1px;
+            margin: 0.2em auto 0;
             background: rgba(0,0,0,0);
             transform: translateY(0.2em);
             transition: all 0.33s ease;
@@ -137,6 +138,17 @@
           color: $color__logo-dark;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          display: inline-block;
+
+          &:after {
+            content: '';
+            display: block;
+            margin: 0.5em auto 0;
+            background: black;
+            opacity: 0.1;
+            height: 1px;
+            width: 100%;
+          }
         }
 
         &.flex-column {
@@ -178,6 +190,12 @@
           width: 100%;
           max-width: none;
           overflow: hidden;
+
+          .title {
+            &:after {
+              display: none;
+            }
+          }
 
           &:before {
             content: '';
@@ -271,7 +289,7 @@
             }
 
             .index-array {
-              top: 100%;
+              top: 101%;
 
               .index {
                 width: 30px;
@@ -408,11 +426,17 @@
     .posts {
       .post {
         .content {
+          .title {
+            text-align: center;
+            width: 100%;
+
+            &:after {
+              width: 80%;
+            }
+          }
+
           &.flex-column {
             .text {
-              .title {
-                text-align: center;
-              }
               &.text-img {
                 padding: 0 0 30px;
               }
@@ -424,9 +448,6 @@
 
           &.video-embed {
             .text {
-              .title {
-                text-align: center;
-              }
               &.text-img {
                 padding: 0 0 30px;
               }
@@ -482,6 +503,10 @@
     .posts {
       .post {
         .content {
+          .title {
+            font-size: 1.33em;
+          }
+
           &.flex-column {
             display: block;
             .text {

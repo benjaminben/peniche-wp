@@ -197,3 +197,13 @@
   font-weight: 900;
   font-style: italic;
 }
+
+@font-face {
+  font-family: 'James Fajardo';
+  src: url('fonts/james_fajardo/JamesFajardo.eot');
+  src: url('fonts/james_fajardo/JamesFajardo.eot?#iefix') format('embedded-opentype'),
+    url('fonts/james_fajardo/JamesFajardo.woff') format('woff'),
+    url('fonts/james_fajardo/JamesFajardo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

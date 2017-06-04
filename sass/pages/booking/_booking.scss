@@ -187,6 +187,18 @@
       }
     }
 
+    .interested-in {
+      input {
+        display: inline-block;
+        width: auto;
+        margin-right: 0.66em;
+      }
+      .wpcf7-list-item {
+        display: block;
+        margin-bottom: 1em;
+      }
+    }
+
     .wpcf7-response-output {
       border: none!important;
       text-align: center;

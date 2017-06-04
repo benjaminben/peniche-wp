@@ -28,6 +28,10 @@
     }
   }
 
+  .cat {
+
+  }
+
   .hotel {
     flex: 0 1 33%;
     width: 33%;
@@ -41,7 +45,7 @@
     box-sizing: border-box;
 
     .hours {
-      span {
+      p {
         margin-bottom: 0.66em;
       }
     }
@@ -90,8 +94,12 @@
   .cat {
     margin-bottom: 1em;
 
+    p {
+      margin: 0;
+    }
+
     span {
-      font-size: 0.8em;
+      font-size: 0.9em;
     }
   }
 }

@@ -466,6 +466,13 @@ big {
   font-weight: 900;
   font-style: italic;
 }
+@font-face {
+  font-family: 'James Fajardo';
+  src: url('fonts/james_fajardo/JamesFajardo.eot');
+  src: url('fonts/james_fajardo/JamesFajardo.eot?#iefix') format('embedded-opentype'), url('fonts/james_fajardo/JamesFajardo.woff') format('woff'), url('fonts/james_fajardo/JamesFajardo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /*--------------------------------------------------------------
  # Elements
  --------------------------------------------------------------*/
@@ -1042,7 +1049,7 @@ body.home #masthead, body.home #mobile_masthead {
   padding: 0 1em;
   box-sizing: border-box;
 }
-#colophon .restaurant .hours span {
+#colophon .restaurant .hours p {
   margin-bottom: 0.66em;
 }
 #colophon .social {
@@ -1084,8 +1091,11 @@ body.home #masthead, body.home #mobile_masthead {
 #colophon .cat {
   margin-bottom: 1em;
 }
+#colophon .cat p {
+  margin: 0;
+}
 #colophon .cat span {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 @media screen and (max-width: 768px) {
   #colophon .section {
@@ -1249,6 +1259,10 @@ body.admin-bar #Home {
 }
 #intro_loader span {
   letter-spacing: 0.1em;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
 }
 #intro_loader svg {
   width: 80px;
@@ -1600,6 +1614,7 @@ body.admin-bar #Home {
   display: block;
   width: 100%;
   height: 1px;
+  margin: 0.2em auto 0;
   background: rgba(0, 0, 0, 0);
   transform: translateY(0.2em);
   transition: all 0.33s ease;
@@ -1639,6 +1654,16 @@ body.admin-bar #Home {
   color: #004066;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  display: inline-block;
+}
+.primary-page-type .posts .post .content .title:after {
+  content: '';
+  display: block;
+  margin: 0.5em auto 0;
+  background: black;
+  opacity: 0.1;
+  height: 1px;
+  width: 100%;
 }
 .primary-page-type .posts .post .content.flex-column {
   display: flex;
@@ -1672,6 +1697,9 @@ body.admin-bar #Home {
   width: 100%;
   max-width: none;
   overflow: hidden;
+}
+.primary-page-type .posts .post .content.banner .title:after {
+  display: none;
 }
 .primary-page-type .posts .post .content.banner:before {
   content: '';
@@ -1760,7 +1788,7 @@ body.admin-bar #Home {
   display: block;
 }
 .primary-page-type .posts .post .content.slideshow .slides .index-array {
-  top: 100%;
+  top: 101%;
 }
 .primary-page-type .posts .post .content.slideshow .slides .index-array .index {
   width: 30px;
@@ -1850,17 +1878,18 @@ body.admin-bar #Home {
   }
 }
 @media screen and (max-width: 888px) {
-  .primary-page-type .posts .post .content.flex-column .text .title {
+  .primary-page-type .posts .post .content .title {
     text-align: center;
+    width: 100%;
+  }
+  .primary-page-type .posts .post .content .title:after {
+    width: 80%;
   }
   .primary-page-type .posts .post .content.flex-column .text.text-img {
     padding: 0 0 30px;
   }
   .primary-page-type .posts .post .content.flex-column .text.img-text {
     padding: 30px 0 0;
-  }
-  .primary-page-type .posts .post .content.video-embed .text .title {
-    text-align: center;
   }
   .primary-page-type .posts .post .content.video-embed .text.text-img {
     padding: 0 0 30px;
@@ -1892,6 +1921,9 @@ body.admin-bar #Home {
   }
 }
 @media screen and (max-width: 480px) {
+  .primary-page-type .posts .post .content .title {
+    font-size: 1.33em;
+  }
   .primary-page-type .posts .post .content.flex-column {
     display: block;
   }
@@ -2164,6 +2196,15 @@ body.admin-bar #Home {
 #Booking form .room-details .note {
   letter-spacing: 0.1em;
   font-size: 0.8em;
+}
+#Booking form .interested-in input {
+  display: inline-block;
+  width: auto;
+  margin-right: 0.66em;
+}
+#Booking form .interested-in .wpcf7-list-item {
+  display: block;
+  margin-bottom: 1em;
 }
 #Booking form .wpcf7-response-output {
   border: none !important;

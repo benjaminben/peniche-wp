@@ -14,34 +14,29 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+    <div class="site-info">
       <div class="content flex flow-row-wrap">
         <span class="hotel section">
           <h1 class="title">HOTEL</h1>
+
+          <?php
+            $hotel = get_field('hotel', 'option');
+            if (have_rows('hotel', 'option')):
+              while (have_rows('hotel', 'option')) : the_row();
+                $label = get_sub_field('label');
+                $content = get_sub_field('content');
+          ?>
           <span class="cat block">
-            <h2>Booking:</h2>
-            <span class="block">+351 262 700 030</span>
+            <h2><?php echo $label ?></h2>
             <span class="block">
-              <a href="mailto:info@surferslodgepeniche.com">
-                info@surferslodgepeniche.com
-              </a>
+              <?php echo $content ?>
             </span>
           </span>
-          <span class="cat block">
-            <h2>Address:</h2>
-            <span class="block">
-              Avenida do mar, Nº 132<br/>
-              2520-050 Casais do Baleal - Ferrel<br/>
-              Peniche - Portugal
-            </span>
-          </span>
-          <span class="cat block">
-            <h2>GPS:</h2>
-            <span class="block">
-              Latitude: N39 22 14<br/>
-              Longitude: W9 19 41
-            </span>
-          </span>
+          <?php
+              endwhile;
+            endif;
+          ?>
+
         </span>
         <span class="social section">
           <form>
@@ -49,54 +44,41 @@
             <input type="submit" value="SUBSCRIBE" />
           </form>
           <span class="icons block">
-            <a class="icon inline-table" href="https://google.com">
-              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/facebook-letter-logo.png" ?>" /></span>
-            </a>
-            <a class="icon inline-table" href="https://google.com">
-              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/instagram-logo.png" ?>" /></span>
-            </a>
-            <a class="icon inline-table" href="https://google.com">
-              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/google-plus.png" ?>" /></span>
-            </a>
-            <a class="icon inline-table" href="https://google.com">
-              <span class="table-cell"><img src="<?php echo get_site_url() . "/wp-content/uploads/2017/05/vimeo-logo.png" ?>" /></span>
-            </a>
+            <?php
+              $socials = get_field('social', 'option');
+              if (have_rows('social', 'option')):
+                while (have_rows('social', 'option')) : the_row();
+                  $logo = get_sub_field('logo');
+                  $link = get_sub_field('link');
+            ?>
+              <a class="icon inline-table bloob" href="<?php echo $link ?>">
+                <span class="table-cell"><img src="<?php echo $logo ?>" /></span>
+              </a>
+            <?php
+                endwhile;
+              endif;
+            ?>
           </span>
         </span>
         <span class="restaurant section">
           <h1 class="title">RESTAURANT</h1>
+          <?php
+            $restaurant = get_field('restaurant', 'option');
+            if (have_rows('restaurant', 'option')):
+              while (have_rows('restaurant', 'option')) : the_row();
+                $label = get_sub_field('label');
+                $content = get_sub_field('content');
+          ?>
           <span class="cat block">
-            <h2>Reservations:</h2>
-            <span class="block">+351 262 700 030</span>
+            <h2><?php echo $label ?></h2>
             <span class="block">
-              <a href="mailto:info@surferslodgepeniche.com">
-                info@surferslodgepeniche.com
-              </a>
+              <?php echo $content ?>
             </span>
           </span>
-          <span class="cat block hours">
-            <h2>Hours:</h2>
-            <span class="block">
-              <strong>Breakfast (buffet)</strong>
-              <br/>
-              Mon-Sun 07:30am - 10:00am
-            </span>
-            <span class="block">
-              <strong>Lunch</strong>
-              <br/>
-              Mon-Sun 07:30am - 10:00am
-            </span>
-            <span class="block">
-              <strong>Snacks</strong>
-              <br/>
-              Mon-Sun 07:30am - 10:00am
-            </span>
-            <span class="block">
-              <strong>Dinner</strong>
-              <br/>
-              Mon-Sun 07:30am - 10:00am
-            </span>
-          </span>
+          <?php
+              endwhile;
+            endif;
+          ?>
         </span>
         <span class="attribution section">
           <h2>Surfers Lodge Peniche</h2>

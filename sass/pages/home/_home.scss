@@ -4,7 +4,6 @@ body.admin-bar {
   }
 }
 
-
 #intro_loader {
   width: 100%;
   height: 100%;
@@ -12,6 +11,10 @@ body.admin-bar {
 
   span {
     letter-spacing: 0.1em;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
   }
 
   svg {
