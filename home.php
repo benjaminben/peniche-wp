@@ -1,7 +1,7 @@
 <?php
   wp_register_script( 'yt-iframe', 'https://www.youtube.com/iframe_api', null, 1.1, true );
-  wp_enqueue_script( 'yt-iframe' );
   wp_register_script('home', get_template_directory_uri() . '/js/home.js', array( 'gsap' ), null, 1.1, true);
+  wp_enqueue_script( 'yt-iframe' );
   wp_enqueue_script( 'home' );
   get_header();
   $post = get_post(89);
@@ -62,7 +62,7 @@
 
     <span id="home_watch_cta" class="watch-cta absolute pointer uppercase text-center"
           style="opacity: 0">
-      <p>WATCH</p>
+      <p class="uppercase">watch our video</p>
       <svg id="welcome_intro_cta_svg" width="100" height="100" viewBox="0 0 30 30" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <path d="M0,15.089434 C0,16.3335929 5.13666091,24.1788679 14.9348958,24.1788679 C24.7325019,24.1788679 29.8697917,16.3335929 29.8697917,15.089434 C29.8697917,13.8456167 24.7325019,6 14.9348958,6 C5.13666091,6 0,13.8456167 0,15.089434 Z" id="welcome_eye_outline"></path>

@@ -1,16 +1,26 @@
 $(document).ready(function() {
+  var $marquee_iframe = $(".marquee-vid iframe")
+  var $marquee_mask = $(".marquee-vid .mask")
+
+  $marquee_mask.on("click", function(e) {
+    $(this).css("display", "none")
+    $marquee_iframe.attr(
+      "src",
+      $marquee_iframe.attr("src") +
+        ($marquee_iframe.attr("src").indexOf("?") > -1 ? "&autoplay=1" : "?&autoplay=1")
+    )
+  })
+
   var $inactivePosts = $(".post").not(".active")
 
   var classifyActive = function($post) {
-    // if (!$post.hasClass("active")) {
-      $post.addClass("active")
-      $inactivePosts = $(".post").not(".active")
-    // }
+    $post.addClass("active")
+    $inactivePosts = $(".post").not(".active")
   }
 
   var checkPosts = function() {
     $.each($inactivePosts, function(i, p) {
-      if (p.getBoundingClientRect().top < (window.outerHeight-(window.outerHeight*0.2))) {
+      if (p.getBoundingClientRect().top < (window.outerHeight-(window.outerHeight*0.15))) {
         classifyActive($(p))
       }
     })

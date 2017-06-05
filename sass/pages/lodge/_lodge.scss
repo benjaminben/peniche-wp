@@ -2,22 +2,17 @@
   padding-bottom: 80px;
 
   .marquee-vid {
-    .entry-title {
-      display: none;
-    }
-    .entry-content {
-      margin: 0;
-      padding-top: 80px;
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
+    margin: 0;
+    padding-top: 80px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 
-      p {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        box-sizing: border-box;
-      }
+    .vid-cont {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      box-sizing: border-box;
 
       iframe {
         position: absolute;
@@ -25,14 +20,48 @@
         width: 100%;
         height: 100%;
       }
-    }
 
-    .hentry {
-      margin: 0;
-    }
+      .mask {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
 
-    footer {
-      display: none;
+        .watch-cta {
+          top: 0;
+          left: 0;
+          letter-spacing: 0.2em;
+          color: white;
+          background: rgba(0,64,102,0.9);
+          box-shadow: 0 0 3px 0 rgba(0,0,0,0.1);
+          width: 110px; height: 110px;
+          padding: 1em 0.6em 0;
+          box-sizing: border-box;
+
+          p {
+            margin: 0;
+            font-weight: 600;
+          }
+
+          svg {
+            display: block;
+            width: 60px;
+            margin: 0 auto;
+            height: 60px;
+          }
+        }
+      }
+
+      &:hover {
+        #welcome_eye_lid {
+          animation: welcome-eye-blink 0.33s;
+        }
+        #welcome_eye {
+          animation: welcome-eye-squeeze 0.33s;
+        }
+      }
     }
   }
 
@@ -500,6 +529,14 @@
 }
 @media screen and (max-width: 480px) {
   .primary-page-type {
+    .marquee-vid {
+      .mask {
+        .watch-cta {
+          transform-origin: top left;
+          transform: scale(0.8);
+        }
+      }
+    }
     .posts {
       .post {
         .content {
