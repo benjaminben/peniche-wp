@@ -24,7 +24,7 @@ get_header(); ?>
 	<header>
 		<?php if ($post_slug == "contact") { ?>
 			<div class="banner">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6072.612064489609!2d-9.332066566174134!3d39.372415989642825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spt!4v1495361457524" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+				<iframe id="bloobs" src="https://www.google.com/maps/embed?&pb=!1m18!1m12!1m3!1d5163.869483917412!2d-9.333320882269874!3d39.37132876564806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x96f14c1daa1449ac!2sSurfers+Lodge+Peniche!5e0!3m2!1sen!2sus!4v1500217654113" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>
 		<?php } else { ?>
 			<div class="banner img-cont"
@@ -46,3 +46,4 @@ get_header(); ?>
 
 <?php
 get_footer();
+

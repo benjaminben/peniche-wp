@@ -3,6 +3,7 @@ $(document).ready(function() {
   var $form = $("#Booking .wpcf7-form")
 
   var $roomDeets = $form.find(".room-details")
+  var $surfDeets = $form.find(".surf-details")
   var $dates = $form.find("input[type='date']")
   var $arrival = $form.find("input.arrival")
   var $departure = $form.find("input.departure")
@@ -10,6 +11,9 @@ $(document).ready(function() {
 
   var $select_room = $form.find(".select-room")
   var $room_ops = $select_room.find(".wpcf7-list-item")
+
+  var $select_surf = $form.find(".select-surf")
+  var $surf_ops = $select_surf.find(".wpcf7-list-item")
 
   $.each($dates, function(index, date) {
     var $date = $(date)
@@ -32,8 +36,24 @@ $(document).ready(function() {
     ).attr("data-image") + ")")
   })
 
+  $.each($surf_ops, function(index, op) {
+    $(op).css("background-image", "url(" + $src.find(
+      ".surf-option[data-title='"+$(op).find("input").attr("value")+"']"
+    ).attr("data-image") + ")")
+  })
+
   var clearGuestOps = function() {
     $.each($room_ops, function(index, op) {
+      var $op = $(op)
+      var $input = $op.find("input")
+
+      $op.removeClass("checked")
+      $input.attr("checked", "")
+    })
+  }
+
+  var clearSurfOps = function() {
+    $.each($surf_ops, function(index, op) {
       var $op = $(op)
       var $input = $op.find("input")
 
@@ -61,7 +81,7 @@ $(document).ready(function() {
   }
 
   var displayRoomDetails = function(title) {
-    $room = $src.find(".room[data-title='"+title+"']")
+    var $room = $src.find(".room[data-title='"+title+"']")
     $roomDeets.html(
       "<div class='deets'>" +
         "<span class='deet low inline-block'>" +
@@ -84,6 +104,18 @@ $(document).ready(function() {
     )
   }
 
+  var displaySurfDetails = function(title) {
+    var $surf = $src.find(".surf-option[data-title='"+title+"']")
+    $surfDeets.html(
+      "<div class='deets'>" +
+        "<p class='rate'><em>"+$surf.attr("data-rate")+"€</em></p>" +
+        "<div class='extras'>" +
+          $surf.attr("data-extras") +
+        "</div>" +
+      "</div>"
+    )
+  }
+
   $.each($room_ops, function(index, op) {
     var $op = $(op)
     var $input = $op.find("input")
@@ -97,6 +129,22 @@ $(document).ready(function() {
       $input.attr("checked", "checked")
       $op.addClass("checked")
       displayRoomDetails($input.attr("value"))
+    })
+  })
+
+  $.each($surf_ops, function(index, op) {
+    var $op = $(op)
+    var $input = $op.find("input")
+
+    if ($input.attr("checked")) {
+      $op.addClass("checked")
+    }
+
+    $op.on("click", function(e) {
+      clearSurfOps()
+      $input.attr("checked", "checked")
+      $op.addClass("checked")
+      displaySurfDetails($input.attr("value"))
     })
   })
 })

@@ -102,7 +102,7 @@
       margin-bottom: 40px;
     }
 
-    .select-room {
+    .select-room, .select-surf {
       display: block;
       width: 100%;
       text-align: center;
@@ -184,6 +184,20 @@
       .note {
         letter-spacing: 0.1em;
         font-size: 0.8em;
+      }
+    }
+
+    .surf-details {
+      text-align: center;
+      margin-bottom: 40px;
+      .rate {
+        color: $color__logo-med;
+        margin: 0 auto 0.33em;
+      }
+      .extras {
+        p {
+          margin: 0;
+        }
       }
     }
 

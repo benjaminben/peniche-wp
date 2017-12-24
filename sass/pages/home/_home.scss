@@ -1,3 +1,9 @@
+body.home {
+  #tidio-chat {
+    display: none;
+  }
+}
+
 body.admin-bar {
   #Home {
     min-height: calc(100vh - 30px)!important;

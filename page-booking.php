@@ -6,8 +6,10 @@
   wp_enqueue_script( 'booking' );
   get_header();
   $post = get_post(102);
+  $fields = get_fields();
   $seasons = get_field("seasons");
   $rooms = get_field("rooms");
+  $surf_options = get_field("surf_options");
 ?>
 
 <div id="Booking" class="page-content">
@@ -24,7 +26,6 @@
       <?php endwhile ?>
       </div>
     <?php endif ?>
-
     <?php if (have_rows("rooms")) : ?>
       <div class="rooms">
       <?php while (have_rows("rooms")) : the_row(); ?>
@@ -33,6 +34,19 @@
               data-low-rate="<?php echo get_sub_field("low_rate") ?>"
               data-mid-rate="<?php echo get_sub_field("mid_rate") ?>"
               data-high-rate="<?php echo get_sub_field("high_rate") ?>"
+              data-image="<?php echo get_sub_field("image") ?>"
+        ></span>
+      <?php endwhile ?>
+      </div>
+    <?php endif ?>
+
+    <?php if (have_rows("surf_options")) : ?>
+      <div class="surf-options">
+      <?php while (have_rows("surf_options")) : the_row(); ?>
+        <span class="surf-option"
+              data-title="<?php echo get_sub_field("title") ?>"
+              data-rate="<?php echo get_sub_field("rate") ?>"
+              data-extras="<?php echo get_sub_field("extras") ?>"
               data-image="<?php echo get_sub_field("image") ?>"
         ></span>
       <?php endwhile ?>
@@ -52,4 +66,3 @@
 </div>
 
 <?php get_footer() ?>
-

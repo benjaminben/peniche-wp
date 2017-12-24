@@ -1,4 +1,6 @@
 #page.contact {
+  text-align: center;
+
   .entry-title {
     display: none;
   }
@@ -8,6 +10,8 @@
     margin: 40px auto 0;
 
     form {
+      text-align: left;
+
       p {
         margin: 0;
       }

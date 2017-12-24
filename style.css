@@ -1249,6 +1249,9 @@ footer .social .icons .icon img {
   display: block;
   margin: 0 auto;
 }
+body.home #tidio-chat {
+  display: none;
+}
 body.admin-bar #Home {
   min-height: calc(100vh - 30px) !important;
 }
@@ -2161,12 +2164,12 @@ body.admin-bar #Home {
 #Booking form .seasons .season.high h3 {
   color: #004066;
 }
-#Booking form .select-room {
+#Booking form .select-room, #Booking form .select-surf {
   display: block;
   width: 100%;
   text-align: center;
 }
-#Booking form .select-room .wpcf7-list-item {
+#Booking form .select-room .wpcf7-list-item, #Booking form .select-surf .wpcf7-list-item {
   margin: 1em;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
@@ -2180,15 +2183,15 @@ body.admin-bar #Home {
   background-position: 1em 1em;
   background-repeat: no-repeat;
 }
-#Booking form .select-room .wpcf7-list-item.checked {
+#Booking form .select-room .wpcf7-list-item.checked, #Booking form .select-surf .wpcf7-list-item.checked {
   box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
-#Booking form .select-room .wpcf7-list-item input {
+#Booking form .select-room .wpcf7-list-item input, #Booking form .select-surf .wpcf7-list-item input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-#Booking form .select-room .wpcf7-list-item .wpcf7-list-item-label {
+#Booking form .select-room .wpcf7-list-item .wpcf7-list-item-label, #Booking form .select-surf .wpcf7-list-item .wpcf7-list-item-label {
   padding: 1em;
   box-sizing: border-box;
   position: absolute;
@@ -2229,6 +2232,17 @@ body.admin-bar #Home {
   letter-spacing: 0.1em;
   font-size: 0.8em;
 }
+#Booking form .surf-details {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#Booking form .surf-details .rate {
+  color: #196c8a;
+  margin: 0 auto 0.33em;
+}
+#Booking form .surf-details .extras p {
+  margin: 0;
+}
 #Booking form .interested-in input {
   display: inline-block;
   width: auto;
@@ -2254,6 +2268,9 @@ body.admin-bar #Home {
   display: block;
   margin: 1em auto;
 }
+#page.contact {
+  text-align: center;
+}
 #page.contact .entry-title {
   display: none;
 }
@@ -2261,6 +2278,9 @@ body.admin-bar #Home {
   width: 90%;
   max-width: 500px;
   margin: 40px auto 0;
+}
+#page.contact .wpcf7 form {
+  text-align: left;
 }
 #page.contact .wpcf7 form p {
   margin: 0;
