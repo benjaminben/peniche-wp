@@ -30,27 +30,29 @@ $is_blog = in_category('blog')
 	<div id="<?php echo ($is_blog ? "blog_primary" : "primary") ?>" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+		<?php while ( have_posts() ) : the_post() ?>
 
-		?>
-
-		<div class="post">
+		<div class="post single <?php echo ($is_blog ? "blog" : "lodge") ?>">
 		  <h1 class="title"><?php the_title(); ?></h1>
-		  <h5 class="date"><?php the_time( get_option( 'date_format' ) ); ?></h5>
+			<?php
+				if ($is_blog) {
+					?>
+					<h5 class="date"><?php the_time( get_option( 'date_format' ) ); ?></h5>
+					<?php
+				}
+			?>
 		  <div class="content">
 		    <?php the_content(); ?>
 		  </div>
 		</div>
 
-		<?php
-
-		endwhile; // End of the loop.
-		?>
+		<?php endwhile;?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-include 'blog-sidebar.php';
+if ($is_blog) {
+	include 'blog-sidebar.php';
+}
 get_footer();

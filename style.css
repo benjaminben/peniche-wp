@@ -1219,6 +1219,36 @@ embed, iframe, object {
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5em;
 }
+.post ul {
+  list-style-type: none;
+  margin: 0 0 2em;
+  padding: 0 0 0 1em;
+}
+.post li {
+  overflow: visible;
+  margin-bottom: 1em;
+}
+.post li:before {
+  content: "";
+  position: relative;
+  height: 0.75em;
+  display: inline-block;
+  width: 12px;
+  margin-right: 1em;
+  transition: opacity 0.33s ease;
+  background: url(images/right-spike.svg) no-repeat left top;
+  background-size: 100% 100%;
+}
+.post.single.lodge {
+  padding: 0 1em;
+}
+.post.single.lodge .title {
+  margin: 0;
+  color: #004066;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+}
 .page-content {
   padding-top: 60px;
 }
