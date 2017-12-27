@@ -745,7 +745,7 @@ a:hover, a:active {
 body.home #content {
   padding-top: 0;
 }
-a:active {
+a, a:active {
   color: #196c8a;
 }
 a:visited {
@@ -2041,6 +2041,12 @@ body.admin-bar #Home {
 }
 #blog_primary .post .content {
   padding-top: 20px;
+}
+#blog_primary .post img {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  width: 90%;
+  height: auto;
 }
 #blog_sidebar {
   float: right;

@@ -7,7 +7,7 @@ body.home {
   }
 }
 
-a:active {
+a, a:active {
   color: $color__logo-med;
 }
 a:visited {
