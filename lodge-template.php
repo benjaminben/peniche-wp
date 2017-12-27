@@ -59,9 +59,11 @@ $thumb_url = $thumb_url_array[0];
         $thumb_url = $thumb_url_array[0];
 
         $format = get_field('format');
+        $id = get_field('id');
       ?>
 
-        <div class="post relative">
+        <div <?php if ($id) { ?> id="<?php echo $id ?>" <?php } ?>
+             class="post relative">
           <div class="content relative <?php echo $format ?>">
           <?php if ($format == 'flex-column') { ?>
             <?php if (get_field('arrangement') == 'text-img') { ?>
