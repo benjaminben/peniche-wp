@@ -7,6 +7,13 @@ body.home {
   }
 }
 
+a:active {
+  color: $color__logo-med;
+}
+a:visited {
+  color: $color__logo-dark;
+}
+
 .sticky {
 	display: block;
 }

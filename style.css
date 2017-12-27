@@ -745,6 +745,12 @@ a:hover, a:active {
 body.home #content {
   padding-top: 0;
 }
+a:active {
+  color: #196c8a;
+}
+a:visited {
+  color: #004066;
+}
 .sticky {
   display: block;
 }
