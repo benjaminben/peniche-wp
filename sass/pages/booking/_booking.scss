@@ -38,10 +38,12 @@
         border: none;
         border-bottom: 1px solid rgba(60,60,60,1);
         border-radius: 0;
-        font-size: 3em;
+        font-size: 2.33em;
         letter-spacing: 0.1em;
         font-weight: 100;
         outline: none;
+        padding: 3px 0;
+        text-transform: uppercase;
       }
 
       &[type="submit"] {
