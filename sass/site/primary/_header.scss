@@ -66,6 +66,7 @@ body.admin-bar {
       a {
         color: $color__black;
         padding: 0 1.66em;
+        outline: none!important;
       }
 
       &:before, &:after {
@@ -109,6 +110,7 @@ body.admin-bar {
         top: -102px;
         width: 100%;
         left: 0;
+        text-align: left;
         height: auto;
         background: rgba(255,255,255,0.9);
         display: block;
@@ -167,6 +169,7 @@ body.admin-bar {
       font-size: 1em;
       letter-spacing: 0.1em;
       outline: none;
+      transition: all 0.2s ease;
 
       &:hover, &:active {
         background: $color__logo-dark;

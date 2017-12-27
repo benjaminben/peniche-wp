@@ -64,31 +64,6 @@
   }
 }
 
-footer {
-  .social {
-    .icons {
-      .icon {
-        margin: 0 5px;
-
-        .table-cell {
-          height: 40px;
-          width: 40px;
-          border: 1px solid white;
-          border-radius: 100%;
-          vertical-align: middle;
-          box-sizing: border-box;
-        }
-
-        img {
-          width: 40%;
-          display: block;
-          margin: 0 auto;
-        }
-      }
-    }
-  }
-}
-
 @import "home/home";
 @import "lodge/lodge";
 @import "blog/blog";
