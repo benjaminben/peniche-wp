@@ -42,7 +42,8 @@ $(document).ready(function() {
     ).attr("data-image") + ")")
   })
 
-  var clearGuestOps = function() {
+  var clearRooms = function() {
+    $roomDeets.html('')
     $.each($room_ops, function(index, op) {
       var $op = $(op)
       var $input = $op.find("input")
@@ -52,7 +53,8 @@ $(document).ready(function() {
     })
   }
 
-  var clearSurfOps = function() {
+  var clearSurf = function() {
+    $surfDeets.html('')
     $.each($surf_ops, function(index, op) {
       var $op = $(op)
       var $input = $op.find("input")
@@ -125,7 +127,10 @@ $(document).ready(function() {
     }
 
     $op.on("click", function(e) {
-      clearGuestOps()
+      if ($op.hasClass("checked")) {
+        return clearRooms()
+      }
+      clearRooms()
       $input.attr("checked", "checked")
       $op.addClass("checked")
       displayRoomDetails($input.attr("value"))
@@ -141,7 +146,10 @@ $(document).ready(function() {
     }
 
     $op.on("click", function(e) {
-      clearSurfOps()
+      if ($op.hasClass("checked")) {
+        return clearSurf()
+      }
+      clearSurf()
       $input.attr("checked", "checked")
       $op.addClass("checked")
       displaySurfDetails($input.attr("value"))
