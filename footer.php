@@ -39,10 +39,6 @@
 
         </span>
         <span class="social section">
-          <form>
-            <input class="block" type="text" placeholder="EMAIL" />
-            <input type="submit" value="SUBSCRIBE" />
-          </form>
           <span class="icons block">
             <?php
               $socials = get_field('social', 'option');
@@ -94,4 +90,3 @@
 
 </body>
 </html>
-
