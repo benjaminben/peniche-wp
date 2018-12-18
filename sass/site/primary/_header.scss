@@ -31,6 +31,7 @@ body.admin-bar {
     margin-top: -2px;
     position: relative;
     z-index: 1000;
+    flex-shrink: 0;
 
     img {
       display: block;
@@ -72,11 +73,11 @@ body.admin-bar {
       &:before, &:after {
         content: "";
         position: absolute;
-        height: 4px;
-        width: 12px;
+        height: 0.4em;
+        width: 1em;
         background-size: 100%;
         background-repeat: no-repeat;
-        top: calc(50% - 2.5px);
+        top: calc(50% - 0.2em);
         opacity: 0;
         transition: opacity 0.33s ease;
       }
@@ -296,6 +297,10 @@ body.home {
     transform: translateY(-100%);
   }
 }
+
+@media screen and (max-width: 1014px) {#masthead nav li {font-size: 0.8em}}
+@media screen and (max-width: 930px) {#masthead nav li {font-size: 0.7em}}
+@media screen and (max-width: 846px) {#masthead nav li {font-size: 1.3vw}}
 
 @media screen and (max-width: 768px) {
   #masthead {

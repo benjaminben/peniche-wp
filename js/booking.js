@@ -37,9 +37,8 @@ $(document).ready(function() {
   })
 
   $.each($surf_ops, function(index, op) {
-    $(op).css("background-image", "url(" + $src.find(
-      ".surf-option[data-title='"+$(op).find("input").attr("value")+"']"
-    ).attr("data-image") + ")")
+    $sop = $src.find(".surf-option[data-title='"+$(op).find("input").attr("value")+"']")
+    $(op).css("background-image", "url(" + $sop.attr("data-image") + ")")
   })
 
   var clearRooms = function() {
@@ -101,6 +100,11 @@ $(document).ready(function() {
           "<p><em>"+$room.attr("data-high-rate")+"€</em></p>" +
           displaySeasons("high") +
         "</span>" +
+        "<span class='deet peak inline-block'>" +
+          "<h3>Peak Season</h3>" +
+          "<p><em>"+$room.attr("data-peak-rate")+"€</em></p>" +
+          displaySeasons("peak") +
+        "</span>" +
       "</div>" +
       "<p class='note text-center uppercase'>*Rates Per Room</p>"
     )
@@ -108,14 +112,11 @@ $(document).ready(function() {
 
   var displaySurfDetails = function(title) {
     var $surf = $src.find(".surf-option[data-title='"+title+"']")
-    $surfDeets.html(
-      "<div class='deets'>" +
-        "<p class='rate'><em>"+$surf.attr("data-rate")+"€</em></p>" +
-        "<div class='extras'>" +
-          $surf.attr("data-extras") +
-        "</div>" +
-      "</div>"
-    )
+    var rate = parseFloat($surf.attr("data-rate"))
+    var extras = $surf.attr("data-extras")
+    var rateHTML = rate ? "<p class='rate'><em>"+rate+"€</em></p>" : ""
+    var extrasHTML = extras ? "<div class='extras'>"+$surf.attr("data-extras")+"</div>" : ""
+    $surfDeets.html("<div class='deets'>" + rateHTML + extrasHTML + "</div>")
   }
 
   $.each($room_ops, function(index, op) {

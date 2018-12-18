@@ -99,6 +99,11 @@
             color: $color__logo-dark
           }
         }
+        &.peak {
+          h3 {
+            color: $color__black
+          }
+        }
       }
 
       margin-bottom: 40px;
@@ -156,9 +161,8 @@
         text-align: center;
 
         .deet {
-          // margin-bottom: 40px;
           vertical-align: top;
-          width: 100%; max-width: 200px;
+          width: 100%; max-width: 220px;
 
           .seasons {
             margin-top: 1em;

@@ -34,6 +34,7 @@
               data-low-rate="<?php echo get_sub_field("low_rate") ?>"
               data-mid-rate="<?php echo get_sub_field("mid_rate") ?>"
               data-high-rate="<?php echo get_sub_field("high_rate") ?>"
+              data-peak-rate="<?php echo get_sub_field("peak_rate") ?>"
               data-image="<?php echo get_sub_field("image") ?>"
         ></span>
       <?php endwhile ?>
